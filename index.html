@@ -1,141 +1,504 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>This site can't be reached</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crown Drive | Luxury Private Chauffeur London</title>
+    <!-- Google Fonts for High-End Elegance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold-light: #F4E0A5;
+            --gold-primary: #D4AF37;
+            --gold-dark: #AA820A;
+            --bg-deep: #050709;
+            --card-bg: rgba(18, 22, 28, 0.7);
+            --border-gold: rgba(212, 175, 55, 0.25);
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --text-main: #F0F4F8;
+            --text-muted: #8E9BAE;
+        }
 
-<style>
-body {
-  margin: 0;
-  background: #fff;
-  font-family: Arial, sans-serif;
-  color: #202124;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.page {
-  max-width: 620px;
-  margin: 110px auto;
-  padding: 20px;
-}
+        body {
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-.icon {
-  width: 70px;
-  height: 82px;
-  margin-bottom: 28px;
-  position: relative;
-}
+        /* Ambient Glow Backgrounds */
+        .glow-bg {
+            position: fixed;
+            top: -150px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, rgba(0,0,0,0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
 
-.paper {
-  width: 48px;
-  height: 62px;
-  border: 3px solid #9aa0a6;
-  border-radius: 5px;
-  position: absolute;
-  left: 8px;
-  top: 5px;
-}
+        /* 1. Luxury Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 8%;
+            position: sticky;
+            top: 0;
+            background: rgba(5, 7, 9, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-subtle);
+            z-index: 1000;
+        }
 
-.paper:before {
-  content: "";
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background: white;
-  border-left: 3px solid #9aa0a6;
-  border-bottom: 3px solid #9aa0a6;
-  right: -3px;
-  top: -3px;
-}
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            color: var(--text-main);
+            text-transform: uppercase;
+        }
 
-.eye {
-  position: absolute;
-  width: 7px;
-  height: 7px;
-  background: #9aa0a6;
-  border-radius: 50%;
-  top: 30px;
-}
+        .logo span {
+            color: var(--gold-primary);
+        }
 
-.eye.left {
-  left: 20px;
-}
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 35px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
 
-.eye.right {
-  left: 39px;
-}
+        nav a:hover {
+            color: var(--gold-primary);
+        }
 
-.mouth {
-  position: absolute;
-  width: 17px;
-  height: 8px;
-  border-top: 3px solid #9aa0a6;
-  border-radius: 50%;
-  left: 23px;
-  top: 45px;
-}
+        /* 2. Hero Section */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 20px 140px;
+            background: linear-gradient(180deg, rgba(5, 7, 9, 0.4) 0%, rgba(5, 7, 9, 1) 100%), 
+                        url('https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&q=80&w=1920') center/cover no-repeat;
+        }
 
-h1 {
-  font-size: 28px;
-  font-weight: 400;
-  margin: 0 0 18px;
-}
+        .hero-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 30px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--border-gold);
+            color: var(--gold-primary);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
 
-p {
-  color: #5f6368;
-  font-size: 15px;
-  line-height: 1.6;
-  margin: 0;
-}
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.5rem, 5vw, 4.2rem);
+            font-weight: 500;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            background: linear-gradient(180deg, #FFFFFF 0%, #D0D7E1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-.error {
-  margin-top: 25px;
-  font-size: 14px;
-  color: #5f6368;
-}
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 620px;
+            margin-bottom: 35px;
+            font-weight: 300;
+        }
 
-button {
-  margin-top: 30px;
-  padding: 10px 22px;
-  border: 0;
-  border-radius: 4px;
-  background: #1a73e8;
-  color: white;
-  font-size: 14px;
-  cursor: pointer;
-}
+        /* Modern Gold Button */
+        .btn-gold {
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 50%, var(--gold-dark) 100%);
+            color: #050709;
+            padding: 16px 38px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.25);
+            transition: all 0.3s ease;
+        }
 
-button:hover {
-  background: #1765cc;
-}
-</style>
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.4);
+        }
+
+        /* 3. Glassmorphic Booking Card */
+        .container {
+            max-width: 1100px;
+            margin: -90px auto 100px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .booking-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-gold);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+        }
+
+        .booking-card h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold-primary);
+            margin-bottom: 30px;
+            font-size: 1.6rem;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-size: 0.75rem;
+            color: var(--gold-primary);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group select {
+            background-color: rgba(5, 7, 9, 0.6);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-main);
+            padding: 14px 16px;
+            border-radius: 8px;
+            outline: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 12px rgba(212, 175, 55, 0.2);
+        }
+
+        /* 4. Services Section */
+        .section {
+            max-width: 1200px;
+            margin: 100px auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header p {
+            color: var(--gold-primary);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            color: var(--text-main);
+            letter-spacing: 1px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 35px 25px;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: var(--border-gold);
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold-primary);
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+
+        /* 5. Fleet Section */
+        .fleet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .fleet-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .fleet-card:hover {
+            border-color: var(--border-gold);
+            transform: translateY(-5px);
+        }
+
+        .fleet-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .fleet-info {
+            padding: 25px;
+        }
+
+        .fleet-info h3 {
+            font-family: 'Cinzel', serif;
+            margin-bottom: 10px;
+            color: var(--gold-primary);
+            font-size: 1.3rem;
+        }
+
+        .fleet-info p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+
+        /* Booking Confirmation Card */
+        #booking-summary {
+            display: none;
+            margin-top: 30px;
+            padding: 24px;
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid var(--border-gold);
+            border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid var(--border-subtle);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; }
+            nav a { margin: 0 10px; }
+            .hero h1 { font-size: 2.2rem; }
+            .booking-card { padding: 25px; }
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="page">
+    <div class="glow-bg"></div>
 
-  <div class="icon">
-    <div class="paper"></div>
-    <div class="eye left"></div>
-    <div class="eye right"></div>
-    <div class="mouth"></div>
-  </div>
+    <!-- 1. Header Navigation -->
+    <header>
+        <div class="logo">Crown <span>Drive</span></div>
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#booking">Reserve</a>
+            <a href="#fleet">Fleet</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-  <h1>This site can’t be reached</h1>
+    <!-- 2. Hero Section -->
+    <section class="hero">
+        <span class="hero-badge">London Private Chauffeur</span>
+        <h1>Bespoke Luxury Driving Service</h1>
+        <p>Premium airport transfers, VIP executive transport, and hourly hire delivered with total discretion across London.</p>
+        <a href="#booking" class="btn-gold">Book Your Ride</a>
+    </section>
 
-  <p>
-    The webpage might be temporarily down or it may have moved
-    permanently to a new web address.
-  </p>
+    <!-- 3. Booking Container -->
+    <div class="container" id="booking">
+        <div class="booking-card">
+            <h2>Instant Reservation</h2>
+            <form id="chauffeurForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="pickup">Pickup Location</label>
+                        <input type="text" id="pickup" placeholder="e.g. Mayfair / Heathrow T5" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dropoff">Drop-off Location</label>
+                        <input type="text" id="dropoff" placeholder="e.g. The Ritz London" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicle">Vehicle Class</label>
+                        <select id="vehicle" required>
+                            <option value="First Class S-Class">Mercedes-Benz S-Class (First Class)</option>
+                            <option value="Executive E-Class">Mercedes-Benz E-Class (Executive)</option>
+                            <option value="Luxury MPV V-Class">Mercedes-Benz V-Class (VIP Group)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date & Time</label>
+                        <input type="datetime-local" id="date" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn-gold" style="width: 100%;">Confirm Journey</button>
+            </form>
 
-  <div class="error">
-    ERR_CONNECTION_REFUSED
-  </div>
+            <div id="booking-summary"></div>
+        </div>
+    </div>
 
-  <button onclick="location.reload()">Reload</button>
+    <!-- 4. Services Overview -->
+    <section class="section" id="services">
+        <div class="section-header">
+            <p>Tailored Transport</p>
+            <h2 class="section-title">Our Exclusive Services</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Airport Transfers</h3>
+                <p>Flight tracking, 60-min complimentary wait time, and flight lounge meet & greet at all London airports.</p>
+            </div>
+            <div class="service-card">
+                <h3>Corporate Chauffeur</h3>
+                <p>Seamless mobility for business executives, board members, and luxury corporate roadshows.</p>
+            </div>
+            <div class="service-card">
+                <h3>VIP & Event Travel</h3>
+                <p>Private luxury transport for red-carpet events, fashion week, gala dinners, and private dining.</p>
+            </div>
+            <div class="service-card">
+                <h3>By The Hour Hire</h3>
+                <p>Enjoy total flexibility with a dedicated private driver at your disposal on your exact terms.</p>
+            </div>
+        </div>
+    </section>
 
-</div>
+    <!-- 5. Fleet Section -->
+    <section class="section" id="fleet">
+        <div class="section-header">
+            <p>Unmatched Comfort</p>
+            <h2 class="section-title">Luxury Vehicle Fleet</h2>
+        </div>
+        <div class="fleet-grid">
+            <div class="fleet-card">
+                <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&q=80&w=600" alt="Mercedes S-Class">
+                <div class="fleet-info">
+                    <h3>Mercedes-Benz S-Class</h3>
+                    <p>The flagship choice for elite travel. Equipped with rear massage seats, executive legroom, and absolute quiet.</p>
+                </div>
+            </div>
+            <div class="fleet-card">
+                <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=600" alt="Mercedes E-Class">
+                <div class="fleet-info">
+                    <h3>Mercedes-Benz E-Class</h3>
+                    <p>Ideal for business class mobility across Greater London. Sleek, efficient, and refined.</p>
+                </div>
+            </div>
+            <div class="fleet-card">
+                <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&q=80&w=600" alt="Mercedes V-Class">
+                <div class="fleet-info">
+                    <h3>Mercedes-Benz V-Class</h3>
+                    <p>Unmatched space for families or group delegations. Fits up to 7 passengers with generous luggage room.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Footer -->
+    <footer id="contact">
+        <p>&copy; 2026 Crown Drive London Private Hire. All Rights Reserved.</p>
+        <p style="margin-top: 5px; color: #556070;">Licensed Private Hire Operator | London, UK</p>
+    </footer>
+
+    <!-- Interactive JS Script -->
+    <script>
+        document.getElementById('chauffeurForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const pickup = document.getElementById('pickup').value;
+            const dropoff = document.getElementById('dropoff').value;
+            const vehicle = document.getElementById('vehicle').value;
+            const dateInput = document.getElementById('date').value;
+
+            const formattedDate = new Date(dateInput).toLocaleString('en-GB', { 
+                dateStyle: 'full', 
+                timeStyle: 'short' 
+            });
+
+            const summaryDiv = document.getElementById('booking-summary');
+            summaryDiv.style.display = 'block';
+            summaryDiv.innerHTML = `
+                <h3 style="color: var(--gold-primary); font-family: 'Cinzel', serif; margin-bottom: 12px;">Booking Request Confirmed</h3>
+                <p><strong>Pickup:</strong> ${pickup}</p>
+                <p><strong>Destination:</strong> ${dropoff}</p>
+                <p><strong>Vehicle:</strong> ${vehicle}</p>
+                <p><strong>Schedule:</strong> ${formattedDate}</p>
+                <p style="margin-top: 12px; font-size: 0.85rem; color: var(--text-muted);">Our dispatch manager will verify availability and contact you shortly.</p>
+            `;
+        });
+    </script>
 </body>
-</html>
+  </html>
