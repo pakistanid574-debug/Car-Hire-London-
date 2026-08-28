@@ -1,10 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crown Drive | Luxury Private Chauffeur London</title>
-    <!-- Google Fonts for High-End Elegance -->
+    
+    <!-- Primary Meta Tags -->
+    <title>Luxury Chauffeur Service London | Private Airport Transfers | Crown Drive</title>
+    <meta name="description" content="Book premium private chauffeur services in London. Executive Mercedes S-Class & V-Class airport transfers, corporate travel & hourly hire in Mayfair, Kensington & Heathrow.">
+    <meta name="keywords" content="chauffeur service London, luxury airport transfer London, executive chauffeur Mayfair, Mercedes S-Class hire London, private driver Heathrow">
+    <link rel="canonical" href="https://www.crowndrive.co.uk/">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Luxury Chauffeur Service London | Crown Drive">
+    <meta property="og:description" content="Bespoke private chauffeur services in London. Airport transfers, executive travel & VIP hourly hire.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&q=80&w=1200">
+
+    <!-- Schema.org JSON-LD (Structured Data for Local SEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LimoOrChauffeurService",
+      "name": "Crown Drive London Chauffeurs",
+      "image": "https://images.unsplash.com/photo-1617814076367-b759c7d7e738",
+      "@id": "https://www.crowndrive.co.uk",
+      "url": "https://www.crowndrive.co.uk",
+      "telephone": "+442079460000",
+      "priceRange": "£££",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Mayfair",
+        "addressLocality": "London",
+        "postalCode": "W1J 8AJ",
+        "addressCountry": "GB"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 51.5074,
+        "longitude": -0.1278
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "London"
+      }
+    }
+    </script>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -36,7 +86,6 @@
             overflow-x: hidden;
         }
 
-        /* Ambient Glow Backgrounds */
         .glow-bg {
             position: fixed;
             top: -150px;
@@ -49,7 +98,6 @@
             pointer-events: none;
         }
 
-        /* 1. Luxury Header */
         header {
             display: flex;
             justify-content: space-between;
@@ -72,9 +120,7 @@
             text-transform: uppercase;
         }
 
-        .logo span {
-            color: var(--gold-primary);
-        }
+        .logo span { color: var(--gold-primary); }
 
         nav a {
             color: var(--text-muted);
@@ -87,11 +133,8 @@
             transition: all 0.3s ease;
         }
 
-        nav a:hover {
-            color: var(--gold-primary);
-        }
+        nav a:hover { color: var(--gold-primary); }
 
-        /* 2. Hero Section */
         .hero {
             min-height: 80vh;
             display: flex;
@@ -138,7 +181,6 @@
             font-weight: 300;
         }
 
-        /* Modern Gold Button */
         .btn-gold {
             background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 50%, var(--gold-dark) 100%);
             color: #050709;
@@ -161,7 +203,6 @@
             box-shadow: 0 15px 35px rgba(212, 175, 55, 0.4);
         }
 
-        /* 3. Glassmorphic Booking Card */
         .container {
             max-width: 1100px;
             margin: -90px auto 100px;
@@ -225,7 +266,6 @@
             box-shadow: 0 0 12px rgba(212, 175, 55, 0.2);
         }
 
-        /* 4. Services Section */
         .section {
             max-width: 1200px;
             margin: 100px auto;
@@ -284,7 +324,6 @@
             font-weight: 300;
         }
 
-        /* 5. Fleet Section */
         .fleet-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -310,9 +349,7 @@
             object-fit: cover;
         }
 
-        .fleet-info {
-            padding: 25px;
-        }
+        .fleet-info { padding: 25px; }
 
         .fleet-info h3 {
             font-family: 'Cinzel', serif;
@@ -327,7 +364,6 @@
             font-weight: 300;
         }
 
-        /* Booking Confirmation Card */
         #booking-summary {
             display: none;
             margin-top: 30px;
@@ -357,10 +393,9 @@
 
     <div class="glow-bg"></div>
 
-    <!-- 1. Header Navigation -->
     <header>
         <div class="logo">Crown <span>Drive</span></div>
-        <nav>
+        <nav aria-label="Main Navigation">
             <a href="#services">Services</a>
             <a href="#booking">Reserve</a>
             <a href="#fleet">Fleet</a>
@@ -368,112 +403,108 @@
         </nav>
     </header>
 
-    <!-- 2. Hero Section -->
-    <section class="hero">
-        <span class="hero-badge">London Private Chauffeur</span>
-        <h1>Bespoke Luxury Driving Service</h1>
-        <p>Premium airport transfers, VIP executive transport, and hourly hire delivered with total discretion across London.</p>
-        <a href="#booking" class="btn-gold">Book Your Ride</a>
-    </section>
+    <main>
+        <section class="hero">
+            <span class="hero-badge">Private Chauffeur Service London</span>
+            <h1>Luxury Private Chauffeur London</h1>
+            <p>Premium London airport transfers, corporate VIP travel, and hourly Mercedes hire delivered with discretion across Mayfair, Westminster, and Greater London.</p>
+            <a href="#booking" class="btn-gold">Book London Chauffeur</a>
+        </section>
 
-    <!-- 3. Booking Container -->
-    <div class="container" id="booking">
-        <div class="booking-card">
-            <h2>Instant Reservation</h2>
-            <form id="chauffeurForm">
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="pickup">Pickup Location</label>
-                        <input type="text" id="pickup" placeholder="e.g. Mayfair / Heathrow T5" required>
+        <section class="container" id="booking">
+            <div class="booking-card">
+                <h2>Reserve Your London Driver</h2>
+                <form id="chauffeurForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="pickup">Pickup Location</label>
+                            <input type="text" id="pickup" placeholder="e.g. Mayfair / Heathrow Airport Terminal 5" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dropoff">Drop-off Location</label>
+                            <input type="text" id="dropoff" placeholder="e.g. The Ritz London / Gatwick Airport" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="vehicle">Vehicle Class</label>
+                            <select id="vehicle" name="vehicle" required>
+                                <option value="First Class S-Class">Mercedes-Benz S-Class (VIP First Class)</option>
+                                <option value="Executive E-Class">Mercedes-Benz E-Class (Business Executive)</option>
+                                <option value="Luxury MPV V-Class">Mercedes-Benz V-Class (VIP Group Chauffeur)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Date & Time</label>
+                            <input type="datetime-local" id="date" required>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="dropoff">Drop-off Location</label>
-                        <input type="text" id="dropoff" placeholder="e.g. The Ritz London" required>
+                    <button type="submit" class="btn-gold" style="width: 100%;">Confirm Private Journey</button>
+                </form>
+
+                <div id="booking-summary"></div>
+            </div>
+        </section>
+
+        <section class="section" id="services">
+            <div class="section-header">
+                <p>Tailored Executive Transport</p>
+                <h2 class="section-title">Exclusive London Chauffeur Services</h2>
+            </div>
+            <div class="services-grid">
+                <article class="service-card">
+                    <h3>London Airport Transfers</h3>
+                    <p>Flight tracking, 60-min complimentary wait time, and flight lounge meet & greet at Heathrow, Gatwick, Stansted, and London City Airport.</p>
+                </article>
+                <article class="service-card">
+                    <h3>Corporate Executive Travel</h3>
+                    <p>Seamless executive mobility for business leaders, financial roadshows, and board meetings across Central London and Canary Wharf.</p>
+                </article>
+                <article class="service-card">
+                    <h3>VIP & Event Chauffeurs</h3>
+                    <p>Private luxury transport for London Fashion Week, Wimbledon, red-carpet galas, and fine dining transfers in Mayfair.</p>
+                </article>
+                <article class="service-card">
+                    <h3>By The Hour Hire London</h3>
+                    <p>Flexible hourly chauffeur service with a private driver dedicated to your itinerary across London and surrounding counties.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="fleet">
+            <div class="section-header">
+                <p>Unmatched Comfort & Style</p>
+                <h2 class="section-title">Chauffeur Driven Fleet London</h2>
+            </div>
+            <div class="fleet-grid">
+                <article class="fleet-card">
+                    <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&q=80&w=600" alt="Mercedes S-Class Luxury Chauffeur London" loading="lazy">
+                    <div class="fleet-info">
+                        <h3>Mercedes-Benz S-Class</h3>
+                        <p>The ultimate luxury sedan for elite travel in London. Features executive legroom, massage seating, and total acoustic insulation.</p>
                     </div>
-                    <div class="form-group">
-                        <label for="vehicle">Vehicle Class</label>
-                        <select id="vehicle" required>
-                            <option value="First Class S-Class">Mercedes-Benz S-Class (First Class)</option>
-                            <option value="Executive E-Class">Mercedes-Benz E-Class (Executive)</option>
-                            <option value="Luxury MPV V-Class">Mercedes-Benz V-Class (VIP Group)</option>
-                        </select>
+                </article>
+                <article class="fleet-card">
+                    <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=600" alt="Mercedes E-Class Executive Driver London" loading="lazy">
+                    <div class="fleet-info">
+                        <h3>Mercedes-Benz E-Class</h3>
+                        <p>Perfect choice for corporate business class travel across Greater London and city-to-city transfers.</p>
                     </div>
-                    <div class="form-group">
-                        <label for="date">Date & Time</label>
-                        <input type="datetime-local" id="date" required>
+                </article>
+                <article class="fleet-card">
+                    <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&q=80&w=600" alt="Mercedes V-Class VIP Group Hire London" loading="lazy">
+                    <div class="fleet-info">
+                        <h3>Mercedes-Benz V-Class</h3>
+                        <p>Spacious luxury MPV hire for up to 7 passengers with generous luggage capacity for airport transfers and events.</p>
                     </div>
-                </div>
-                <button type="submit" class="btn-gold" style="width: 100%;">Confirm Journey</button>
-            </form>
+                </article>
+            </div>
+        </section>
+    </main>
 
-            <div id="booking-summary"></div>
-        </div>
-    </div>
-
-    <!-- 4. Services Overview -->
-    <section class="section" id="services">
-        <div class="section-header">
-            <p>Tailored Transport</p>
-            <h2 class="section-title">Our Exclusive Services</h2>
-        </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Airport Transfers</h3>
-                <p>Flight tracking, 60-min complimentary wait time, and flight lounge meet & greet at all London airports.</p>
-            </div>
-            <div class="service-card">
-                <h3>Corporate Chauffeur</h3>
-                <p>Seamless mobility for business executives, board members, and luxury corporate roadshows.</p>
-            </div>
-            <div class="service-card">
-                <h3>VIP & Event Travel</h3>
-                <p>Private luxury transport for red-carpet events, fashion week, gala dinners, and private dining.</p>
-            </div>
-            <div class="service-card">
-                <h3>By The Hour Hire</h3>
-                <p>Enjoy total flexibility with a dedicated private driver at your disposal on your exact terms.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. Fleet Section -->
-    <section class="section" id="fleet">
-        <div class="section-header">
-            <p>Unmatched Comfort</p>
-            <h2 class="section-title">Luxury Vehicle Fleet</h2>
-        </div>
-        <div class="fleet-grid">
-            <div class="fleet-card">
-                <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&q=80&w=600" alt="Mercedes S-Class">
-                <div class="fleet-info">
-                    <h3>Mercedes-Benz S-Class</h3>
-                    <p>The flagship choice for elite travel. Equipped with rear massage seats, executive legroom, and absolute quiet.</p>
-                </div>
-            </div>
-            <div class="fleet-card">
-                <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=600" alt="Mercedes E-Class">
-                <div class="fleet-info">
-                    <h3>Mercedes-Benz E-Class</h3>
-                    <p>Ideal for business class mobility across Greater London. Sleek, efficient, and refined.</p>
-                </div>
-            </div>
-            <div class="fleet-card">
-                <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&q=80&w=600" alt="Mercedes V-Class">
-                <div class="fleet-info">
-                    <h3>Mercedes-Benz V-Class</h3>
-                    <p>Unmatched space for families or group delegations. Fits up to 7 passengers with generous luggage room.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer id="contact">
         <p>&copy; 2026 Crown Drive London Private Hire. All Rights Reserved.</p>
-        <p style="margin-top: 5px; color: #556070;">Licensed Private Hire Operator | London, UK</p>
+        <p style="margin-top: 5px; color: #556070;">Licensed Transport for London (TfL) Private Hire Operator | Mayfair, London, UK</p>
     </footer>
 
-    <!-- Interactive JS Script -->
     <script>
         document.getElementById('chauffeurForm').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -491,14 +522,15 @@
             const summaryDiv = document.getElementById('booking-summary');
             summaryDiv.style.display = 'block';
             summaryDiv.innerHTML = `
-                <h3 style="color: var(--gold-primary); font-family: 'Cinzel', serif; margin-bottom: 12px;">Booking Request Confirmed</h3>
+                <h3 style="color: var(--gold-primary); font-family: 'Cinzel', serif; margin-bottom: 12px;">London Booking Request Confirmed</h3>
                 <p><strong>Pickup:</strong> ${pickup}</p>
                 <p><strong>Destination:</strong> ${dropoff}</p>
                 <p><strong>Vehicle:</strong> ${vehicle}</p>
                 <p><strong>Schedule:</strong> ${formattedDate}</p>
-                <p style="margin-top: 12px; font-size: 0.85rem; color: var(--text-muted);">Our dispatch manager will verify availability and contact you shortly.</p>
+                <p style="margin-top: 12px; font-size: 0.85rem; color: var(--text-muted);">Our dispatch manager will verify vehicle availability and send a confirmation shortly.</p>
             `;
         });
     </script>
 </body>
-  </html>
+    </html>
+                
