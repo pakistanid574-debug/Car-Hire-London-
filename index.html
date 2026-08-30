@@ -6,8 +6,7 @@
   
   <!-- Primary On-Page SEO Meta Tags -->
   <title>Private Driver Norway | Executive Chauffeur & Oslo Airport Transfers</title>
-  <meta name="description" content="Book premium private driver & luxury chauffeur services in Norway. Specialized in Oslo Airport (Gardermoen OSL) transfers, Bergen tours, and VIP corporate travel." />
-  <meta name="keywords" content="Private Driver Norway, Chauffeur Oslo, Oslo Airport Transfer Gardermoen, Private Car Service Bergen, VIP Transport Norway" />
+  <meta name="description" content="Book premium private driver & luxury chauffeur services in Norway. Specialized in Oslo Airport transfers and VIP corporate travel." />
   <meta name="robots" content="index, follow" />
 
   <!-- Canonical & Geo-Targeting -->
@@ -86,35 +85,53 @@
       max-width: 700px;
       margin: 0 auto 30px auto;
     }
-    .error-alert {
+
+    /* Expired Screen Style */
+    #expired-screen {
       display: none;
-      background-color: #ef4444;
-      color: #ffffff;
-      padding: 12px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #0f172a;
+      z-index: 9999;
       text-align: center;
-      font-weight: bold;
+      padding-top: 150px;
+    }
+    #expired-screen h1 {
+      font-size: 50px;
+      color: #ef4444;
+      margin-bottom: 10px;
+    }
+    #expired-screen p {
+      font-size: 18px;
+      color: #94a3b8;
     }
   </style>
 </head>
 <body>
 
-  <!-- Error Alert Banner for Incorrect URL -->
-  <div id="url-error-alert" class="error-alert">
-    ⚠️ Invalid Link Detected! We have automatically assigned a fresh reference ID for your booking.
+  <!-- 404 / 5-Minute Link Expired Overlay Screen -->
+  <div id="expired-screen">
+    <h1>404 - Link Expired</h1>
+    <p>This booking link was only valid for 5 minutes and has now expired.</p>
+    <button onclick="generateFreshLink()" style="margin-top:20px; background:#38bdf8; color:#0f172a; padding:12px 24px; border:none; font-weight:bold; border-radius:6px; cursor:pointer;">Generate Fresh Booking Link</button>
   </div>
 
   <!-- Header Section -->
   <header>
     <div class="logo">Private Driver Norway</div>
     <div>
-      <button onclick="shareLink()" class="btn-share">🔗 Share Link</button>
+      <button onclick="shareLink()" class="btn-share">🔗 Share Link (Valid 5 Mins)</button>
       <a id="whatsapp-btn" href="#" target="_blank" class="btn-whatsapp">Book via WhatsApp</a>
     </div>
   </header>
 
   <!-- Dynamic User ID Display Banner -->
   <div class="id-banner">
-    Your Booking Reference ID: <strong id="user-id-display" style="color: #ffffff;">Generating...</strong>
+    Booking Reference ID: <strong id="user-id-display" style="color: #ffffff;">Generating...</strong> | 
+    Time Remaining: <strong id="timer-display" style="color: #ef4444;">05:00</strong>
   </div>
 
   <!-- Main Hero Section -->
@@ -123,66 +140,83 @@
     <p>Premium airport transfers from Oslo Gardermoen (OSL), Bergen, Stavanger, and private luxury tours.</p>
     <div>
       <a id="hero-whatsapp-btn" href="#" target="_blank" style="background:#0284c7; color:#ffffff; padding:15px 30px; text-decoration:none; font-weight:bold; border-radius:6px; margin-right:10px;">Book Ride Now</a>
-      <button onclick="shareLink()" style="background:#1e293b; color:#38bdf8; border:1px solid #38bdf8; padding:15px 30px; font-size:16px; font-weight:bold; border-radius:6px; cursor:pointer;">🔗 Share Page Link</button>
+      <button onclick="shareLink()" style="background:#1e293b; color:#38bdf8; border:1px solid #38bdf8; padding:15px 30px; font-size:16px; font-weight:bold; border-radius:6px; cursor:pointer;">🔗 Share 5-Min Valid Link</button>
     </div>
   </section>
 
-  <!-- Dynamic ID & Error Handling JavaScript -->
+  <!-- JavaScript for Dynamic Unique ID & 5-Minute Expiration -->
   <script>
-    // 1. Apna WhatsApp Number yahan likhein (Country Code ke sath, bina '+' ke)
-    const whatsappNumber = "4712345678"; 
+    const whatsappNumber = "4712345678"; // Apna WhatsApp number daalein
+    const EXPIRE_TIME_MS = 5 * 60 * 1000; // 5 Minutes in milliseconds
 
-    // 2. Continuous Automatic Unique ID Generator
     function generateNewUniqueID() {
       const timestamp = Date.now().toString(36);
       const randomPart = Math.random().toString(36).substring(2, 7).toUpperCase();
       return `NOR-${timestamp.slice(-4)}-${randomPart}`;
     }
 
-    // 3. Validate URL Parameter & Auto-Fix 404 / Invalid URL Entry
-    function initializePageSession() {
-      const urlParams = new URLSearchParams(window.location.search);
-      let clientID = urlParams.get('id');
-      let isInvalid = false;
+    // 1. URL me se ID aur Timestamp nikalein
+    const urlParams = new URLSearchParams(window.location.search);
+    let clientID = urlParams.get('id');
+    let createdAt = parseInt(urlParams.get('t'), 10);
 
-      // Agar ID missing ho, 6 characters se choti ho, ya ghalat characters shamil hon
-      if (!clientID || clientID.trim().length < 4 || /[^a-zA-Z0-9\-]/g.test(clientID)) {
-        if (clientID !== null) {
-          isInvalid = true; // User ne ghalat URL daala tha
-        }
-        clientID = generateNewUniqueID(); // Nayi unique ID generate karein
+    const currentTime = Date.now();
+
+    // Agar URL me time nahi hai ya link 5 min se purana hai
+    if (!createdAt || (currentTime - createdAt) > EXPIRE_TIME_MS) {
+      if (createdAt) {
+        // Link expire ho chuka hai, expired screen dikhayein
+        document.getElementById('expired-screen').style.display = 'block';
+      } else {
+        // First time load par nayi ID aur naya Timestamp set karein
+        createdAt = currentTime;
+        clientID = generateNewUniqueID();
+        const freshURL = window.location.origin + window.location.pathname + `?id=${clientID}&t=${createdAt}`;
+        window.history.replaceState({}, document.title, freshURL);
       }
-
-      // Show alert if an invalid URL parameter was processed
-      if (isInvalid) {
-        document.getElementById('url-error-alert').style.display = 'block';
-        // Auto-clean URL address bar without page reload
-        const cleanURL = window.location.origin + window.location.pathname + '?id=' + clientID;
-        window.history.replaceState({}, document.title, cleanURL);
-      }
-
-      return clientID;
     }
 
-    // Execute session initialization
-    const activeID = initializePageSession();
-    document.getElementById('user-id-display').innerText = activeID;
+    document.getElementById('user-id-display').innerText = clientID;
 
-    // Build Dynamic WhatsApp URL
-    const message = encodeURIComponent(`Hi, I would like to book a private driver in Norway. My Booking Reference ID is: [${activeID}]`);
+    // 2. WhatsApp Message Configuration
+    const message = encodeURIComponent(`Hi, I would like to book a private driver in Norway. My Booking Reference ID is: [${clientID}]`);
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
 
     document.getElementById('whatsapp-btn').href = whatsappURL;
     document.getElementById('hero-whatsapp-btn').href = whatsappURL;
 
-    // 4. Link Sharing Mechanism
+    // 3. 5-Minute Countdown Timer
+    function startTimer() {
+      const timerElement = document.getElementById('timer-display');
+      
+      const interval = setInterval(() => {
+        const now = Date.now();
+        const elapsed = now - createdAt;
+        const remaining = EXPIRE_TIME_MS - elapsed;
+
+        if (remaining <= 0) {
+          clearInterval(interval);
+          document.getElementById('expired-screen').style.display = 'block';
+        } else {
+          const minutes = Math.floor(remaining / 60000);
+          const seconds = Math.floor((remaining % 60000) / 1000);
+          timerElement.innerText = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+      }, 1000);
+    }
+
+    startTimer();
+
+    // 4. Share Link Function (Har baar naya 5 min ka timestamp lagayega)
     function shareLink() {
-      const shareUrl = window.location.origin + window.location.pathname + '?id=' + activeID;
+      const now = Date.now();
+      const newID = generateNewUniqueID();
+      const shareUrl = window.location.origin + window.location.pathname + `?id=${newID}&t=${now}`;
       
       if (navigator.share) {
         navigator.share({
           title: 'Private Driver Norway',
-          text: 'Book Executive Chauffeur & Private Driver in Norway (Booking ID: ' + activeID + ')',
+          text: 'Book Executive Chauffeur (Link Valid for 5 Mins - ID: ' + newID + ')',
           url: shareUrl
         }).catch(() => {
           copyToClipboard(shareUrl);
@@ -194,10 +228,16 @@
 
     function copyToClipboard(text) {
       navigator.clipboard.writeText(text).then(() => {
-        alert('Shareable link copied to clipboard!\n\n' + text);
+        alert('5-Minute Valid Link Copied!\n\n' + text);
       }).catch(() => {
-        alert('Copy failed. URL: ' + text);
+        alert('Copy failed: ' + text);
       });
+    }
+
+    function generateFreshLink() {
+      const now = Date.now();
+      const newID = generateNewUniqueID();
+      window.location.href = window.location.origin + window.location.pathname + `?id=${newID}&t=${now}`;
     }
   </script>
 
