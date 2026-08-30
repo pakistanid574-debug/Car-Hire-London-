@@ -96,7 +96,7 @@
       margin: 0 auto 30px auto;
     }
 
-    /* Expired Screen Overlay - No Auto Redirect */
+    /* Dynamic Expired Screen Overlay */
     #expired-screen {
       display: none;
       position: fixed;
@@ -158,7 +158,7 @@
   <!-- Static 404 Expired Overlay Screen -->
   <div id="expired-screen">
     <h1 style="font-size:50px; color:#ef4444;">404 - Link Expired</h1>
-    <p style="color:#94a3b8;">This booking link has expired.</p>
+    <p style="color:#94a3b8;">This booking link has expired because a new session was initiated or time limits reached.</p>
   </div>
 
   <!-- Hidden Admin Login Modal -->
@@ -221,29 +221,38 @@
     const urlParams = new URLSearchParams(window.location.search);
     let clientID = urlParams.get('id');
     let createdAt = parseInt(urlParams.get('t'), 10);
-    let durationSeconds = parseInt(urlParams.get('d'), 10) || 300; // Default 5 mins (300 sec)
+    let durationSeconds = parseInt(urlParams.get('d'), 10) || 300;
     const isAdminMode = urlParams.get('admin');
 
     const currentTime = Date.now();
     const expireTimeMs = durationSeconds * 1000;
 
-    // Show Static 404 Screen Only (No Redirect)
-    function handleExpiration() {
+    function showExpiredScreen() {
       document.getElementById('expired-screen').style.display = 'block';
     }
 
-    if (!createdAt || (currentTime - createdAt) > expireTimeMs) {
-      if (createdAt) {
-        handleExpiration();
+    // Checking Link Freshness & Expiration
+    if (createdAt) {
+      if ((currentTime - createdAt) > expireTimeMs) {
+        showExpiredScreen();
       } else {
-        createdAt = currentTime;
-        clientID = generateNewUniqueID();
-        const freshURL = window.location.origin + window.location.pathname + `?id=${clientID}&t=${createdAt}&d=${durationSeconds}` + (isAdminMode ? '&admin=true' : '');
-        window.history.replaceState({}, document.title, freshURL);
+        // Automatically track and invalidate older session links locally
+        const lastActiveTime = localStorage.getItem('last_active_link_time');
+        if (lastActiveTime && parseInt(lastActiveTime, 10) > createdAt) {
+          showExpiredScreen();
+        } else {
+          localStorage.setItem('last_active_link_time', createdAt.toString());
+        }
       }
+    } else {
+      createdAt = currentTime;
+      clientID = generateNewUniqueID();
+      localStorage.setItem('last_active_link_time', createdAt.toString());
+      const freshURL = window.location.origin + window.location.pathname + `?id=${clientID}&t=${createdAt}&d=${durationSeconds}` + (isAdminMode ? '&admin=true' : '');
+      window.history.replaceState({}, document.title, freshURL);
     }
 
-    document.getElementById('user-id-display').innerText = clientID;
+    document.getElementById('user-id-display').innerText = clientID || 'N/A';
 
     // WhatsApp Configuration
     const message = encodeURIComponent(`Hi, I would like to book a private driver in Norway. My Booking Reference ID is: [${clientID}]`);
@@ -257,7 +266,7 @@
       const remaining = expireTimeMs - (Date.now() - createdAt);
       if (remaining <= 0) {
         clearInterval(timerInterval);
-        handleExpiration();
+        showExpiredScreen();
       } else {
         const totalSec = Math.ceil(remaining / 1000);
         const m = Math.floor(totalSec / 60);
@@ -295,6 +304,7 @@
       const selectedSeconds = document.getElementById('expiry-time-select').value;
       const now = Date.now();
       const newID = generateNewUniqueID();
+      localStorage.setItem('last_active_link_time', now.toString());
       const shareUrl = window.location.origin + window.location.pathname + `?id=${newID}&t=${now}&d=${selectedSeconds}`;
 
       if (navigator.share) {
