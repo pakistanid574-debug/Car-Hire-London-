@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Executive Journal & Insights | Crown Drive London</title>
-    <meta name="description" content="Explore articles on luxury chauffeur travel in London, VIP airport transfers, executive car trends, and British luxury lifestyle.">
+    <title id="page-title">Crown Drive London | Premier Executive Chauffeur & VIP Transfer UK</title>
+    <meta name="description" content="Experience London's premier luxury chauffeur service. Private airport transfers, VIP corporate travel, and executive fleets.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,6 +44,45 @@
                 radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.08) 0%, transparent 50%);
         }
 
+        .uk-watermark {
+            position: fixed;
+            font-family: 'Cinzel', serif;
+            font-size: 16rem;
+            color: rgba(255, 255, 255, 0.012);
+            writing-mode: horizontal-tb;
+            user-select: none;
+            pointer-events: none;
+            z-index: 0;
+            right: -2%;
+            top: 15%;
+            font-weight: 900;
+            letter-spacing: 16px;
+        }
+
+        /* Dynamic Glow Effects */
+        .glow-orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(140px);
+            z-index: -1;
+            pointer-events: none;
+            animation: pulseGlow 10s infinite alternate ease-in-out;
+        }
+
+        .glow-1 {
+            top: -15%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 900px;
+            height: 900px;
+            background: radial-gradient(circle, var(--gold-glow) 0%, rgba(0,0,0,0) 70%);
+        }
+
+        @keyframes pulseGlow {
+            0% { opacity: 0.3; transform: translateX(-50%) scale(0.85); }
+            100% { opacity: 0.7; transform: translateX(-50%) scale(1.1); }
+        }
+
         /* Header Navigation */
         header {
             display: flex;
@@ -65,6 +104,7 @@
             align-items: center;
             gap: 16px;
             text-decoration: none;
+            cursor: pointer;
         }
 
         .logo-symbol {
@@ -76,6 +116,11 @@
             align-items: center;
             justify-content: center;
             box-shadow: 0 0 15px var(--gold-glow);
+            transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .logo-container:hover .logo-symbol {
+            transform: rotate(225deg);
         }
 
         .logo-symbol::after {
@@ -110,9 +155,24 @@
             letter-spacing: 2px;
             text-transform: uppercase;
             transition: all 0.3s ease;
+            position: relative;
+            cursor: pointer;
         }
 
-        nav a:hover, nav a.active { color: var(--gold-primary); }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--gold-primary);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        nav a:hover, nav a.active { color: var(--text-main); }
+        nav a:hover::after, nav a.active::after { width: 100%; }
 
         .btn-header {
             background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.03));
@@ -121,39 +181,270 @@
             padding: 12px 28px;
             border-radius: 4px;
             font-weight: 600 !important;
+            transition: all 0.4s ease !important;
         }
 
-        /* Hero Banner */
-        .blog-hero {
-            padding: 160px 20px 80px;
+        .btn-header:hover {
+            background: var(--gold-primary);
+            color: #030508 !important;
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* Page Switcher Control */
+        .page-view {
+            display: none;
+        }
+
+        .page-view.active {
+            display: block;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            background: linear-gradient(180deg, rgba(3,5,8,0.7) 0%, rgba(3,5,8,1) 100%);
+            padding: 180px 20px 140px;
+            position: relative;
+            background: 
+                linear-gradient(180deg, rgba(3,5,8,0.6) 0%, rgba(3,5,8,0.98) 100%),
+                url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&q=80&w=1920') center/cover no-repeat;
+        }
+
+        .hero-tagline {
+            font-family: 'Cinzel', serif;
+            color: var(--gold-primary);
+            font-size: 0.95rem;
+            letter-spacing: 8px;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 24px;
+            border-radius: 40px;
+            background: rgba(11, 15, 23, 0.8);
+            border: 1px solid var(--border-gold);
+            color: var(--gold-light);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-bottom: 28px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 7px;
+            height: 7px;
+            background: var(--gold-primary);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--gold-primary);
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.8rem, 6vw, 5.2rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            letter-spacing: 2px;
+            background: linear-gradient(180deg, #FFFFFF 0%, #B0C0D6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 680px;
+            margin-bottom: 44px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #FFE8A3 0%, #D4AF37 50%, #A37F1E 100%);
+            color: #030508;
+            padding: 20px 48px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.3);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.5);
+        }
+
+        /* Glassmorphic Booking Form */
+        .container {
+            max-width: 1140px;
+            margin: -100px auto 100px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .booking-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(35px);
+            -webkit-backdrop-filter: blur(35px);
+            border: 1px solid var(--border-gold);
+            border-radius: 8px;
+            padding: 55px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8);
+        }
+
+        .booking-card h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold-primary);
+            margin-bottom: 35px;
+            font-size: 1.8rem;
+            text-align: center;
+            letter-spacing: 3px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 24px;
+            margin-bottom: 35px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-size: 0.72rem;
+            color: var(--gold-primary);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group select {
+            background-color: rgba(3, 5, 8, 0.85);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-main);
+            padding: 16px 20px;
+            border-radius: 4px;
+            outline: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+        }
+
+        /* Executive Leadership */
+        .leadership-section {
+            max-width: 1140px;
+            margin: 100px auto 140px;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            color: var(--gold-primary);
+            font-size: 2rem;
+            letter-spacing: 4px;
+            margin-bottom: 50px;
+        }
+
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+
+        .executive-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(25px);
+            border: 1px solid var(--border-subtle);
+            padding: 45px 35px;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .executive-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+            border-color: var(--gold-primary);
+        }
+
+        .executive-role {
+            font-size: 0.75rem;
+            color: var(--gold-primary);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .executive-name {
+            font-family: 'Cinzel', serif;
+            font-size: 1.6rem;
+            color: var(--text-main);
+            letter-spacing: 2px;
+            margin-bottom: 14px;
+        }
+
+        .executive-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        /* Blogs Styling */
+        .blog-hero {
+            padding: 160px 20px 60px;
+            text-align: center;
         }
 
         .blog-hero h1 {
             font-family: 'Cinzel', serif;
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-size: clamp(2.2rem, 4vw, 3.8rem);
             color: var(--text-main);
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
-        .blog-hero p {
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto;
-            font-size: 1rem;
-        }
-
-        /* Blog Section */
         .blog-container {
-            max-width: 1200px;
+            max-width: 1140px;
             margin: 0 auto 120px;
             padding: 0 20px;
         }
 
         .blog-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 32px;
         }
 
@@ -165,8 +456,7 @@
             display: flex;
             flex-direction: column;
             transition: all 0.4s ease;
-            text-decoration: none;
-            color: inherit;
+            cursor: pointer;
         }
 
         .blog-card:hover {
@@ -226,98 +516,112 @@
             gap: 8px;
         }
 
-        .read-more::after {
-            content: '→';
-            transition: transform 0.3s ease;
+        /* Single Article View */
+        .article-container {
+            max-width: 800px;
+            margin: 140px auto 100px;
+            padding: 0 20px;
         }
 
-        .blog-card:hover .read-more::after {
-            transform: translateX(6px);
+        .article-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--text-main);
+            margin-bottom: 20px;
         }
 
-        /* Footer */
-        footer {
-            border-top: 1px solid var(--border-subtle);
-            padding: 40px 20px;
-            text-align: center;
-            color: var(--text-muted);
+        .article-meta {
+            color: var(--gold-primary);
             font-size: 0.85rem;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .article-body {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 30px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--gold-primary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 868px) {
+            header { flex-direction: column; gap: 18px; padding: 18px 4%; }
+            nav { flex-wrap: wrap; justify-content: center; gap: 18px; }
+            .hero h1 { font-size: 2.5rem; }
+            .booking-card { padding: 35px 25px; }
+            .container { margin-top: -50px; }
+            .uk-watermark { display: none; }
         }
     </style>
 </head>
 <body>
 
+    <div class="uk-watermark">LONDON</div>
+    <div class="glow-orb glow-1"></div>
+
     <header>
-        <a href="/" class="logo-container">
+        <a onclick="navigateTo('/')" class="logo-container">
             <div class="logo-symbol"></div>
             <div class="logo">Crown <span>Drive</span></div>
         </a>
         <nav aria-label="Main Navigation">
-            <a href="/">Home</a>
-            <a href="/#fleet">Fleet</a>
-            <a href="/blogs" class="active">Journal</a>
-            <a href="/#booking" class="btn-header">Book Now</a>
+            <a onclick="navigateTo('/')" id="nav-home" class="active">Home</a>
+            <a onclick="navigateTo('/#fleet')">Fleet</a>
+            <a onclick="navigateTo('/#leadership')">Leadership</a>
+            <a onclick="navigateTo('/blogs')" id="nav-blogs">Journal & Blogs</a>
+            <a onclick="navigateTo('/#booking')" class="btn-header">Book Chauffeur</a>
         </nav>
     </header>
 
     <main>
-        <section class="blog-hero">
-            <h1>Crown Journal</h1>
-            <p>Insights into London's premier VIP chauffeur travel, executive fleet reviews, and luxury lifestyle guides.</p>
-        </section>
+        <!-- HOME PAGE VIEW -->
+        <div id="view-home" class="page-view active">
+            <section class="hero">
+                <div class="hero-tagline">First-Class Travel Experience</div>
+                <span class="hero-badge">London Executive Chauffeur & VIP Travel</span>
+                <h1>British Excellence Luxury Chauffeur</h1>
+                <p>Unrivaled VIP transport in London, Oxford, and Manchester. Executive transfers for London Heathrow & Gatwick with British precision.</p>
+                <a onclick="navigateTo('/#booking')" class="btn-gold">Reserve Chauffeur</a>
+            </section>
 
-        <section class="blog-container">
-            <div class="blog-grid">
-                
-                <!-- Blog Post 1 -->
-                <a href="/blog/top-reasons-to-hire-vip-chauffeur-heathrow-transfer" class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=80" alt="Heathrow VIP Chauffeur" class="blog-img">
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span>Airport VIP</span>
-                            <span>May 12, 2026</span>
+            <section class="container" id="booking">
+                <div class="booking-card">
+                    <h2>Reserve Executive Transport</h2>
+                    <form id="chauffeurForm">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="pickup">Pickup Location</label>
+                                <input type="text" id="pickup" placeholder="e.g. Heathrow Airport (LHR)" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="dropoff">Drop-off Location</label>
+                                <input type="text" id="dropoff" placeholder="e.g. The Ritz London, Mayfair" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="vehicle">Vehicle Class</label>
+                                <select id="vehicle" name="vehicle" required>
+                                    <option value="Rolls-Royce Phantom VIP">Rolls-Royce Phantom (VIP Luxury)</option>
+                                    <option value="Mercedes S-Class VIP">Mercedes-Benz S-Class (First Class)</option>
+                                    <option value="Mercedes V-Class MPV">Mercedes-Benz V-Class (Group Travel)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="date">Date & Time</label>
+                                <input type="datetime-local" id="date" required>
+                            </div>
                         </div>
-                        <h2 class="blog-title">Why VIP Chauffeur Transfer Beats Regular Taxis at Heathrow</h2>
-                        <p class="blog-excerpt">Discover how executive airport transfers save time, eliminate stress, and ensure seamless transit from Heathrow to Mayfair.</p>
-                        <span class="read-more">Read Article</span>
-                    </div>
-                </a>
-
-                <!-- Blog Post 2 -->
-                <a href="/blog/mercedes-s-class-vs-rolls-royce-phantom-chauffeur" class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80" alt="Rolls-Royce and Mercedes S Class" class="blog-img">
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span>Fleet Spotlight</span>
-                            <span>Apr 28, 2026</span>
-                        </div>
-                        <h2 class="blog-title">Mercedes S-Class vs. Rolls-Royce Phantom: Which Belongs in Your Travel Plan?</h2>
-                        <p class="blog-excerpt">An executive breakdown comparing ultra-luxury comfort, business usability, and VIP presence for London roadshows.</p>
-                        <span class="read-more">Read Article</span>
-                    </div>
-                </a>
-
-                <!-- Blog Post 3 -->
-                <a href="/blog/ultimate-guide-london-executive-corporate-travel" class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=800&q=80" alt="London Corporate Travel" class="blog-img">
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span>Corporate Travel</span>
-                            <span>Apr 10, 2026</span>
-                        </div>
-                        <h2 class="blog-title">The Ultimate Corporate Travel Guide for C-Suite Executives in London</h2>
-                        <p class="blog-excerpt">How to optimize high-profile business itineraries, private airport transfers, and hourly chauffeur services across London.</p>
-                        <span class="read-more">Read Article</span>
-                    </div>
-                </a>
-
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        &copy; 2026 Crown Drive London. All Rights Reserved. Executive Transport & VIP Services.
-    </footer>
-
-</body>
-</html>
+                        <di
