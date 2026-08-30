@@ -4,77 +4,81 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <!-- Primary SEO Meta Tags -->
+  <!-- SEO Meta Tags -->
   <title>Private Driver Norway | Executive Chauffeur & Oslo Airport Transfers</title>
-  <meta name="title" content="Private Driver Norway | Executive Chauffeur & Oslo Airport Transfers" />
-  <meta name="description" content="Book premium private driver & luxury chauffeur services in Norway. Specialized in Oslo Airport (Gardermoen OSL) transfers, Bergen fjord tours, and VIP corporate travel." />
-  <meta name="keywords" content="Private Driver Norway, Chauffeur Oslo, Oslo Airport Transfer Gardermoen, Private Car Service Bergen, VIP Transport Norway" />
+  <meta name="description" content="Book premium private driver & luxury chauffeur services in Norway. Specialized in Oslo Airport (Gardermoen OSL) transfers, Bergen tours, and VIP travel." />
   <meta name="robots" content="index, follow" />
 
   <!-- Canonical & Geo-Targeting -->
   <link rel="canonical" href="https://private-driver-norway.vercel.app/" />
   <link rel="alternate" hreflang="en-no" href="https://private-driver-norway.vercel.app/" />
-  <link rel="alternate" hreflang="no" href="https://private-driver-norway.vercel.app/" />
 
-  <!-- Open Graph / Social Media -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://private-driver-norway.vercel.app/" />
-  <meta property="og:title" content="Private Driver Norway | Premium Chauffeur Services" />
-  <meta property="og:description" content="Reliable luxury chauffeur & private driver services across Oslo, Bergen, and Stavanger." />
-  <meta property="og:image" content="https://private-driver-norway.vercel.app/og-image.jpg" />
-
-  <!-- Structured Data / Schema Markup for Norway -->
+  <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "TaxiService",
     "name": "Private Driver Norway",
     "url": "https://private-driver-norway.vercel.app/",
-    "image": "https://private-driver-norway.vercel.app/og-image.jpg",
-    "description": "Executive chauffeur and private driver services in Oslo, Gardermoen Airport, Bergen, and Stavanger.",
-    "areaServed": [
-      {"@type": "Country", "name": "Norway"},
-      {"@type": "City", "name": "Oslo"},
-      {"@type": "City", "name": "Bergen"},
-      {"@type": "City", "name": "Stavanger"}
-    ],
-    "serviceType": ["Oslo Gardermoen Airport Transfer", "Executive Chauffeur", "Fjord Tours", "VIP Corporate Driver"],
+    "serviceType": ["Airport Transfer", "Executive Chauffeur", "VIP Transport"],
     "priceRange": "NOK"
   }
   </script>
 </head>
-<body style="margin:0; font-family: 'Segoe UI', Roboto, sans-serif; background-color:#0f172a; color:#ffffff;">
+<body style="margin:0; font-family: Arial, sans-serif; background-color:#0f172a; color:#ffffff;">
 
   <!-- Header Section -->
   <header style="padding: 20px; background-color: #1e293b; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #334155;">
-    <div style="font-size: 22px; font-weight: bold; color: #38bdf8;">Private Driver Norway</div>
-    <a href="https://wa.me/YOUR_PHONE_NUMBER?text=Hi%2C%20I%20want%20to%20book%20a%20private%20driver%20in%20Norway" style="background:#38bdf8; color:#0f172a; padding:12px 24px; text-decoration:none; font-weight:bold; border-radius:6px;">Instant Booking</a>
+    <div style="font-size: 20px; font-weight: bold; color: #38bdf8;">Private Driver Norway</div>
+    <!-- Booking Button with Dynamic WhatsApp Link -->
+    <a id="whatsapp-btn" href="#" target="_blank" style="background:#38bdf8; color:#0f172a; padding:12px 24px; text-decoration:none; font-weight:bold; border-radius:6px;">Book via WhatsApp</a>
   </header>
 
-  <!-- Hero Section (High Conversion) -->
-  <section style="padding: 80px 20px; text-align: center; background: linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.85));">
-    <h1 style="font-size: 38px; margin-bottom: 15px; color:#ffffff;">Premium Private Driver & Chauffeur Service in Norway</h1>
-    <p style="font-size: 18px; color: #94a3b8; max-width: 750px; margin: 0 auto 30px auto; line-height: 1.6;">
-      Punctual, discreet, and luxury executive transfers for Oslo Airport (Gardermoen OSL), Bergen, Stavanger, and private Norway fjord tours.
+  <!-- Dynamic User ID Display Banner -->
+  <div style="background-color: #1e1b4b; border-bottom: 1px solid #6366f1; padding: 10px; text-align: center; font-size: 14px; color: #a5b4fc;">
+    Your Booking Tracking ID: <strong id="user-id-display" style="color: #ffffff;">Loading...</strong>
+  </div>
+
+  <!-- Hero Section -->
+  <section style="padding: 70px 20px; text-align: center;">
+    <h1 style="font-size: 36px; margin-bottom: 15px;">Executive Private Driver & Chauffeur Service in Norway</h1>
+    <p style="font-size: 18px; color: #94a3b8; max-width: 700px; margin: 0 auto 30px auto;">
+      Luxury transfers for Oslo Airport (Gardermoen OSL), Bergen, Stavanger, and private tours.
     </p>
-    <div style="margin-top:20px;">
-      <a href="#booking" style="background:#0284c7; color:#ffffff; padding:15px 30px; font-size:16px; text-decoration:none; font-weight:bold; border-radius:6px; margin-right:10px;">Book Your Ride</a>
-      <a href="#services" style="border:1px solid #38bdf8; color:#38bdf8; padding:15px 30px; font-size:16px; text-decoration:none; font-weight:bold; border-radius:6px;">Our Fleet & Services</a>
-    </div>
+    <a id="hero-whatsapp-btn" href="#" target="_blank" style="background:#0284c7; color:#ffffff; padding:15px 30px; font-size:16px; text-decoration:none; font-weight:bold; border-radius:6px;">Book Ride Now</a>
   </section>
 
-  <!-- H2 Heading Sections for SEO Hierarchy -->
-  <section id="services" style="padding: 50px 20px; max-width: 1000px; margin: 0 auto;">
-    <h2 style="color: #38bdf8; text-align: center; font-size: 28px;">Oslo Gardermoen (OSL) Airport Transfers</h2>
-    <p style="color: #cbd5e1; text-align: center; font-size: 16px;">
-      Direct, stress-free luxury transfers between Oslo Gardermoen Airport and Oslo city center or surrounding regions.
-    </p>
+  <!-- Automatic Dynamic ID Script -->
+  <script>
+    // 1. Apna WhatsApp Number yahan darj karein (Country Code ke sath, bina '+' ke)
+    const whatsappNumber = "YOUR_PHONE_NUMBER_HERE"; // Example: "923001234567" or "4712345678"
 
-    <h2 style="color: #38bdf8; text-align: center; font-size: 28px; margin-top: 40px;">Executive Chauffeur Services in Bergen & Stavanger</h2>
-    <p style="color: #cbd5e1; text-align: center; font-size: 16px;">
-      Tailored private driver solutions for business executives, private fjord sightseeing tours, and VIP events across Norway.
-    </p>
-  </section>
+    // 2. Function to fetch ID from URL parameters or generate auto ID
+    function getOrGenerateID() {
+      const urlParams = new URLSearchParams(window.location.search);
+      let clientID = urlParams.get('id');
+
+      // Agar URL me ID nahi mili, toh random Auto-ID banayein
+      if (!clientID) {
+        clientID = 'AUTO-' + Math.floor(1000 + Math.random() * 9000);
+      }
+      return clientID;
+    }
+
+    // 3. Update Page & WhatsApp Links
+    const activeID = getOrGenerateID();
+    
+    // Display ID on page
+    document.getElementById('user-id-display').innerText = activeID;
+
+    // Custom WhatsApp Message with Tracking ID
+    const message = encodeURIComponent(`Hi, I would like to book a private driver in Norway. My Booking Reference ID is: [${activeID}]`);
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+
+    // Update buttons href
+    document.getElementById('whatsapp-btn').href = whatsappURL;
+    document.getElementById('hero-whatsapp-btn').href = whatsappURL;
+  </script>
 
 </body>
 </html>
