@@ -30,8 +30,12 @@
   <!-- Header Section -->
   <header style="padding: 20px; background-color: #1e293b; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #334155;">
     <div style="font-size: 20px; font-weight: bold; color: #38bdf8;">Private Driver Norway</div>
-    <!-- Booking Button with Dynamic WhatsApp Link -->
-    <a id="whatsapp-btn" href="#" target="_blank" style="background:#38bdf8; color:#0f172a; padding:12px 24px; text-decoration:none; font-weight:bold; border-radius:6px;">Book via WhatsApp</a>
+    <div>
+      <!-- Share Link Button -->
+      <button onclick="shareLink()" style="background:#334155; color:#ffffff; padding:10px 16px; border:1px solid #475569; font-weight:bold; border-radius:6px; cursor:pointer; margin-right:8px;">🔗 Share Link</button>
+      <!-- WhatsApp Booking Button -->
+      <a id="whatsapp-btn" href="#" target="_blank" style="background:#38bdf8; color:#0f172a; padding:10px 20px; text-decoration:none; font-weight:bold; border-radius:6px;">Book via WhatsApp</a>
+    </div>
   </header>
 
   <!-- Dynamic User ID Display Banner -->
@@ -45,39 +49,64 @@
     <p style="font-size: 18px; color: #94a3b8; max-width: 700px; margin: 0 auto 30px auto;">
       Luxury transfers for Oslo Airport (Gardermoen OSL), Bergen, Stavanger, and private tours.
     </p>
-    <a id="hero-whatsapp-btn" href="#" target="_blank" style="background:#0284c7; color:#ffffff; padding:15px 30px; font-size:16px; text-decoration:none; font-weight:bold; border-radius:6px;">Book Ride Now</a>
+    <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
+      <a id="hero-whatsapp-btn" href="#" target="_blank" style="background:#0284c7; color:#ffffff; padding:15px 30px; font-size:16px; text-decoration:none; font-weight:bold; border-radius:6px;">Book Ride Now</a>
+      <button onclick="shareLink()" style="background:#1e293b; color:#38bdf8; border:1px solid #38bdf8; padding:15px 30px; font-size:16px; font-weight:bold; border-radius:6px; cursor:pointer;">🔗 Share Page Link</button>
+    </div>
   </section>
 
-  <!-- Automatic Dynamic ID Script -->
+  <!-- Automatic Dynamic ID & Share Script -->
   <script>
-    // 1. Apna WhatsApp Number yahan darj karein (Country Code ke sath, bina '+' ke)
-    const whatsappNumber = "YOUR_PHONE_NUMBER_HERE"; // Example: "923001234567" or "4712345678"
+    // 1. Apna WhatsApp Number yahan darj karein
+    const whatsappNumber = "YOUR_PHONE_NUMBER_HERE"; 
 
-    // 2. Function to fetch ID from URL parameters or generate auto ID
+    // 2. Dynamic ID Fetch/Generate Function
     function getOrGenerateID() {
       const urlParams = new URLSearchParams(window.location.search);
       let clientID = urlParams.get('id');
 
-      // Agar URL me ID nahi mili, toh random Auto-ID banayein
       if (!clientID) {
         clientID = 'AUTO-' + Math.floor(1000 + Math.random() * 9000);
       }
       return clientID;
     }
 
-    // 3. Update Page & WhatsApp Links
     const activeID = getOrGenerateID();
-    
-    // Display ID on page
     document.getElementById('user-id-display').innerText = activeID;
 
-    // Custom WhatsApp Message with Tracking ID
+    // 3. WhatsApp Message Configuration
     const message = encodeURIComponent(`Hi, I would like to book a private driver in Norway. My Booking Reference ID is: [${activeID}]`);
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
 
-    // Update buttons href
     document.getElementById('whatsapp-btn').href = whatsappURL;
     document.getElementById('hero-whatsapp-btn').href = whatsappURL;
+
+    // 4. Share Link Functionality
+    function shareLink() {
+      const shareUrl = window.location.origin + window.location.pathname + '?id=' + activeID;
+      
+      if (navigator.share) {
+        // Mobile Browsers me Native Share Sheet kholega (WhatsApp, Facebook, etc.)
+        navigator.share({
+          title: 'Private Driver Norway',
+          text: 'Book Executive Chauffeur & Private Driver in Norway (Ref ID: ' + activeID + ')',
+          url: shareUrl
+        }).catch(() => {
+          copyToClipboard(shareUrl);
+        });
+      } else {
+        // Desktop / Laptop Browsers me Clipboard me copy karega
+        copyToClipboard(shareUrl);
+      }
+    }
+
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert('Link copied to clipboard!\n\n' + text);
+      }).catch(err => {
+        alert('Copy failed. URL: ' + text);
+      });
+    }
   </script>
 
 </body>
