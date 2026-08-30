@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Crown Drive Japan | Premier Executive Chauffeur & VIP Transfer Tokyo</title>
+    <meta name="description" content="Experience Japan's premier luxury chauffeur service. Private airport transfers (Haneda, Narita), VIP corporate travel, and hourly Mercedes S-Class & Alphard hire in Ginza, Roppongi & Kyoto.">
+    <link rel="canonical" href="https://www.crowndrive.jp/">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Crown Drive Japan | Luxury Chauffeur Tokyo & Kyoto">
+    <meta property="og:description" content="Bespoke VIP chauffeur services in Japan. Luxury Haneda & Narita transfers, executive travel & private driver hire.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&q=80&w=1200">
+
+    <!-- Fonts: Zen Old Mincho & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Zen+Old+Mincho:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold-light: #FCE8B3;
+            --gold-primary: #E5C158;
+            --gold-dark: #B88E28;
+            --jp-red: #BC002D;
+            --bg-deep: #030406;
+            --bg-surface: #0A0D12;
+            --card-bg: rgba(14, 18, 25, 0.65);
+            --border-gold: rgba(229, 193, 88, 0.3);
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --text-main: #F4F6F9;
+            --text-muted: #9BA8B9;
+            --glow-color: rgba(229, 193, 88, 0.18);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(188, 0, 45, 0.03) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(229, 193, 88, 0.04) 0%, transparent 50%);
+        }
+
+        /* Japanese Vertical Text Decorative Elements */
+        .jp-watermark {
+            position: fixed;
+            font-family: 'Zen Old Mincho', serif;
+            font-size: 14rem;
+            color: rgba(255, 255, 255, 0.012);
+            writing-mode: vertical-rl;
+            user-select: none;
+            pointer-events: none;
+            z-index: 0;
+            right: 2%;
+            top: 10%;
+            font-weight: 900;
+        }
+
+        /* Glowing Orbs Ambient Effects */
+        .glow-orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(120px);
+            z-index: -1;
+            pointer-events: none;
+            animation: pulseGlow 10s infinite alternate;
+        }
+
+        .glow-1 {
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, var(--glow-color) 0%, rgba(0,0,0,0) 70%);
+        }
+
+        .glow-2 {
+            bottom: 10%;
+            left: -100px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(188, 0, 45, 0.08) 0%, rgba(0,0,0,0) 70%);
+        }
+
+        @keyframes pulseGlow {
+            0% { opacity: 0.5; transform: scale(0.95); }
+            100% { opacity: 1; transform: scale(1.05); }
+        }
+
+        /* Header Visuals */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 6%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(3, 4, 6, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-subtle);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-symbol {
+            width: 32px;
+            height: 32px;
+            border: 1.5px solid var(--gold-primary);
+            transform: rotate(45deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 10px var(--glow-color);
+        }
+
+        .logo-symbol::after {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: var(--gold-primary);
+        }
+
+        .logo {
+            font-family: 'Zen Old Mincho', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: var(--text-main);
+            text-transform: uppercase;
+        }
+
+        .logo span { color: var(--gold-primary); }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0%;
+            height: 1px;
+            background: var(--gold-primary);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover { color: var(--gold-primary); }
+        nav a:hover::after { width: 100%; }
+
+        .btn-header {
+            background: rgba(229, 193, 88, 0.08);
+            color: var(--gold-primary) !important;
+            border: 1px solid var(--border-gold);
+            padding: 10px 22px;
+            border-radius: 4px;
+            font-weight: 600 !important;
+            box-shadow: 0 0 15px rgba(229, 193, 88, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .btn-header:hover {
+            background: var(--gold-primary);
+            color: #000 !important;
+            box-shadow: 0 0 20px rgba(229, 193, 88, 0.4);
+        }
+
+        .btn-header::after { display: none; }
+
+        /* Hero Section */
+        .hero {
+            min-height: 92vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 140px 20px 140px;
+            position: relative;
+            background: 
+                radial-gradient(ellipse at center, rgba(3,4,6,0.3) 0%, rgba(3,4,6,0.95) 100%),
+                url('https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&q=80&w=1920') center/cover no-repeat;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .hero-kanji {
+            font-family: 'Zen Old Mincho', serif;
+            color: var(--gold-primary);
+            font-size: 1.1rem;
+            letter-spacing: 8px;
+            margin-bottom: 12px;
+            opacity: 0.9;
+            text-transform: uppercase;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 18px;
+            border-radius: 30px;
+            background: rgba(10, 13, 18, 0.8);
+            border: 1px solid var(--border-gold);
+            color: var(--gold-light);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--jp-red);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--jp-red);
+        }
+
+        .hero h1 {
+            font-family: 'Zen Old Mincho', serif;
+            font-size: clamp(2.6rem, 5.5vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.25;
+            margin-bottom: 24px;
+            letter-spacing: 2px;
+            background: linear-gradient(180deg, #FFFFFF 0%, #D2DAE5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.8);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 680px;
+            margin-bottom: 40px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        /* Gold Japanese Style Button */
+        .btn-gold {
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 50%, var(--gold-dark) 100%);
+            color: #050709;
+            padding: 18px 42px;
+            border: none;
+            border-radius: 2px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 10px 30px rgba(229, 193, 88, 0.25);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-gold::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.7s ease;
+        }
+
+        .btn-gold:hover::before {
+            left: 100%;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(229, 193, 88, 0.45);
+        }
+
+        /* Container & Floating Glass Form */
+        .container {
+            max-width: 1140px;
+            margin: -100px auto 100px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .booking-card {
+            background: rgba(10, 13, 18, 0.85);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid var(--border-gold);
+            border-radius: 6px;
+            padding: 45px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255,255,255,0.1);
+        }
+
+        .booking-card h2 {
+            font-family: 'Zen Old Mincho', serif;
+            color: var(--gold-primary);
+            margin-bottom: 35px;
+            font-size: 1.7rem;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-size: 0.72rem;
+            color: var(--gold-primary);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group select {
+            background-color: rgba(3, 4, 6, 0.7);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-main);
+            padding: 16px 18px;
+            border-radius: 4px;
+            outline: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 15px rgba(229, 193, 88, 0.2);
+            background-color: rgba(5, 7, 10, 0.9);
+        }
+
+        /* Sections */
+        .section {
+            max-width: 1200px;
+            margin: 120px auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+            position: relative;
+        }
+
+        .section-header p {
+            color: var(--gold-primary);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-family: 'Zen Old Mincho', serif;
+            font-size: 2.4rem;
+            color: var(--text-main);
+            letter-spacing: 2px;
+        }
+
+        /* Glass Cards with Japanese Accents */
+        .services-grid, .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 28px;
+        }
+
+        .service-card, .faq-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-subtle);
+            border-radius: 4px;
+            padding: 40px 30px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 0%;
+            background: var(--gold-primary);
+            transition: height 0.4s ease;
+        }
+
+        .service-card:hover::before { height: 100%; }
+
+        .service-card:hover, .faq-card:hover {
+            border-color: var(--border-gold);
+            transform: translateY(-7px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            background: rgba(18, 24, 34, 0.75);
+        }
+
+        .service-card h3, .faq-card h3 {
+            font-family: 'Zen Old Mincho', serif;
+            color: var(--gold-primary);
+            margin-bottom: 16px;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+        }
+
+        .service-card p, .faq-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        /* Fleet Cards Showcase */
+        .fleet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+            gap: 32px;
+        }
+
+        .fleet-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-subtle);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .fleet-card:hover {
+            border-color: var(--border-gold);
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.8);
+        }
+
+        .fleet-img-wrapper {
+            position: relative;
+            overflow: hidden;
+            height: 230px;
+        }
+
+        .fleet-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .fleet-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .fleet-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(3, 4, 6, 0.85);
+            border: 1px solid var(--border-gold);
+            color: var(--gold-primary);
+            padding: 4px 12px;
+            font-size: 0.7rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            backdrop-filter: blur(8px);
+        }
+
+        .fleet-info { padding: 30px; }
+
+        .fleet-info h3 {
+            font-family: 'Zen Old Mincho', serif;
+            margin-bottom: 12px;
+            color: var(--gold-primary);
+            font-size: 1.4rem;
+        }
+
+        .fleet-info p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            border-top: 1px solid var(--border-subtle);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            background: var(--bg-surface);
+            position: relative;
+        }
+
+        footer a { color: var(--gold-primary); text-decoration: none; }
+
+        /* Responsive Design */
+        @media (max-width: 868px) {
+            header { flex-direction: column; gap: 15px; padding: 15px 4%; }
+            nav { flex-wrap: wrap; justify-content: center; gap: 15px; }
+            .hero h1 { font-size: 2.2rem; }
+            .booking-card { padding: 25px; }
+            .container { margin-top: -60px; }
+            .jp-watermark { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="jp-watermark">最高級ハイヤー</div>
+    <div class="glow-orb glow-1"></div>
+    <div class="glow-orb glow-2"></div>
+
+    <header>
+        <div class="logo-container">
+            <div class="logo-symbol"></div>
+            <div class="logo">Crown <span>Drive</span></div>
+        </div>
+        <nav aria-label="Main Navigation">
+            <a href="#services">Services</a>
+            <a href="#fleet">Executive Fleet</a>
+            <a href="#booking">Reserve</a>
+            <a href="#faq">FAQ</a>
+            <a href="#booking" class="btn-header">Book Chauffeur</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-kanji">ファーストクラスの移動体験</div>
+            <span class="hero-badge">Japan Executive Chauffeur & VIP Travel</span>
+            <h1>Omotenashi Luxury Driver Service</h1>
+            <p>Unrivaled VIP transport in Tokyo, Kyoto, and Osaka. Executive airport transfers for Tokyo Haneda & Narita with Japanese precision and discretion.</p>
+            <a href="#booking" class="btn-gold">Reserve Private Chauffeur</a>
+        </section>
+
+        <section class="container" id="booking">
+            <div class="booking-card">
+                <h2>Reserve Executive Transportation</h2>
+                <form id="chauffeurForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="pickup">Pickup Location</label>
+                            <input type="text" id="pickup" placeholder="e.g. Haneda Airport (HND) / Ginza" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dropoff">Drop-off Location</label>
+                            <input type="text" id="dropoff" placeholder="e.g. Aman Tokyo / Roppongi Hills" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="vehicle">Vehicle Class</label>
+                            <select id="vehicle" name="vehicle" required>
+                                <option value="Toyota Alphard Executive Lounge">Toyota Alphard VIP Executive Lounge</option>
+                                <option value="Mercedes S-Class VIP">Mercedes-Benz S-Class (VIP First Class)</option>
+                                <option value="Mercedes V-Class MPV">Mercedes-Benz V-Class (Group Travel)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Date & Time</label>
+                            <input type="datetime-local" id="date" required>
+             
