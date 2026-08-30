@@ -9,22 +9,21 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --gold-light: #FCE8B3;
+            --gold-light: #FFE8A3;
             --gold-primary: #D4AF37;
-            --gold-dark: #AA7C11;
-            --uk-blue: #00247D;
-            --bg-deep: #05070A;
-            --bg-surface: #0E1218;
-            --card-bg: rgba(18, 24, 34, 0.45);
-            --border-gold: rgba(212, 175, 55, 0.25);
+            --gold-dark: #A37F1E;
+            --gold-glow: rgba(212, 175, 55, 0.25);
+            --bg-deep: #030508;
+            --bg-surface: #0B0F17;
+            --card-bg: rgba(14, 20, 31, 0.65);
+            --border-gold: rgba(212, 175, 55, 0.35);
             --border-subtle: rgba(255, 255, 255, 0.08);
             --text-main: #F4F6F9;
             --text-muted: #9BA8B9;
-            --glow-gold: rgba(212, 175, 55, 0.15);
         }
 
         * {
@@ -41,61 +40,61 @@
             line-height: 1.6;
             overflow-x: hidden;
             background-image: 
-                radial-gradient(circle at 15% 15%, rgba(0, 36, 125, 0.08) 0%, transparent 40%),
-                radial-gradient(circle at 85% 85%, rgba(212, 175, 55, 0.05) 0%, transparent 45%);
+                radial-gradient(circle at 10% 20%, rgba(0, 36, 125, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.08) 0%, transparent 50%);
         }
 
         .uk-watermark {
             position: fixed;
             font-family: 'Cinzel', serif;
-            font-size: 14rem;
-            color: rgba(255, 255, 255, 0.015);
+            font-size: 16rem;
+            color: rgba(255, 255, 255, 0.012);
             writing-mode: horizontal-tb;
             user-select: none;
             pointer-events: none;
             z-index: 0;
-            right: 1%;
-            top: 20%;
+            right: -2%;
+            top: 15%;
             font-weight: 900;
-            letter-spacing: 12px;
+            letter-spacing: 16px;
         }
 
-        /* Ambient Glow System */
+        /* Dynamic Glow Effects */
         .glow-orb {
             position: fixed;
             border-radius: 50%;
             filter: blur(140px);
             z-index: -1;
             pointer-events: none;
-            animation: pulseGlow 12s infinite alternate ease-in-out;
+            animation: pulseGlow 10s infinite alternate ease-in-out;
         }
 
         .glow-1 {
-            top: -10%;
+            top: -15%;
             left: 50%;
             transform: translateX(-50%);
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, var(--glow-gold) 0%, rgba(0,0,0,0) 70%);
+            width: 900px;
+            height: 900px;
+            background: radial-gradient(circle, var(--gold-glow) 0%, rgba(0,0,0,0) 70%);
         }
 
         @keyframes pulseGlow {
-            0% { opacity: 0.4; transform: translateX(-50%) scale(0.9); }
-            100% { opacity: 0.8; transform: translateX(-50%) scale(1.1); }
+            0% { opacity: 0.3; transform: translateX(-50%) scale(0.85); }
+            100% { opacity: 0.7; transform: translateX(-50%) scale(1.1); }
         }
 
-        /* Header Visuals */
+        /* Header Navigation */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 22px 6%;
+            padding: 20px 8%;
             position: fixed;
             width: 100%;
             top: 0;
-            background: rgba(5, 7, 10, 0.8);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
+            background: rgba(3, 5, 8, 0.85);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
             border-bottom: 1px solid var(--border-subtle);
             z-index: 1000;
         }
@@ -103,19 +102,20 @@
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 16px;
+            text-decoration: none;
         }
 
         .logo-symbol {
-            width: 30px;
-            height: 30px;
+            width: 32px;
+            height: 32px;
             border: 1.5px solid var(--gold-primary);
             transform: rotate(45deg);
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 0 12px var(--glow-gold);
-            transition: transform 0.6s ease;
+            box-shadow: 0 0 15px var(--gold-glow);
+            transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
         .logo-container:hover .logo-symbol {
@@ -131,7 +131,7 @@
 
         .logo {
             font-family: 'Cinzel', serif;
-            font-size: 1.35rem;
+            font-size: 1.4rem;
             font-weight: 700;
             letter-spacing: 4px;
             color: var(--text-main);
@@ -143,15 +143,15 @@
         nav {
             display: flex;
             align-items: center;
-            gap: 32px;
+            gap: 36px;
         }
 
         nav a {
             color: var(--text-muted);
             text-decoration: none;
-            font-size: 0.8rem;
+            font-size: 0.82rem;
             font-weight: 500;
-            letter-spacing: 2.5px;
+            letter-spacing: 2px;
             text-transform: uppercase;
             transition: all 0.3s ease;
             position: relative;
@@ -163,7 +163,7 @@
             bottom: -6px;
             left: 50%;
             width: 0;
-            height: 1.5px;
+            height: 2px;
             background: var(--gold-primary);
             transition: all 0.3s ease;
             transform: translateX(-50%);
@@ -173,20 +173,19 @@
         nav a:hover::after { width: 100%; }
 
         .btn-header {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.03));
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.03));
             color: var(--gold-primary) !important;
             border: 1px solid var(--border-gold);
-            padding: 12px 26px;
-            border-radius: 2px;
+            padding: 12px 28px;
+            border-radius: 4px;
             font-weight: 600 !important;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
-            transition: all 0.3s ease !important;
+            transition: all 0.4s ease !important;
         }
 
         .btn-header:hover {
             background: var(--gold-primary);
-            color: #000 !important;
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+            color: #030508 !important;
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
             transform: translateY(-2px);
         }
 
@@ -198,19 +197,19 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 160px 20px 140px;
+            padding: 180px 20px 140px;
             position: relative;
             background: 
-                linear-gradient(180deg, rgba(5,7,10,0.5) 0%, rgba(5,7,10,0.95) 100%),
+                linear-gradient(180deg, rgba(3,5,8,0.6) 0%, rgba(3,5,8,0.98) 100%),
                 url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&q=80&w=1920') center/cover no-repeat;
         }
 
         .hero-tagline {
             font-family: 'Cinzel', serif;
             color: var(--gold-primary);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             letter-spacing: 8px;
-            margin-bottom: 16px;
+            margin-bottom: 18px;
             text-transform: uppercase;
         }
 
@@ -218,36 +217,37 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            padding: 6px 20px;
-            border-radius: 30px;
-            background: rgba(14, 18, 24, 0.7);
+            padding: 8px 24px;
+            border-radius: 40px;
+            background: rgba(11, 15, 23, 0.8);
             border: 1px solid var(--border-gold);
             color: var(--gold-light);
-            font-size: 0.72rem;
+            font-size: 0.75rem;
             font-weight: 600;
             letter-spacing: 2.5px;
             text-transform: uppercase;
             margin-bottom: 28px;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
         }
 
         .hero-badge::before {
             content: '';
-            width: 6px;
-            height: 6px;
+            width: 7px;
+            height: 7px;
             background: var(--gold-primary);
             border-radius: 50%;
-            box-shadow: 0 0 8px var(--gold-primary);
+            box-shadow: 0 0 10px var(--gold-primary);
         }
 
         .hero h1 {
             font-family: 'Cinzel', serif;
-            font-size: clamp(2.8rem, 6vw, 4.8rem);
+            font-size: clamp(2.8rem, 6vw, 5.2rem);
             font-weight: 700;
-            line-height: 1.2;
+            line-height: 1.15;
             margin-bottom: 24px;
-            letter-spacing: 3px;
-            background: linear-gradient(180deg, #FFFFFF 0%, #A6B4C9 100%);
+            letter-spacing: 2px;
+            background: linear-gradient(180deg, #FFFFFF 0%, #B0C0D6 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -255,18 +255,18 @@
         .hero p {
             font-size: 1.15rem;
             color: var(--text-muted);
-            max-width: 640px;
+            max-width: 680px;
             margin-bottom: 44px;
             font-weight: 300;
             letter-spacing: 0.5px;
         }
 
         .btn-gold {
-            background: linear-gradient(135deg, #FCE8B3 0%, #D4AF37 50%, #AA7C11 100%);
-            color: #05070A;
+            background: linear-gradient(135deg, #FFE8A3 0%, #D4AF37 50%, #A37F1E 100%);
+            color: #030508;
             padding: 20px 48px;
             border: none;
-            border-radius: 2px;
+            border-radius: 4px;
             font-weight: 700;
             font-size: 0.85rem;
             letter-spacing: 3px;
@@ -274,50 +274,48 @@
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.25);
+            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.3);
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            position: relative;
-            overflow: hidden;
         }
 
         .btn-gold:hover {
             transform: translateY(-4px);
-            box-shadow: 0 18px 45px rgba(212, 175, 55, 0.45);
+            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.5);
         }
 
-        /* Floating Booking Form Card */
+        /* Glassmorphic Booking Form */
         .container {
             max-width: 1140px;
-            margin: -120px auto 80px;
+            margin: -100px auto 100px;
             padding: 0 20px;
             position: relative;
             z-index: 10;
         }
 
         .booking-card {
-            background: rgba(14, 18, 24, 0.75);
-            backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
+            background: var(--card-bg);
+            backdrop-filter: blur(35px);
+            -webkit-backdrop-filter: blur(35px);
             border: 1px solid var(--border-gold);
-            border-radius: 4px;
-            padding: 50px;
-            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8);
+            border-radius: 8px;
+            padding: 55px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8);
         }
 
         .booking-card h2 {
             font-family: 'Cinzel', serif;
             color: var(--gold-primary);
             margin-bottom: 35px;
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             text-align: center;
             letter-spacing: 3px;
         }
 
         .form-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
             gap: 24px;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
 
         .form-group {
@@ -326,7 +324,7 @@
         }
 
         .form-group label {
-            font-size: 0.7rem;
+            font-size: 0.72rem;
             color: var(--gold-primary);
             margin-bottom: 12px;
             text-transform: uppercase;
@@ -335,11 +333,11 @@
         }
 
         .form-group input, .form-group select {
-            background-color: rgba(5, 7, 10, 0.8);
+            background-color: rgba(3, 5, 8, 0.85);
             border: 1px solid var(--border-subtle);
             color: var(--text-main);
-            padding: 16px 18px;
-            border-radius: 2px;
+            padding: 16px 20px;
+            border-radius: 4px;
             outline: none;
             font-size: 0.9rem;
             transition: all 0.3s ease;
@@ -348,13 +346,13 @@
 
         .form-group input:focus, .form-group select:focus {
             border-color: var(--gold-primary);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
         }
 
-        /* Executive Leadership Section */
+        /* Executive Leadership */
         .leadership-section {
             max-width: 1140px;
-            margin: 80px auto 120px;
+            margin: 100px auto 140px;
             padding: 0 20px;
         }
 
@@ -362,66 +360,65 @@
             text-align: center;
             font-family: 'Cinzel', serif;
             color: var(--gold-primary);
-            font-size: 1.8rem;
-            letter-spacing: 3px;
-            margin-bottom: 40px;
+            font-size: 2rem;
+            letter-spacing: 4px;
+            margin-bottom: 50px;
         }
 
         .leadership-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
         }
 
         .executive-card {
-            background: rgba(14, 18, 24, 0.55);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--border-gold);
-            padding: 35px 30px;
-            border-radius: 4px;
+            background: var(--card-bg);
+            backdrop-filter: blur(25px);
+            border: 1px solid var(--border-subtle);
+            padding: 45px 35px;
+            border-radius: 8px;
             text-align: center;
             transition: all 0.4s ease;
             position: relative;
-            overflow: hidden;
         }
 
         .executive-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
             border-color: var(--gold-primary);
         }
 
         .executive-role {
             font-size: 0.75rem;
             color: var(--gold-primary);
-            letter-spacing: 2.5px;
+            letter-spacing: 3px;
             text-transform: uppercase;
             font-weight: 600;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .executive-name {
             font-family: 'Cinzel', serif;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             color: var(--text-main);
-            letter-spacing: 1.5px;
-            margin-bottom: 12px;
+            letter-spacing: 2px;
+            margin-bottom: 14px;
         }
 
         .executive-desc {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: var(--text-muted);
             font-weight: 300;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         /* Responsive Breakpoints */
         @media (max-width: 868px) {
             header { flex-direction: column; gap: 18px; padding: 18px 4%; }
-            nav { flex-wrap: wrap; justify-content: center; gap: 16px; }
-            .hero h1 { font-size: 2.3rem; }
-            .booking-card { padding: 30px 20px; }
-            .container { margin-top: -60px; }
+            nav { flex-wrap: wrap; justify-content: center; gap: 18px; }
+            .hero h1 { font-size: 2.5rem; }
+            .booking-card { padding: 35px 25px; }
+            .container { margin-top: -50px; }
             .uk-watermark { display: none; }
         }
     </style>
@@ -432,10 +429,10 @@
     <div class="glow-orb glow-1"></div>
 
     <header>
-        <div class="logo-container">
+        <a href="#" class="logo-container">
             <div class="logo-symbol"></div>
             <div class="logo">Crown <span>Drive</span></div>
-        </div>
+        </a>
         <nav aria-label="Main Navigation">
             <a href="#services">Services</a>
             <a href="#fleet">Executive Fleet</a>
@@ -481,7 +478,7 @@
                         </div>
                     </div>
                     <div style="text-align: center;">
-                        <button type="submit" class="btn-gold" style="width: 100%; max-width: 400px;">Confirm Reservation</button>
+                        <button type="submit" class="btn-gold" style="width: 100%; max-width: 420px;">Confirm Reservation</button>
                     </div>
                 </form>
             </div>
