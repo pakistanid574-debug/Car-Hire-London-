@@ -96,7 +96,7 @@
       margin: 0 auto 30px auto;
     }
 
-    /* Expired Screen Overlay */
+    /* Expired Screen Overlay - No Auto Redirect */
     #expired-screen {
       display: none;
       position: fixed;
@@ -155,10 +155,10 @@
 </head>
 <body>
 
-  <!-- 404 Expired Overlay Screen with Auto Redirect -->
+  <!-- Static 404 Expired Overlay Screen -->
   <div id="expired-screen">
     <h1 style="font-size:50px; color:#ef4444;">404 - Link Expired</h1>
-    <p style="color:#94a3b8;">This booking link has expired. Redirecting to home page...</p>
+    <p style="color:#94a3b8;">This booking link has expired.</p>
   </div>
 
   <!-- Hidden Admin Login Modal -->
@@ -227,12 +227,9 @@
     const currentTime = Date.now();
     const expireTimeMs = durationSeconds * 1000;
 
-    // Trigger Expiration Screen & Automatic Redirect Back to Home Page
+    // Show Static 404 Screen Only (No Redirect)
     function handleExpiration() {
       document.getElementById('expired-screen').style.display = 'block';
-      setTimeout(() => {
-        window.location.href = window.location.origin + window.location.pathname;
-      }, 1000); // 1-Second Auto Redirect Back
     }
 
     if (!createdAt || (currentTime - createdAt) > expireTimeMs) {
