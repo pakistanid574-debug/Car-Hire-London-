@@ -4,16 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <!-- SEO Meta Tags -->
   <title>Private Driver Norway | Executive Chauffeur & Oslo Airport Transfers</title>
   <meta name="description" content="Book premium private driver & luxury chauffeur services in Norway." />
   <meta name="robots" content="index, follow" />
 
-  <!-- Canonical & Geo-Targeting -->
   <link rel="canonical" href="https://private-driver-norway.vercel.app/" />
   <link rel="alternate" hreflang="en-no" href="https://private-driver-norway.vercel.app/" />
 
-  <!-- Schema.org LocalBusiness Markup -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -53,8 +50,21 @@
       font-weight: bold;
       border-radius: 6px;
     }
+    .admin-controls {
+      display: none;
+      align-items: center;
+      gap: 8px;
+    }
+    .time-select {
+      background: #0f172a;
+      color: #38bdf8;
+      border: 1px solid #38bdf8;
+      padding: 9px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
     .btn-admin-share {
-      display: none; /* Restricted from normal users */
       background: #eab308;
       color: #0f172a;
       padding: 10px 16px;
@@ -62,7 +72,6 @@
       font-weight: bold;
       border-radius: 6px;
       cursor: pointer;
-      margin-right: 8px;
     }
     .id-banner {
       background-color: #1e1b4b;
@@ -101,7 +110,7 @@
       padding-top: 150px;
     }
 
-    /* Admin Login Modal Modal */
+    /* Admin Login Modal */
     #admin-modal {
       display: none;
       position: fixed;
@@ -146,10 +155,10 @@
 </head>
 <body>
 
-  <!-- Expired Screen Overlay -->
+  <!-- 404 Expired Overlay Screen with Auto Redirect -->
   <div id="expired-screen">
     <h1 style="font-size:50px; color:#ef4444;">404 - Link Expired</h1>
-    <p style="color:#94a3b8;">This booking link was only valid for 5 minutes and has expired.</p>
+    <p style="color:#94a3b8;">This booking link has expired. Redirecting to home page...</p>
   </div>
 
   <!-- Hidden Admin Login Modal -->
@@ -166,8 +175,18 @@
   <!-- Header Section -->
   <header>
     <div class="logo">Private Driver Norway</div>
-    <div>
-      <button id="admin-share-btn" onclick="executeAdminShare()" class="btn-admin-share">🔑 Share Link (Admin Only)</button>
+    <div style="display:flex; align-items:center; gap:10px;">
+      <!-- Admin Controls Panel -->
+      <div id="admin-controls" class="admin-controls">
+        <select id="expiry-time-select" class="time-select">
+          <option value="1">1 Sec Limit</option>
+          <option value="3">3 Sec Limit</option>
+          <option value="5">5 Sec Limit</option>
+          <option value="300" selected>5 Min Limit</option>
+        </select>
+        <button onclick="executeAdminShare()" class="btn-admin-share">🔑 Share Custom Link</button>
+      </div>
+      
       <a id="whatsapp-btn" href="#" target="_blank" class="btn-whatsapp">Book via WhatsApp</a>
     </div>
   </header>
@@ -175,7 +194,7 @@
   <!-- Dynamic User ID Display Banner -->
   <div class="id-banner">
     Booking Reference ID: <strong id="user-id-display" style="color: #ffffff;">Generating...</strong> | 
-    Time Remaining: <strong id="timer-display" style="color: #ef4444;">05:00</strong>
+    Time Remaining: <strong id="timer-display" style="color: #ef4444;">--:--</strong>
   </div>
 
   <!-- Main Hero Section -->
@@ -187,13 +206,11 @@
     </div>
   </section>
 
-  <!-- Encrypted Obfuscated Protected Script -->
+  <!-- JavaScript Code -->
   <script>
-    // Base64 Obfuscated Security Credentials
-    const _0x1a = "SGFzc2FudWs="; // Encoded Username
-    const _0x1b = "NDc0NjI5NA=="; // Encoded Password
+    const _0x1a = "SGFzc2FudWs="; 
+    const _0x1b = "NDc0NjI5NA=="; 
     const whatsappNumber = "4712345678";
-    const EXPIRE_TIME_MS = 5 * 60 * 1000;
 
     function generateNewUniqueID() {
       const timestamp = Date.now().toString(36);
@@ -204,47 +221,58 @@
     const urlParams = new URLSearchParams(window.location.search);
     let clientID = urlParams.get('id');
     let createdAt = parseInt(urlParams.get('t'), 10);
+    let durationSeconds = parseInt(urlParams.get('d'), 10) || 300; // Default 5 mins (300 sec)
     const isAdminMode = urlParams.get('admin');
 
     const currentTime = Date.now();
+    const expireTimeMs = durationSeconds * 1000;
 
-    // Session Expiration Logic
-    if (!createdAt || (currentTime - createdAt) > EXPIRE_TIME_MS) {
+    // Trigger Expiration Screen & Automatic Redirect Back to Home Page
+    function handleExpiration() {
+      document.getElementById('expired-screen').style.display = 'block';
+      setTimeout(() => {
+        window.location.href = window.location.origin + window.location.pathname;
+      }, 1000); // 1-Second Auto Redirect Back
+    }
+
+    if (!createdAt || (currentTime - createdAt) > expireTimeMs) {
       if (createdAt) {
-        document.getElementById('expired-screen').style.display = 'block';
+        handleExpiration();
       } else {
         createdAt = currentTime;
         clientID = generateNewUniqueID();
-        const freshURL = window.location.origin + window.location.pathname + `?id=${clientID}&t=${createdAt}` + (isAdminMode ? '&admin=true' : '');
+        const freshURL = window.location.origin + window.location.pathname + `?id=${clientID}&t=${createdAt}&d=${durationSeconds}` + (isAdminMode ? '&admin=true' : '');
         window.history.replaceState({}, document.title, freshURL);
       }
     }
 
     document.getElementById('user-id-display').innerText = clientID;
 
-    // WhatsApp Message Integration
+    // WhatsApp Configuration
     const message = encodeURIComponent(`Hi, I would like to book a private driver in Norway. My Booking Reference ID is: [${clientID}]`);
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
     document.getElementById('whatsapp-btn').href = whatsappURL;
     document.getElementById('hero-whatsapp-btn').href = whatsappURL;
 
-    // 5-Min Timer Countdown
+    // Countdown Timer System
     const timerElement = document.getElementById('timer-display');
-    setInterval(() => {
-      const remaining = EXPIRE_TIME_MS - (Date.now() - createdAt);
+    const timerInterval = setInterval(() => {
+      const remaining = expireTimeMs - (Date.now() - createdAt);
       if (remaining <= 0) {
-        document.getElementById('expired-screen').style.display = 'block';
+        clearInterval(timerInterval);
+        handleExpiration();
       } else {
-        const m = Math.floor(remaining / 60000);
-        const s = Math.floor((remaining % 60000) / 1000);
+        const totalSec = Math.ceil(remaining / 1000);
+        const m = Math.floor(totalSec / 60);
+        const s = totalSec % 60;
         timerElement.innerText = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
       }
-    }, 1000);
+    }, 200);
 
-    // Admin Authentication Check
+    // Admin Auth Logic
     if (isAdminMode === 'true') {
       if (sessionStorage.getItem('admin_authenticated') === 'true') {
-        document.getElementById('admin-share-btn').style.display = 'inline-block';
+        document.getElementById('admin-controls').style.display = 'flex';
       } else {
         document.getElementById('admin-modal').style.display = 'flex';
       }
@@ -257,25 +285,26 @@
       if (btoa(u) === _0x1a && btoa(p) === _0x1b) {
         sessionStorage.setItem('admin_authenticated', 'true');
         document.getElementById('admin-modal').style.display = 'none';
-        document.getElementById('admin-share-btn').style.display = 'inline-block';
+        document.getElementById('admin-controls').style.display = 'flex';
       } else {
         document.getElementById('admin-err').style.display = 'block';
       }
     }
 
-    // Admin Share Execution Function
+    // Dynamic Admin Custom Expiry Share Function
     function executeAdminShare() {
       if (sessionStorage.getItem('admin_authenticated') !== 'true') return;
       
+      const selectedSeconds = document.getElementById('expiry-time-select').value;
       const now = Date.now();
       const newID = generateNewUniqueID();
-      const shareUrl = window.location.origin + window.location.pathname + `?id=${newID}&t=${now}`;
+      const shareUrl = window.location.origin + window.location.pathname + `?id=${newID}&t=${now}&d=${selectedSeconds}`;
 
       if (navigator.share) {
         navigator.share({ title: 'Private Driver Norway', url: shareUrl });
       } else {
         navigator.clipboard.writeText(shareUrl).then(() => {
-          alert('🔑 Admin Link Generated & Copied! (Valid 5 Mins):\n\n' + shareUrl);
+          alert(`🔑 Admin Link Generated! (${selectedSeconds} Sec Limit):\n\n` + shareUrl);
         });
       }
     }
