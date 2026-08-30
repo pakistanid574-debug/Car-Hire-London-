@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crown Drive Japan | Premier Executive Chauffeur & VIP Transfer Tokyo</title>
-    <meta name="description" content="Experience Japan's premier luxury chauffeur service. Private airport transfers (Haneda, Narita), VIP corporate travel, and hourly Mercedes S-Class & Alphard hire in Ginza, Roppongi & Kyoto.">
+    <title>Crown Drive London | Premier Executive Chauffeur & VIP Transfer UK</title>
+    <meta name="description" content="Experience London's premier luxury chauffeur service. Private airport transfers (Heathrow, Gatwick), VIP corporate travel, and hourly Mercedes S-Class & Phantom hire in Mayfair, Knightsbridge & Central London.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Zen+Old+Mincho:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
             --gold-light: #FCE8B3;
             --gold-primary: #D4AF37;
             --gold-dark: #AA7C11;
-            --jp-red: #BC002D;
+            --uk-blue: #00247D;
             --bg-deep: #05070A;
             --bg-surface: #0E1218;
             --card-bg: rgba(18, 24, 34, 0.45);
@@ -41,22 +41,23 @@
             line-height: 1.6;
             overflow-x: hidden;
             background-image: 
-                radial-gradient(circle at 15% 15%, rgba(188, 0, 45, 0.04) 0%, transparent 40%),
+                radial-gradient(circle at 15% 15%, rgba(0, 36, 125, 0.08) 0%, transparent 40%),
                 radial-gradient(circle at 85% 85%, rgba(212, 175, 55, 0.05) 0%, transparent 45%);
         }
 
-        .jp-watermark {
+        .uk-watermark {
             position: fixed;
-            font-family: 'Zen Old Mincho', serif;
-            font-size: 16rem;
+            font-family: 'Cinzel', serif;
+            font-size: 14rem;
             color: rgba(255, 255, 255, 0.015);
-            writing-mode: vertical-rl;
+            writing-mode: horizontal-tb;
             user-select: none;
             pointer-events: none;
             z-index: 0;
             right: 1%;
-            top: 5%;
+            top: 20%;
             font-weight: 900;
+            letter-spacing: 12px;
         }
 
         /* Ambient Glow System */
@@ -200,15 +201,15 @@
             padding: 160px 20px 140px;
             position: relative;
             background: 
-                linear-gradient(180deg, rgba(5,7,10,0.4) 0%, rgba(5,7,10,0.95) 100%),
-                url('https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&q=80&w=1920') center/cover no-repeat;
+                linear-gradient(180deg, rgba(5,7,10,0.5) 0%, rgba(5,7,10,0.95) 100%),
+                url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&q=80&w=1920') center/cover no-repeat;
         }
 
-        .hero-kanji {
-            font-family: 'Zen Old Mincho', serif;
+        .hero-tagline {
+            font-family: 'Cinzel', serif;
             color: var(--gold-primary);
-            font-size: 1rem;
-            letter-spacing: 10px;
+            font-size: 0.9rem;
+            letter-spacing: 8px;
             margin-bottom: 16px;
             text-transform: uppercase;
         }
@@ -234,9 +235,9 @@
             content: '';
             width: 6px;
             height: 6px;
-            background: var(--jp-red);
+            background: var(--gold-primary);
             border-radius: 50%;
-            box-shadow: 0 0 8px var(--jp-red);
+            box-shadow: 0 0 8px var(--gold-primary);
         }
 
         .hero h1 {
@@ -421,13 +422,13 @@
             .hero h1 { font-size: 2.3rem; }
             .booking-card { padding: 30px 20px; }
             .container { margin-top: -60px; }
-            .jp-watermark { display: none; }
+            .uk-watermark { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <div class="jp-watermark">最高級ハイヤー</div>
+    <div class="uk-watermark">LONDON</div>
     <div class="glow-orb glow-1"></div>
 
     <header>
@@ -446,10 +447,10 @@
 
     <main>
         <section class="hero">
-            <div class="hero-kanji">ファーストクラスの移動体験</div>
-            <span class="hero-badge">Japan Executive Chauffeur & VIP Travel</span>
-            <h1>Omotenashi Luxury Chauffeur</h1>
-            <p>Unrivaled VIP transport in Tokyo, Kyoto, and Osaka. Executive transfers for Tokyo Haneda & Narita with Japanese precision.</p>
+            <div class="hero-tagline">First-Class Travel Experience</div>
+            <span class="hero-badge">London Executive Chauffeur & VIP Travel</span>
+            <h1>British Excellence Luxury Chauffeur</h1>
+            <p>Unrivaled VIP transport in London, Oxford, and Manchester. Executive transfers for London Heathrow & Gatwick with British precision.</p>
             <a href="#booking" class="btn-gold">Reserve Chauffeur</a>
         </section>
 
@@ -460,17 +461,17 @@
                     <div class="form-grid">
                         <div class="form-group">
                             <label for="pickup">Pickup Location</label>
-                            <input type="text" id="pickup" placeholder="e.g. Haneda Airport (HND)" required>
+                            <input type="text" id="pickup" placeholder="e.g. Heathrow Airport (LHR)" required>
                         </div>
                         <div class="form-group">
                             <label for="dropoff">Drop-off Location</label>
-                            <input type="text" id="dropoff" placeholder="e.g. Aman Tokyo" required>
+                            <input type="text" id="dropoff" placeholder="e.g. The Ritz London, Mayfair" required>
                         </div>
                         <div class="form-group">
                             <label for="vehicle">Vehicle Class</label>
                             <select id="vehicle" name="vehicle" required>
-                                <option value="Toyota Alphard Executive Lounge">Toyota Alphard VIP Executive Lounge</option>
-                                <option value="Mercedes S-Class VIP">Mercedes-Benz S-Class (VIP First Class)</option>
+                                <option value="Rolls-Royce Phantom VIP">Rolls-Royce Phantom (VIP Luxury)</option>
+                                <option value="Mercedes S-Class VIP">Mercedes-Benz S-Class (First Class)</option>
                                 <option value="Mercedes V-Class MPV">Mercedes-Benz V-Class (Group Travel)</option>
                             </select>
                         </div>
@@ -493,12 +494,12 @@
                 <div class="executive-card">
                     <div class="executive-role">Chief Executive Officer</div>
                     <div class="executive-name">Rao Ubaid</div>
-                    <div class="executive-desc">Leading Crown Drive with a vision of unparalleled luxury, precision, and first-class Omotenashi hospitality across Japan.</div>
+                    <div class="executive-desc">Leading Crown Drive from London with a vision of unparalleled luxury, precision, and world-class British executive hospitality across the UK.</div>
                 </div>
                 <div class="executive-card">
                     <div class="executive-role">General Manager</div>
                     <div class="executive-name">Hassan Alvi</div>
-                    <div class="executive-desc">Overseeing operations to ensure flawless execution, fleet excellence, and seamless VIP transport experiences.</div>
+                    <div class="executive-desc">Overseeing London operations to ensure flawless execution, fleet excellence, and seamless VIP transport experiences.</div>
                 </div>
             </div>
         </section>
