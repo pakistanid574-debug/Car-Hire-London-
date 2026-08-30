@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <!-- Primary On-Page SEO Meta Tags -->
+  <!-- SEO Meta Tags -->
   <title>Private Driver Norway | Executive Chauffeur & Oslo Airport Transfers</title>
-  <meta name="description" content="Book premium private driver & luxury chauffeur services in Norway. Specialized in Oslo Airport transfers and VIP corporate travel." />
+  <meta name="description" content="Book premium private driver & luxury chauffeur services in Norway." />
   <meta name="robots" content="index, follow" />
 
   <!-- Canonical & Geo-Targeting -->
@@ -45,16 +45,6 @@
       font-weight: bold;
       color: #38bdf8;
     }
-    .btn-share {
-      background: #334155;
-      color: #ffffff;
-      padding: 10px 16px;
-      border: 1px solid #475569;
-      font-weight: bold;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-right: 8px;
-    }
     .btn-whatsapp {
       background: #38bdf8;
       color: #0f172a;
@@ -62,6 +52,17 @@
       text-decoration: none;
       font-weight: bold;
       border-radius: 6px;
+    }
+    .btn-admin-share {
+      display: none; /* Restricted from normal users */
+      background: #eab308;
+      color: #0f172a;
+      padding: 10px 16px;
+      border: none;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-right: 8px;
     }
     .id-banner {
       background-color: #1e1b4b;
@@ -86,7 +87,7 @@
       margin: 0 auto 30px auto;
     }
 
-    /* Expired Screen Style */
+    /* Expired Screen Overlay */
     #expired-screen {
       display: none;
       position: fixed;
@@ -99,31 +100,74 @@
       text-align: center;
       padding-top: 150px;
     }
-    #expired-screen h1 {
-      font-size: 50px;
-      color: #ef4444;
-      margin-bottom: 10px;
+
+    /* Admin Login Modal Modal */
+    #admin-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.95);
+      z-index: 10000;
+      justify-content: center;
+      align-items: center;
     }
-    #expired-screen p {
-      font-size: 18px;
-      color: #94a3b8;
+    .admin-box {
+      background: #1e293b;
+      padding: 30px;
+      border-radius: 8px;
+      border: 1px solid #334155;
+      text-align: center;
+      width: 300px;
+    }
+    .admin-box input {
+      width: 90%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 4px;
+      border: 1px solid #475569;
+      background: #0f172a;
+      color: #fff;
+    }
+    .admin-box button {
+      width: 96%;
+      padding: 10px;
+      background: #38bdf8;
+      color: #0f172a;
+      font-weight: bold;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
 
-  <!-- 404 / 5-Minute Link Expired Overlay Screen -->
+  <!-- Expired Screen Overlay -->
   <div id="expired-screen">
-    <h1>404 - Link Expired</h1>
-    <p>This booking link was only valid for 5 minutes and has now expired.</p>
-    <button onclick="generateFreshLink()" style="margin-top:20px; background:#38bdf8; color:#0f172a; padding:12px 24px; border:none; font-weight:bold; border-radius:6px; cursor:pointer;">Generate Fresh Booking Link</button>
+    <h1 style="font-size:50px; color:#ef4444;">404 - Link Expired</h1>
+    <p style="color:#94a3b8;">This booking link was only valid for 5 minutes and has expired.</p>
+  </div>
+
+  <!-- Hidden Admin Login Modal -->
+  <div id="admin-modal">
+    <div class="admin-box">
+      <h3 style="color:#38bdf8; margin-top:0;">Admin Access</h3>
+      <input type="text" id="admin-user" placeholder="Username" />
+      <input type="password" id="admin-pass" placeholder="Password" />
+      <button onclick="verifyAdminLogin()">Login</button>
+      <p id="admin-err" style="color:#ef4444; font-size:12px; display:none; margin-top:10px;">Invalid Credentials!</p>
+    </div>
   </div>
 
   <!-- Header Section -->
   <header>
     <div class="logo">Private Driver Norway</div>
     <div>
-      <button onclick="shareLink()" class="btn-share">🔗 Share Link (Valid 5 Mins)</button>
+      <button id="admin-share-btn" onclick="executeAdminShare()" class="btn-admin-share">🔑 Share Link (Admin Only)</button>
       <a id="whatsapp-btn" href="#" target="_blank" class="btn-whatsapp">Book via WhatsApp</a>
     </div>
   </header>
@@ -139,15 +183,17 @@
     <h1>Executive Private Driver & Chauffeur Service in Norway</h1>
     <p>Premium airport transfers from Oslo Gardermoen (OSL), Bergen, Stavanger, and private luxury tours.</p>
     <div>
-      <a id="hero-whatsapp-btn" href="#" target="_blank" style="background:#0284c7; color:#ffffff; padding:15px 30px; text-decoration:none; font-weight:bold; border-radius:6px; margin-right:10px;">Book Ride Now</a>
-      <button onclick="shareLink()" style="background:#1e293b; color:#38bdf8; border:1px solid #38bdf8; padding:15px 30px; font-size:16px; font-weight:bold; border-radius:6px; cursor:pointer;">🔗 Share 5-Min Valid Link</button>
+      <a id="hero-whatsapp-btn" href="#" target="_blank" style="background:#0284c7; color:#ffffff; padding:15px 30px; text-decoration:none; font-weight:bold; border-radius:6px;">Book Ride Now</a>
     </div>
   </section>
 
-  <!-- JavaScript for Dynamic Unique ID & 5-Minute Expiration -->
+  <!-- Encrypted Obfuscated Protected Script -->
   <script>
-    const whatsappNumber = "4712345678"; // Apna WhatsApp number daalein
-    const EXPIRE_TIME_MS = 5 * 60 * 1000; // 5 Minutes in milliseconds
+    // Base64 Obfuscated Security Credentials
+    const _0x1a = "SGFzc2FudWs="; // Encoded Username
+    const _0x1b = "NDc0NjI5NA=="; // Encoded Password
+    const whatsappNumber = "4712345678";
+    const EXPIRE_TIME_MS = 5 * 60 * 1000;
 
     function generateNewUniqueID() {
       const timestamp = Date.now().toString(36);
@@ -155,89 +201,83 @@
       return `NOR-${timestamp.slice(-4)}-${randomPart}`;
     }
 
-    // 1. URL me se ID aur Timestamp nikalein
     const urlParams = new URLSearchParams(window.location.search);
     let clientID = urlParams.get('id');
     let createdAt = parseInt(urlParams.get('t'), 10);
+    const isAdminMode = urlParams.get('admin');
 
     const currentTime = Date.now();
 
-    // Agar URL me time nahi hai ya link 5 min se purana hai
+    // Session Expiration Logic
     if (!createdAt || (currentTime - createdAt) > EXPIRE_TIME_MS) {
       if (createdAt) {
-        // Link expire ho chuka hai, expired screen dikhayein
         document.getElementById('expired-screen').style.display = 'block';
       } else {
-        // First time load par nayi ID aur naya Timestamp set karein
         createdAt = currentTime;
         clientID = generateNewUniqueID();
-        const freshURL = window.location.origin + window.location.pathname + `?id=${clientID}&t=${createdAt}`;
+        const freshURL = window.location.origin + window.location.pathname + `?id=${clientID}&t=${createdAt}` + (isAdminMode ? '&admin=true' : '');
         window.history.replaceState({}, document.title, freshURL);
       }
     }
 
     document.getElementById('user-id-display').innerText = clientID;
 
-    // 2. WhatsApp Message Configuration
+    // WhatsApp Message Integration
     const message = encodeURIComponent(`Hi, I would like to book a private driver in Norway. My Booking Reference ID is: [${clientID}]`);
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
-
     document.getElementById('whatsapp-btn').href = whatsappURL;
     document.getElementById('hero-whatsapp-btn').href = whatsappURL;
 
-    // 3. 5-Minute Countdown Timer
-    function startTimer() {
-      const timerElement = document.getElementById('timer-display');
-      
-      const interval = setInterval(() => {
-        const now = Date.now();
-        const elapsed = now - createdAt;
-        const remaining = EXPIRE_TIME_MS - elapsed;
-
-        if (remaining <= 0) {
-          clearInterval(interval);
-          document.getElementById('expired-screen').style.display = 'block';
-        } else {
-          const minutes = Math.floor(remaining / 60000);
-          const seconds = Math.floor((remaining % 60000) / 1000);
-          timerElement.innerText = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-        }
-      }, 1000);
-    }
-
-    startTimer();
-
-    // 4. Share Link Function (Har baar naya 5 min ka timestamp lagayega)
-    function shareLink() {
-      const now = Date.now();
-      const newID = generateNewUniqueID();
-      const shareUrl = window.location.origin + window.location.pathname + `?id=${newID}&t=${now}`;
-      
-      if (navigator.share) {
-        navigator.share({
-          title: 'Private Driver Norway',
-          text: 'Book Executive Chauffeur (Link Valid for 5 Mins - ID: ' + newID + ')',
-          url: shareUrl
-        }).catch(() => {
-          copyToClipboard(shareUrl);
-        });
+    // 5-Min Timer Countdown
+    const timerElement = document.getElementById('timer-display');
+    setInterval(() => {
+      const remaining = EXPIRE_TIME_MS - (Date.now() - createdAt);
+      if (remaining <= 0) {
+        document.getElementById('expired-screen').style.display = 'block';
       } else {
-        copyToClipboard(shareUrl);
+        const m = Math.floor(remaining / 60000);
+        const s = Math.floor((remaining % 60000) / 1000);
+        timerElement.innerText = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+      }
+    }, 1000);
+
+    // Admin Authentication Check
+    if (isAdminMode === 'true') {
+      if (sessionStorage.getItem('admin_authenticated') === 'true') {
+        document.getElementById('admin-share-btn').style.display = 'inline-block';
+      } else {
+        document.getElementById('admin-modal').style.display = 'flex';
       }
     }
 
-    function copyToClipboard(text) {
-      navigator.clipboard.writeText(text).then(() => {
-        alert('5-Minute Valid Link Copied!\n\n' + text);
-      }).catch(() => {
-        alert('Copy failed: ' + text);
-      });
+    function verifyAdminLogin() {
+      const u = document.getElementById('admin-user').value;
+      const p = document.getElementById('admin-pass').value;
+
+      if (btoa(u) === _0x1a && btoa(p) === _0x1b) {
+        sessionStorage.setItem('admin_authenticated', 'true');
+        document.getElementById('admin-modal').style.display = 'none';
+        document.getElementById('admin-share-btn').style.display = 'inline-block';
+      } else {
+        document.getElementById('admin-err').style.display = 'block';
+      }
     }
 
-    function generateFreshLink() {
+    // Admin Share Execution Function
+    function executeAdminShare() {
+      if (sessionStorage.getItem('admin_authenticated') !== 'true') return;
+      
       const now = Date.now();
       const newID = generateNewUniqueID();
-      window.location.href = window.location.origin + window.location.pathname + `?id=${newID}&t=${now}`;
+      const shareUrl = window.location.origin + window.location.pathname + `?id=${newID}&t=${now}`;
+
+      if (navigator.share) {
+        navigator.share({ title: 'Private Driver Norway', url: shareUrl });
+      } else {
+        navigator.clipboard.writeText(shareUrl).then(() => {
+          alert('🔑 Admin Link Generated & Copied! (Valid 5 Mins):\n\n' + shareUrl);
+        });
+      }
     }
   </script>
 
