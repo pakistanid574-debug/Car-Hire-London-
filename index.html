@@ -4,16 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <!-- SEO Meta Tags -->
+  <!-- Primary On-Page SEO Meta Tags -->
   <title>Private Driver Norway | Executive Chauffeur & Oslo Airport Transfers</title>
-  <meta name="description" content="Book premium private driver & luxury chauffeur services in Norway. Specialized in Oslo Airport (Gardermoen OSL) transfers, Bergen tours, and VIP travel." />
+  <meta name="description" content="Book premium private driver & luxury chauffeur services in Norway. Specialized in Oslo Airport (Gardermoen OSL) transfers, Bergen tours, and VIP corporate travel." />
+  <meta name="keywords" content="Private Driver Norway, Chauffeur Oslo, Oslo Airport Transfer Gardermoen, Private Car Service Bergen, VIP Transport Norway" />
   <meta name="robots" content="index, follow" />
 
   <!-- Canonical & Geo-Targeting -->
   <link rel="canonical" href="https://private-driver-norway.vercel.app/" />
   <link rel="alternate" hreflang="en-no" href="https://private-driver-norway.vercel.app/" />
 
-  <!-- Structured Data (JSON-LD) -->
+  <!-- Schema.org LocalBusiness Markup -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -24,86 +25,177 @@
     "priceRange": "NOK"
   }
   </script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #0f172a;
+      color: #ffffff;
+    }
+    header {
+      padding: 20px;
+      background-color: #1e293b;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #334155;
+    }
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #38bdf8;
+    }
+    .btn-share {
+      background: #334155;
+      color: #ffffff;
+      padding: 10px 16px;
+      border: 1px solid #475569;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-right: 8px;
+    }
+    .btn-whatsapp {
+      background: #38bdf8;
+      color: #0f172a;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+    }
+    .id-banner {
+      background-color: #1e1b4b;
+      border-bottom: 1px solid #6366f1;
+      padding: 10px;
+      text-align: center;
+      font-size: 14px;
+      color: #a5b4fc;
+    }
+    .hero {
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+    .hero p {
+      font-size: 18px;
+      color: #94a3b8;
+      max-width: 700px;
+      margin: 0 auto 30px auto;
+    }
+    .error-alert {
+      display: none;
+      background-color: #ef4444;
+      color: #ffffff;
+      padding: 12px;
+      text-align: center;
+      font-weight: bold;
+    }
+  </style>
 </head>
-<body style="margin:0; font-family: Arial, sans-serif; background-color:#0f172a; color:#ffffff;">
+<body>
+
+  <!-- Error Alert Banner for Incorrect URL -->
+  <div id="url-error-alert" class="error-alert">
+    ⚠️ Invalid Link Detected! We have automatically assigned a fresh reference ID for your booking.
+  </div>
 
   <!-- Header Section -->
-  <header style="padding: 20px; background-color: #1e293b; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #334155;">
-    <div style="font-size: 20px; font-weight: bold; color: #38bdf8;">Private Driver Norway</div>
+  <header>
+    <div class="logo">Private Driver Norway</div>
     <div>
-      <!-- Share Link Button -->
-      <button onclick="shareLink()" style="background:#334155; color:#ffffff; padding:10px 16px; border:1px solid #475569; font-weight:bold; border-radius:6px; cursor:pointer; margin-right:8px;">🔗 Share Link</button>
-      <!-- WhatsApp Booking Button -->
-      <a id="whatsapp-btn" href="#" target="_blank" style="background:#38bdf8; color:#0f172a; padding:10px 20px; text-decoration:none; font-weight:bold; border-radius:6px;">Book via WhatsApp</a>
+      <button onclick="shareLink()" class="btn-share">🔗 Share Link</button>
+      <a id="whatsapp-btn" href="#" target="_blank" class="btn-whatsapp">Book via WhatsApp</a>
     </div>
   </header>
 
   <!-- Dynamic User ID Display Banner -->
-  <div style="background-color: #1e1b4b; border-bottom: 1px solid #6366f1; padding: 10px; text-align: center; font-size: 14px; color: #a5b4fc;">
-    Your Booking Tracking ID: <strong id="user-id-display" style="color: #ffffff;">Loading...</strong>
+  <div class="id-banner">
+    Your Booking Reference ID: <strong id="user-id-display" style="color: #ffffff;">Generating...</strong>
   </div>
 
-  <!-- Hero Section -->
-  <section style="padding: 70px 20px; text-align: center;">
-    <h1 style="font-size: 36px; margin-bottom: 15px;">Executive Private Driver & Chauffeur Service in Norway</h1>
-    <p style="font-size: 18px; color: #94a3b8; max-width: 700px; margin: 0 auto 30px auto;">
-      Luxury transfers for Oslo Airport (Gardermoen OSL), Bergen, Stavanger, and private tours.
-    </p>
-    <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
-      <a id="hero-whatsapp-btn" href="#" target="_blank" style="background:#0284c7; color:#ffffff; padding:15px 30px; font-size:16px; text-decoration:none; font-weight:bold; border-radius:6px;">Book Ride Now</a>
+  <!-- Main Hero Section -->
+  <section class="hero">
+    <h1>Executive Private Driver & Chauffeur Service in Norway</h1>
+    <p>Premium airport transfers from Oslo Gardermoen (OSL), Bergen, Stavanger, and private luxury tours.</p>
+    <div>
+      <a id="hero-whatsapp-btn" href="#" target="_blank" style="background:#0284c7; color:#ffffff; padding:15px 30px; text-decoration:none; font-weight:bold; border-radius:6px; margin-right:10px;">Book Ride Now</a>
       <button onclick="shareLink()" style="background:#1e293b; color:#38bdf8; border:1px solid #38bdf8; padding:15px 30px; font-size:16px; font-weight:bold; border-radius:6px; cursor:pointer;">🔗 Share Page Link</button>
     </div>
   </section>
 
-  <!-- Automatic Dynamic ID & Share Script -->
+  <!-- Dynamic ID & Error Handling JavaScript -->
   <script>
-    // 1. Apna WhatsApp Number yahan darj karein
-    const whatsappNumber = "YOUR_PHONE_NUMBER_HERE"; 
+    // 1. Apna WhatsApp Number yahan likhein (Country Code ke sath, bina '+' ke)
+    const whatsappNumber = "4712345678"; 
 
-    // 2. Dynamic ID Fetch/Generate Function
-    function getOrGenerateID() {
+    // 2. Continuous Automatic Unique ID Generator
+    function generateNewUniqueID() {
+      const timestamp = Date.now().toString(36);
+      const randomPart = Math.random().toString(36).substring(2, 7).toUpperCase();
+      return `NOR-${timestamp.slice(-4)}-${randomPart}`;
+    }
+
+    // 3. Validate URL Parameter & Auto-Fix 404 / Invalid URL Entry
+    function initializePageSession() {
       const urlParams = new URLSearchParams(window.location.search);
       let clientID = urlParams.get('id');
+      let isInvalid = false;
 
-      if (!clientID) {
-        clientID = 'AUTO-' + Math.floor(1000 + Math.random() * 9000);
+      // Agar ID missing ho, 6 characters se choti ho, ya ghalat characters shamil hon
+      if (!clientID || clientID.trim().length < 4 || /[^a-zA-Z0-9\-]/g.test(clientID)) {
+        if (clientID !== null) {
+          isInvalid = true; // User ne ghalat URL daala tha
+        }
+        clientID = generateNewUniqueID(); // Nayi unique ID generate karein
       }
+
+      // Show alert if an invalid URL parameter was processed
+      if (isInvalid) {
+        document.getElementById('url-error-alert').style.display = 'block';
+        // Auto-clean URL address bar without page reload
+        const cleanURL = window.location.origin + window.location.pathname + '?id=' + clientID;
+        window.history.replaceState({}, document.title, cleanURL);
+      }
+
       return clientID;
     }
 
-    const activeID = getOrGenerateID();
+    // Execute session initialization
+    const activeID = initializePageSession();
     document.getElementById('user-id-display').innerText = activeID;
 
-    // 3. WhatsApp Message Configuration
+    // Build Dynamic WhatsApp URL
     const message = encodeURIComponent(`Hi, I would like to book a private driver in Norway. My Booking Reference ID is: [${activeID}]`);
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
 
     document.getElementById('whatsapp-btn').href = whatsappURL;
     document.getElementById('hero-whatsapp-btn').href = whatsappURL;
 
-    // 4. Share Link Functionality
+    // 4. Link Sharing Mechanism
     function shareLink() {
       const shareUrl = window.location.origin + window.location.pathname + '?id=' + activeID;
       
       if (navigator.share) {
-        // Mobile Browsers me Native Share Sheet kholega (WhatsApp, Facebook, etc.)
         navigator.share({
           title: 'Private Driver Norway',
-          text: 'Book Executive Chauffeur & Private Driver in Norway (Ref ID: ' + activeID + ')',
+          text: 'Book Executive Chauffeur & Private Driver in Norway (Booking ID: ' + activeID + ')',
           url: shareUrl
         }).catch(() => {
           copyToClipboard(shareUrl);
         });
       } else {
-        // Desktop / Laptop Browsers me Clipboard me copy karega
         copyToClipboard(shareUrl);
       }
     }
 
     function copyToClipboard(text) {
       navigator.clipboard.writeText(text).then(() => {
-        alert('Link copied to clipboard!\n\n' + text);
-      }).catch(err => {
+        alert('Shareable link copied to clipboard!\n\n' + text);
+      }).catch(() => {
         alert('Copy failed. URL: ' + text);
       });
     }
