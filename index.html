@@ -1,304 +1,267 @@
 <!DOCTYPE html>
-<html lang="ur">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emirates Web Concept | Fly Better</title>
-    <!-- Google Fonts for premium clean look -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
+    <title>UK Festival Countdown & Celebration</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
-        /* --- CSS STYLING --- */
-        :root {
-            --emirates-red: #D71921;
-            --emirates-dark-red: #B11218;
-            --dark-gold: #C5A059;
-            --charcoal: #111111;
-            --light-bg: #F9F9F9;
-            --white: #FFFFFF;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            font-family: 'Poppins', 'Noto Nastaliq Urdu', sans-serif;
-            background-color: var(--light-bg);
-            color: var(--charcoal);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Header / Navbar */
-        header {
-            background-color: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #ffffff;
+            min-height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
         }
 
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--emirates-red);
-            letter-spacing: 1px;
-            text-transform: uppercase;
+        /* Header Styling */
+        header {
+            text-align: center;
+            padding: 2.5rem 1rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .logo span {
-            color: var(--charcoal);
-            font-weight: 300;
+        header h1 {
+            font-size: 2.2rem;
+            color: #38bdf8;
+            margin-bottom: 0.5rem;
         }
 
-        nav ul {
+        /* Main Event Card */
+        main {
             display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: var(--charcoal);
-            font-weight: 400;
-            font-size: 14px;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: var(--emirates-red);
-        }
-
-        /* Hero Banner Section */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), 
-                        url('https://unsplash.com') no-repeat center center/cover;
-            height: 100vh;
-            display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
+            padding: 2rem 1rem;
+            flex-grow: 1;
+        }
+
+        .event-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            padding: 2.5rem;
+            max-width: 600px;
+            width: 100%;
             text-align: center;
-            color: var(--white);
-            padding: 0 20px;
-            margin-top: 60px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
         }
 
-        .hero-content {
-            max-width: 800px;
+        .event-title {
+            font-size: 1.8rem;
+            color: #f1f5f9;
+            margin-bottom: 0.5rem;
         }
 
-        .hero h1 {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 20px;
+        .event-date {
+            color: #94a3b8;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Countdown Grid */
+        .countdown {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .time-box {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 1rem;
+            border-radius: 10px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        .number {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #38bdf8;
+            display: block;
+        }
+
+        .label {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .hero p {
-            font-size: 18px;
-            margin-bottom: 35px;
-            font-weight: 300;
-            opacity: 0.95;
+        .celebrate-msg {
+            display: none;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #4ade80;
+            animation: pulse 1s infinite alternate;
         }
 
-        /* Buttons Styling */
-        .btn {
-            display: inline-block;
-            padding: 14px 35px;
-            background-color: var(--emirates-red);
-            color: var(--white);
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 15px;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(215, 25, 33, 0.3);
+        @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.05); }
         }
 
-        .btn:hover {
-            background-color: var(--emirates-dark-red);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(215, 25, 33, 0.4);
-        }
-
-        /* General Features Grid Setup */
-        .section {
-            padding: 100px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .grid-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .section-img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .section-text h2 {
-            font-size: 32px;
-            color: var(--charcoal);
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .section-text h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background-color: var(--dark-gold);
-        }
-
-        .section-text p {
-            font-size: 16px;
-            color: #555;
-            margin-bottom: 30px;
-            text-align: justify;
-        }
-
-        /* Dark / Alt Background Sections */
-        .alt-bg {
-            background-color: var(--white);
-            width: 100vw;
-            position: relative;
-            left: 50%;
-            right: 50%;
-            margin-left: -50vw;
-            margin-right: -50vw;
-            padding: 100px 0;
-        }
-
-        .alt-bg .section {
-            padding: 0 20px;
-        }
-
-        /* Footer Section */
+        /* Footer Styling */
         footer {
-            background-color: var(--charcoal);
-            color: var(--white);
-            padding: 50px 20px;
+            background: #090d16;
+            padding: 2rem 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             text-align: center;
         }
 
-        .bonus-quote {
-            max-width: 700px;
-            margin: 0 auto 30px auto;
-            font-style: italic;
-            font-size: 18px;
-            color: #ccc;
-            border-left: 3px solid var(--emirates-red);
-            padding-left: 20px;
+        footer p {
+            color: #64748b;
+            font-size: 0.85rem;
+            margin-bottom: 1.2rem;
         }
 
-        .copyright {
-            font-size: 13px;
-            color: #777;
-            margin-top: 20px;
+        .brand-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
         }
 
-        /* Responsive Breakpoints */
-        @media (max-width: 768px) {
-            nav { display: none; } /* Kept simple for raw code demonstration */
-            .grid-layout {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            .hero h1 { font-size: 32px; }
-            .hero p { font-size: 15px; }
-            .section { padding: 60px 20px; }
-            .section-img { height: 250px; }
+        .brand-logos svg {
+            fill: #94a3b8;
+            height: 35px;
+            width: auto;
+            transition: all 0.3s ease;
+        }
+
+        .brand-logos svg:hover {
+            fill: #ffffff;
+            transform: translateY(-3px);
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Navigation -->
     <header>
-        <div class="nav-container">
-            <div class="logo">Emirates <span>Clone</span></div>
-            <nav>
-                <ul>
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#business">Business Class</a></li>
-                    <li><a href="#ice">Inflight Entertainment</a></li>
-                    <li><a href="#skywards">Skywards</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1>🇬🇧 UK Upcoming Festivals</h1>
+        <p>Live Countdown & Celebration</p>
     </header>
 
-    <!-- 1. Homepage Hero Section -->
-    <section id="hero" class="hero">
-        <div class="hero-content">
-            <h1>Asman Se Agay Ka Safar.</h1>
-            <p>Sirf aik jagah se doosri jagah jana hi safar nahi hota. Emirates ke sath har parwaz aik la-zawal tajurba hai. Shandar luxury, be-misaal service aur aisi asaish jo apko ghar jaisa sukoon de.</p>
-            <button class="btn" onclick="handleBooking('General Booking')">Abhi Book Karen</button>
+    <main>
+        <div class="event-card">
+            <h2 class="event-title" id="event-name">Loading Festival...</h2>
+            <p class="event-date" id="event-date"></p>
+
+            <div class="countdown" id="countdown-box">
+                <div class="time-box"><span class="number" id="days">00</span><span class="label">Days</span></div>
+                <div class="time-box"><span class="number" id="hours">00</span><span class="label">Hours</span></div>
+                <div class="time-box"><span class="number" id="minutes">00</span><span class="label">Minutes</span></div>
+                <div class="time-box"><span class="number" id="seconds">00</span><span class="label">Seconds</span></div>
+            </div>
+
+            <div class="celebrate-msg" id="celebrate-msg"> 🎉 HAPPY FESTIVAL! CELEBRATING NOW! 🥳 </div>
         </div>
-    </section>
+    </main>
 
-    <!-- 2. Business Class Section -->
-    <section id="business" class="section">
-        <div class="grid-layout">
-            <div class="section-text">
-                <h2>Kam ko Araam Banayen.</h2>
-                <p>Emirates Business Class mein laya gaya hai asaish ka naya mayar. Lie-flat seats par sukoon ki neend len, onboard lounge mein networking karen, aur world-class chefs ke haath ke bane khane ka lutf uthayen. Yeh sirf business travel nahi, yeh apka personal comfort zone hai.</p>
-                <button class="btn" onclick="handleBooking('Business Class')">Business Class Explore Karen</button>
-            </div>
-            <div>
-                <img src="https://unsplash.com" alt="Emirates Business Class Layout" class="section-img">
-            </div>
+    <footer>
+        <p>Official Partners & Sponsors</p>
+        <div class="brand-logos">
+            <svg viewBox="0 0 300 60" title="British Airways">
+                <path d="M 10,35 Q 80,5 150,25 Q 220,45 280,15 L 290,25 Q 210,60 140,35 Q 70,10 10,45 Z" fill="#eb2226"/>
+                <text x="10" y="25" font-family="Arial" font-size="20" font-weight="bold" fill="#ffffff">BRITISH AIRWAYS</text>
+            </svg>
+
+            <svg viewBox="0 0 200 60" title="Air Arabia">
+                <path d="M 20,40 Q 50,10 100,25 Q 150,40 180,15 L 170,45 Q 130,50 90,35 Z" fill="#e11932"/>
+                <text x="25" y="25" font-family="Arial" font-size="18" font-weight="bold" fill="#ffffff">Air Arabia</text>
+            </svg>
+
+            <svg viewBox="0 0 100 50" title="Nike">
+                <path d="M 10.18 25.07 C 18.73 29.83 31.95 36.19 44.91 36.19 C 73.12 36.19 95 12 95 12 C 95 12 60.1 27.8 42.14 24.3 C 31.91 22.31 18.42 15.1 10.18 25.07 Z"/>
+            </svg>
         </div>
-    </section>
+    </footer>
 
-    <!-- 3. Inflight Entertainment (ice) Section -->
-    <div class="alt-bg" id="ice">
-        <section class="section">
-            <div class="grid-layout">
-                <div>
-                    <img src="https://unsplash.com" alt="Inflight Entertainment Screen" class="section-img">
-                </div>
-                <div class="section-text">
-                    <h2>Har Lamha, Apni Marzi Ka.</h2>
-                    <p>Hamare award-winning inflight entertainment system '<strong>ice</strong>' ke sath boredom ko khuda hafiz kahen. 6,500 se zayd channels par Hollywood, Bollywood aur global movies, TV shows aur music ka lutf uthayen. Safar kab guzar jayega, apko pata bhi nahi chalega.</p>
-                    <button class="btn" onclick="handleBooking('Entertainment Systems')">Entertainment Check Karen</button>
-                </div>
-            </div>
-        </section>
-    </div>
+    <script>
+        // UK Upcoming Festivals List
+        const ukFestivals = [
+            { name: "Bonfire Night (Guy Fawkes)", date: new Date("Nov 5, 2026 00:00:00").getTime() },
+            { name: "Christmas Eve UK", date: new Date("Dec 24, 2026 00:00:00").getTime() },
+            { name: "London New Year's Eve", date: new Date("Dec 31, 2026 23:59:59").getTime() },
+            { name: "Glastonbury Festival", date: new Date("Jun 23, 2027 00:00:00").getTime() }
+        ];
 
-    <!-- 4. Special Offers / Skywards Loyalty Section -->
-    <section id="skywards" class="section">
-        <div class="grid-layout">
-            <div class="section-text">
-                <h2>Har Safar Par Inam.</h2>
-                <p>Emirates Skywards ke member banen aur har flight ke sath Miles earn karen. In Miles se upgrades, free flights aur hamare global partners ke sath exclusive benefits haasil karen. Safar jitna lamba hoga, faide utne hi zayd honge.</p>
-                
+        // Pick current or next upcoming festival
+        let now = new Date().getTime();
+        let currentFestival = ukFestivals.find(f => f.date > now) || ukFestivals[0];
+
+        // Display Info
+        document.getElementById('event-name').innerText = currentFestival.name;
+        document.getElementById('event-date').innerText = new Date(currentFestival.date).toDateString();
+
+        let isCelebrating = false;
+
+        function updateCountdown() {
+            const currentTime = new Date().getTime();
+            const distance = currentFestival.date - currentTime;
+
+            if (distance <= 0) {
+                // Trigger Celebration Mode
+                if (!isCelebrating) {
+                    isCelebrating = true;
+                    document.getElementById('countdown-box').style.display = 'none';
+                    document.getElementById('celebrate-msg').style.display = 'block';
+                    triggerConfetti();
+                }
+                return;
+            }
+
+            // Calculation
+            const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output
+            document.getElementById('days').innerText = d < 10 ? '0' + d : d;
+            document.getElementById('hours').innerText = h < 10 ? '0' + h : h;
+            document.getElementById('minutes').innerText = m < 10 ? '0' + m : m;
+            document.getElementById('seconds').innerText = s < 10 ? '0' + s : s;
+        }
+
+        // Automatic Confetti Firework Function
+        function triggerConfetti() {
+            var duration = 15 * 1000;
+            var animationEnd = Date.now() + duration;
+
+            (function frame() {
+                confetti({
+                    particleCount: 5,
+                    angle: 60,
+                    spread: 55,
+                    origin: { x: 0 }
+                });
+                confetti({
+                    particleCount: 5,
+                    angle: 120,
+                    spread: 55,
+                    origin: { x: 1 }
+                });
+
+                if (Date.now() < animationEnd) {
+                    requestAnimationFrame(frame);
+                }
+            })();
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
