@@ -3,279 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Multan International Airport (MUX)</title>
+  <title>404 - Page Not Found</title>
   <style>
-    :root {
-      --primary: #0a192f;
-      --accent: #dfa835; /* Premium Gold Accent */
-      --light: #f8f9fa;
-      --card-bg: rgba(255, 255, 255, 0.07);
-      --glass-border: rgba(255, 255, 255, 0.18);
-    }
-
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-
     body {
-      background-color: var(--primary);
-      color: var(--light);
-      overflow-x: hidden;
-    }
-
-    /* DXB Style Glass Navigation */
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      padding: 20px 50px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(10, 25, 47, 0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--glass-border);
-      z-index: 1000;
-    }
-
-    .logo {
-      font-size: 24px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      color: #fff;
-    }
-
-    .logo span {
-      color: var(--accent);
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 30px;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: var(--accent);
-    }
-
-    /* Hero Section */
-    .hero {
-      height: 100vh;
-      background: linear-gradient(rgba(10,25,47,0.65), rgba(10,25,47,0.9)), 
-                  url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1920') center/cover no-repeat;
+      font-family: system-ui, -apple-system, sans-serif;
+      background-color: #0f172a;
+      color: #f8fafc;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 0 20px;
+      padding: 1rem;
     }
-
-    .hero h1 {
-      font-size: 56px;
-      font-weight: 300;
-      margin-bottom: 15px;
-      letter-spacing: 2px;
+    h1 {
+      font-size: 8rem;
+      font-weight: 800;
+      color: #38bdf8;
+      line-height: 1;
     }
-
-    .hero p {
-      font-size: 18px;
-      color: #b3b9c5;
-      max-width: 600px;
-      margin-bottom: 40px;
+    h2 {
+      font-size: 2rem;
+      margin-top: 1rem;
     }
-
-    /* DXB Flight Tracker Search Widget */
-    .flight-widget {
-      background: var(--card-bg);
-      backdrop-filter: blur(16px);
-      border: 1px solid var(--glass-border);
-      border-radius: 16px;
-      padding: 30px;
-      width: 100%;
-      max-width: 850px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    p {
+      color: #94a3b8;
+      margin: 1rem 0 2rem;
+      max-width: 400px;
     }
-
-    .widget-tabs {
-      display: flex;
-      gap: 20px;
-      margin-bottom: 20px;
-      border-bottom: 1px solid var(--glass-border);
-      padding-bottom: 10px;
-    }
-
-    .tab-btn {
-      background: none;
+    .btn {
+      background-color: #38bdf8;
+      color: #0f172a;
+      padding: 0.75rem 1.5rem;
       border: none;
-      color: #a0aec0;
-      font-size: 16px;
-      cursor: pointer;
-      padding: 5px 15px;
-      transition: 0.3s;
-    }
-
-    .tab-btn.active {
-      color: var(--accent);
-      border-bottom: 2px solid var(--accent);
-    }
-
-    .search-row {
-      display: flex;
-      gap: 15px;
-    }
-
-    .search-row input {
-      flex: 1;
-      padding: 15px 20px;
-      border-radius: 8px;
-      border: 1px solid var(--glass-border);
-      background: rgba(255, 255, 255, 0.05);
-      color: #fff;
-      outline: none;
-    }
-
-    .search-row button {
-      padding: 15px 35px;
-      background: var(--accent);
-      border: none;
-      border-radius: 8px;
-      color: #000;
+      border-radius: 0.5rem;
       font-weight: 600;
       cursor: pointer;
-      transition: 0.3s;
+      text-decoration: none;
+      transition: background 0.2s;
     }
-
-    .search-row button:hover {
-      background: #c7942c;
-    }
-
-    /* Services Grid */
-    .services {
-      padding: 100px 50px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .section-title {
-      font-size: 32px;
-      margin-bottom: 40px;
-      text-align: center;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
-
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--glass-border);
-      padding: 30px;
-      border-radius: 12px;
-      transition: transform 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-    }
-
-    .card h3 {
-      color: var(--accent);
-      margin-bottom: 15px;
-    }
-
-    .card p {
-      color: #a0aec0;
-      font-size: 14px;
-      line-height: 1.6;
+    .btn:hover {
+      background-color: #0284c7;
+      color: #ffffff;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="logo">MUX <span>AIRPORT</span></div>
-    <nav>
-      <ul>
-        <li><a href="#flights">Flights</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#parking">Parking & Transport</a></li>
-        <li><a href="#guide">Guide</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <h1>MULTAN INTERNATIONAL</h1>
-    <p>Experience world-class travel with seamless connectivity and modern amenities.</p>
-
-    <div class="flight-widget" id="flights">
-      <div class="widget-tabs">
-        <button class="tab-btn active" onclick="switchTab('departures')">Departures</button>
-        <button class="tab-btn" onclick="switchTab('arrivals')">Arrivals</button>
-      </div>
-      <div class="search-row">
-        <input type="text" id="flightInput" placeholder="Enter Flight No. or City (e.g. PK-306, Dubai)">
-        <button onclick="searchFlight()">Search Flight</button>
-      </div>
-    </div>
-  </section>
-
-  <section class="services" id="services">
-    <h2 class="section-title">Airport Experience</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>VIP Lounges</h3>
-        <p>Relax before your flight in modern executive lounges featuring premium refreshments and high-speed Wi-Fi.</p>
-      </div>
-      <div class="card">
-        <h3>Duty Free Shop</h3>
-        <p>Explore luxury retail, regional specialties, and international brands at the MUX terminal.</p>
-      </div>
-      <div class="card">
-        <h3>Fast-Track Parking</h3>
-        <p>Convenient short-term and long-term parking options located directly adjacent to the main terminal.</p>
-      </div>
-      <div class="card">
-        <h3>Car Rentals & Taxis</h3>
-        <p>Book verified city taxi services or private rental vehicles instantly upon arrival.</p>
-      </div>
-    </div>
-  </section>
+  <h1>404</h1>
+  <h2>Page Not Found</h2>
+  <p>Jo page aap dhoond rahe hain woh shayad delete ho gaya hai ya galat URL type hua hai.</p>
+  
+  <a href="/" class="btn" id="homeBtn">Go Back Home</a>
 
   <script>
-    function switchTab(type) {
-      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
-      const input = document.getElementById('flightInput');
-      input.placeholder = type === 'departures' 
-        ? 'Enter Departure Flight No. or Destination' 
-        : 'Enter Arrival Flight No. or Origin';
-    }
-
-    function searchFlight() {
-      const query = document.getElementById('flightInput').value;
-      if (query.trim() === '') {
-        alert('Please enter a flight number or city.');
-      } else {
-        alert('Searching flight updates for: ' + query);
-      }
-    }
+    // JS to optionally handle auto-redirect or button click logic
+    document.getElementById('homeBtn').addEventListener('click', (e) => {
+      // Custom logic here if needed before redirect
+      console.log("Redirecting user back to home...");
+    });
   </script>
 
 </body>
