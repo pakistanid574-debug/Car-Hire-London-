@@ -3,37 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UK Festival Countdown & Celebration</title>
+    <title>Edinburgh & UK Festival Countdown</title>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;600&display=swap');
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background: linear-gradient(135deg, #0f172a, #1e293b);
-            color: #ffffff;
+            /* Edinburgh Midnight Blue & Royal Theme */
+            background: radial-gradient(circle at top, #1a2a40 0%, #0a1118 100%);
+            color: #f8fafc;
+            font-family: 'Montserrat', sans-serif;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            position: relative;
+        }
+
+        /* Subtle Tartan Pattern Overlay */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: 
+                repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(212, 175, 55, 0.03) 40px, rgba(212, 175, 55, 0.03) 41px),
+                repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(212, 175, 55, 0.03) 40px, rgba(212, 175, 55, 0.03) 41px);
+            pointer-events: none;
+            z-index: 0;
         }
 
         /* Header Styling */
         header {
             text-align: center;
-            padding: 2.5rem 1rem 1rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 3rem 1rem 1.5rem;
+            background: rgba(10, 17, 24, 0.6);
+            border-bottom: 2px solid #d4af37;
+            position: relative;
+            z-index: 1;
         }
 
         header h1 {
-            font-size: 2.2rem;
-            color: #38bdf8;
-            margin-bottom: 0.5rem;
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            color: #d4af37;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 0 2px 10px rgba(212, 175, 55, 0.2);
+            margin-bottom: 0.3rem;
+        }
+
+        header p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
         }
 
         /* Main Event Card */
@@ -41,116 +69,143 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 2rem 1rem;
+            padding: 2.5rem 1rem;
             flex-grow: 1;
+            position: relative;
+            z-index: 1;
         }
 
         .event-card {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 16px;
-            padding: 2.5rem;
-            max-width: 600px;
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 8px;
+            padding: 3rem 2rem;
+            max-width: 650px;
             width: 100%;
             text-align: center;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(212, 175, 55, 0.05);
+            position: relative;
+        }
+
+        .event-card::before {
+            content: '🏰';
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 0.5rem;
         }
 
         .event-title {
-            font-size: 1.8rem;
-            color: #f1f5f9;
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            color: #ffffff;
             margin-bottom: 0.5rem;
         }
 
         .event-date {
-            color: #94a3b8;
+            color: #d4af37;
             font-size: 1rem;
-            margin-bottom: 2rem;
+            letter-spacing: 1px;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
         }
 
         /* Countdown Grid */
         .countdown {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
+            gap: 1.2rem;
             margin-bottom: 1.5rem;
         }
 
         .time-box {
-            background: rgba(0, 0, 0, 0.4);
-            padding: 1rem;
-            border-radius: 10px;
-            border: 1px solid rgba(56, 189, 248, 0.2);
+            background: rgba(10, 17, 24, 0.8);
+            padding: 1.2rem 0.5rem;
+            border-radius: 6px;
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            transition: transform 0.3s ease;
+        }
+
+        .time-box:hover {
+            transform: translateY(-3px);
+            border-color: #d4af37;
         }
 
         .number {
-            font-size: 2.2rem;
-            font-weight: bold;
-            color: #38bdf8;
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffffff;
             display: block;
+            line-height: 1;
+            margin-bottom: 0.4rem;
         }
 
         .label {
-            font-size: 0.75rem;
-            color: #94a3b8;
+            font-size: 0.7rem;
+            color: #d4af37;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
         }
 
         .celebrate-msg {
             display: none;
+            font-family: 'Cinzel', serif;
             font-size: 1.8rem;
             font-weight: bold;
-            color: #4ade80;
-            animation: pulse 1s infinite alternate;
+            color: #d4af37;
+            animation: pulse 1.5s infinite alternate;
         }
 
         @keyframes pulse {
-            from { transform: scale(1); }
-            to { transform: scale(1.05); }
+            from { transform: scale(1); opacity: 0.8; }
+            to { transform: scale(1.05); opacity: 1; }
         }
 
         /* Footer Styling */
         footer {
-            background: #090d16;
+            background: #060a0f;
             padding: 2rem 1rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
             text-align: center;
+            position: relative;
+            z-index: 1;
         }
 
         footer p {
             color: #64748b;
-            font-size: 0.85rem;
-            margin-bottom: 1.2rem;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
         }
 
         .brand-logos {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 2.5rem;
+            gap: 3rem;
             flex-wrap: wrap;
         }
 
         .brand-logos svg {
-            fill: #94a3b8;
-            height: 35px;
+            fill: #64748b;
+            height: 32px;
             width: auto;
             transition: all 0.3s ease;
         }
 
         .brand-logos svg:hover {
-            fill: #ffffff;
-            transform: translateY(-3px);
+            fill: #d4af37;
+            transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>🇬🇧 UK Upcoming Festivals</h1>
-        <p>Live Countdown & Celebration</p>
+        <h1>🏴󠁧󠁢󠁳󠁣󠁴󠁿 Edinburgh Festival Countdown</h1>
+        <p>Royal Celebrations & Historic Events</p>
     </header>
 
     <main>
@@ -165,7 +220,7 @@
                 <div class="time-box"><span class="number" id="seconds">00</span><span class="label">Seconds</span></div>
             </div>
 
-            <div class="celebrate-msg" id="celebrate-msg"> 🎉 HAPPY FESTIVAL! CELEBRATING NOW! 🥳 </div>
+            <div class="celebrate-msg" id="celebrate-msg"> 🎆 CELEBRATING NOW IN EDINBURGH! 🏰 </div>
         </div>
     </main>
 
@@ -173,13 +228,13 @@
         <p>Official Partners & Sponsors</p>
         <div class="brand-logos">
             <svg viewBox="0 0 300 60" title="British Airways">
-                <path d="M 10,35 Q 80,5 150,25 Q 220,45 280,15 L 290,25 Q 210,60 140,35 Q 70,10 10,45 Z" fill="#eb2226"/>
-                <text x="10" y="25" font-family="Arial" font-size="20" font-weight="bold" fill="#ffffff">BRITISH AIRWAYS</text>
+                <path d="M 10,35 Q 80,5 150,25 Q 220,45 280,15 L 290,25 Q 210,60 140,35 Q 70,10 10,45 Z"/>
+                <text x="10" y="25" font-family="'Cinzel', serif" font-size="18" font-weight="bold">BRITISH AIRWAYS</text>
             </svg>
 
             <svg viewBox="0 0 200 60" title="Air Arabia">
-                <path d="M 20,40 Q 50,10 100,25 Q 150,40 180,15 L 170,45 Q 130,50 90,35 Z" fill="#e11932"/>
-                <text x="25" y="25" font-family="Arial" font-size="18" font-weight="bold" fill="#ffffff">Air Arabia</text>
+                <path d="M 20,40 Q 50,10 100,25 Q 150,40 180,15 L 170,45 Q 130,50 90,35 Z"/>
+                <text x="25" y="25" font-family="'Cinzel', serif" font-size="16" font-weight="bold">Air Arabia</text>
             </svg>
 
             <svg viewBox="0 0 100 50" title="Nike">
@@ -189,19 +244,18 @@
     </footer>
 
     <script>
-        // UK Upcoming Festivals List
-        const ukFestivals = [
+        // Edinburgh & UK Upcoming Festivals List
+        const edinburghFestivals = [
+            { name: "Edinburgh Fringe Festival", date: new Date("Aug 7, 2026 00:00:00").getTime() },
+            { name: "Royal Edinburgh Military Tattoo", date: new Date("Aug 7, 2026 00:00:00").getTime() },
             { name: "Bonfire Night (Guy Fawkes)", date: new Date("Nov 5, 2026 00:00:00").getTime() },
-            { name: "Christmas Eve UK", date: new Date("Dec 24, 2026 00:00:00").getTime() },
-            { name: "London New Year's Eve", date: new Date("Dec 31, 2026 23:59:59").getTime() },
-            { name: "Glastonbury Festival", date: new Date("Jun 23, 2027 00:00:00").getTime() }
+            { name: "Edinburgh's Hogmanay (NYE)", date: new Date("Dec 31, 2026 23:59:59").getTime() },
+            { name: "Burns Night", date: new Date("Jan 25, 2027 00:00:00").getTime() }
         ];
 
-        // Pick current or next upcoming festival
         let now = new Date().getTime();
-        let currentFestival = ukFestivals.find(f => f.date > now) || ukFestivals[0];
+        let currentFestival = edinburghFestivals.find(f => f.date > now) || edinburghFestivals[0];
 
-        // Display Info
         document.getElementById('event-name').innerText = currentFestival.name;
         document.getElementById('event-date').innerText = new Date(currentFestival.date).toDateString();
 
@@ -212,7 +266,6 @@
             const distance = currentFestival.date - currentTime;
 
             if (distance <= 0) {
-                // Trigger Celebration Mode
                 if (!isCelebrating) {
                     isCelebrating = true;
                     document.getElementById('countdown-box').style.display = 'none';
@@ -222,20 +275,17 @@
                 return;
             }
 
-            // Calculation
             const d = Math.floor(distance / (1000 * 60 * 60 * 24));
             const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const s = Math.floor((distance % (1000 * 60)) / 1000);
 
-            // Output
             document.getElementById('days').innerText = d < 10 ? '0' + d : d;
             document.getElementById('hours').innerText = h < 10 ? '0' + h : h;
             document.getElementById('minutes').innerText = m < 10 ? '0' + m : m;
             document.getElementById('seconds').innerText = s < 10 ? '0' + s : s;
         }
 
-        // Automatic Confetti Firework Function
         function triggerConfetti() {
             var duration = 15 * 1000;
             var animationEnd = Date.now() + duration;
@@ -245,13 +295,15 @@
                     particleCount: 5,
                     angle: 60,
                     spread: 55,
-                    origin: { x: 0 }
+                    origin: { x: 0 },
+                    colors: ['#d4af37', '#ffffff', '#005eb8']
                 });
                 confetti({
                     particleCount: 5,
                     angle: 120,
                     spread: 55,
-                    origin: { x: 1 }
+                    origin: { x: 1 },
+                    colors: ['#d4af37', '#ffffff', '#005eb8']
                 });
 
                 if (Date.now() < animationEnd) {
