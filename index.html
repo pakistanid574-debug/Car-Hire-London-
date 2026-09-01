@@ -1,74 +1,159 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ur">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404 - Page Not Found</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: system-ui, -apple-system, sans-serif;
-      background-color: #0f172a;
-      color: #f8fafc;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 1rem;
-    }
-    h1 {
-      font-size: 8rem;
-      font-weight: 800;
-      color: #38bdf8;
-      line-height: 1;
-    }
-    h2 {
-      font-size: 2rem;
-      margin-top: 1rem;
-    }
-    p {
-      color: #94a3b8;
-      margin: 1rem 0 2rem;
-      max-width: 400px;
-    }
-    .btn {
-      background-color: #38bdf8;
-      color: #0f172a;
-      padding: 0.75rem 1.5rem;
-      border: none;
-      border-radius: 0.5rem;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background 0.2s;
-    }
-    .btn:hover {
-      background-color: #0284c7;
-      color: #ffffff;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toronto Executive Chauffeur | Luxury Airport & City Rides</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #0f0f0f;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, #111111, #1a1a2e);
+            border-bottom: 2px solid #c5a059;
+            color: #fff;
+            padding: 2.5rem 1rem;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            color: #c5a059;
+            letter-spacing: 1px;
+        }
+        nav {
+            background: #000;
+            padding: 0.8rem;
+            text-align: center;
+            border-bottom: 1px solid #333;
+        }
+        nav a {
+            color: #ccc;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        nav a:hover {
+            color: #c5a059;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .hero {
+            background: #181818;
+            border: 1px solid #333;
+            padding: 2.5rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .hero h2 {
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        .features {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .card {
+            background: #181818;
+            border: 1px solid #2a2a2a;
+            flex: 1;
+            min-width: 250px;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .card h3 {
+            color: #c5a059;
+            margin-bottom: 0.5rem;
+        }
+        .contact-box {
+            background: #141e28;
+            border-left: 5px solid #c5a059;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            border-radius: 4px;
+        }
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: #050505;
+            color: #777;
+            margin-top: 2rem;
+            border-top: 1px solid #222;
+        }
+        .btn {
+            display: inline-block;
+            background: #c5a059;
+            color: #000;
+            padding: 0.8rem 1.8rem;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 1.2rem;
+            font-weight: bold;
+        }
+        .btn:hover {
+            background: #e5b869;
+        }
+    </style>
 </head>
 <body>
 
-  <h1>404</h1>
-  <h2>Page Not Found</h2>
-  <p>This Site Closed.</p>
-  
-  <a href="/" class="btn" id="homeBtn">Go Back Home</a>
+    <header>
+        <h1>Toronto Executive Chauffeur</h1>
+        <p>Premium Luxury Car & Private Driver Services across Toronto & GTA</p>
+    </header>
 
-  <script>
-    // JS to optionally handle auto-redirect or button click logic
-    document.getElementById('homeBtn').addEventListener('click', (e) => {
-      // Custom logic here if needed before redirect
-      console.log("Redirecting user back to home...");
-    });
-  </script>
+    <nav>
+        <a href="#about">About Service</a>
+        <a href="#fleet">Our Fleet</a>
+        <a href="#contact">Book Ride</a>
+    </nav>
+
+    <div class="container">
+        <section class="hero" id="about">
+            <h2>Luxury Chauffeur Services in Toronto</h2>
+            <p>Reliable, point-to-point private transfers for corporate clients, airport pickups (YYZ), weddings, and international travelers from USA, India, and Pakistan.</p>
+            <a href="#contact" class="btn">Reserve Your Driver</a>
+        </section>
+
+        <div class="features" id="fleet">
+            <div class="card">
+                <h3>Airport Transfers</h3>
+                <p>Flight tracking with guaranteed on-time pickups at Toronto Pearson & Billy Bishop Airports.</p>
+            </div>
+            <div class="card">
+                <h3>Executive Fleet</h3>
+                <p>Premium Sedans, SUV Class (Suburban/Cadillac), and VIP Stretch Limos for events.</p>
+            </div>
+            <div class="card">
+                <h3>Hourly & Event Hire</h3>
+                <p>Dedicated professional drivers at your service for business meetings or city tours.</p>
+            </div>
+        </div>
+
+        <div class="contact-box" id="contact">
+            <h3>Direct Booking & Inquiries</h3>
+            <p><strong>24/7 Dispatch / WhatsApp:</strong> +1 (416) 555-0199 <i>(Demo Line)</i></p>
+            <p><strong>Email:</strong> bookings@torontochauffeur.com</p>
+            <p><strong>Service Area:</strong> Toronto, Mississauga, Brampton, Niagara & GTA</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Toronto Executive Chauffeur Services. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
