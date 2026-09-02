@@ -4,10 +4,10 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 	
-	<!-- Advanced Meta Tags (DE Search Intent Focus) -->
+	<!-- Title & Description (Perfekte Keyword-Dichte & Zeichenlänge) -->
 	<title>Chauffeur Service Oslo Flughafen (OSL) | VIP Transfer Norwegen</title>
-	<meta name="description" content="Exklusiver VIP Chauffeur-Service in Oslo für Gäste aus Deutschland & der Schweiz. Lufthansa Terminal-Abholung am Flughafen OSL mit Mercedes S-Klasse & V-Klasse. Deutschsprachige Chauffeure.">
-	<meta name="keywords" content="Chauffeur Service Oslo, Flughafentransfer Norwegen, Oslo VIP Transfer, Lufthansa Flughafen Oslo Abholung, Mercedes V Klasse Oslo mieten, Fjord Privat Tour, Geschäftsreise Oslo Chauffeur, Limousinenservice Gardermoen">
+	<meta name="description" content="Exklusiver VIP Chauffeur-Service in Oslo für Gäste aus DE, AT & CH. Lufthansa Terminal-Abholung am Flughafen OSL mit Mercedes S-Klasse & V-Klasse. Deutschsprachige Chauffeure.">
+	<meta name="keywords" content="Chauffeur Service Oslo, Flughafentransfer Norwegen, Oslo VIP Transfer, Lufthansa Flughafen Oslo Abholung, Mercedes V Klasse Oslo mieten, Limousinenservice Gardermoen">
 	<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 	<meta name="author" content="Crown Drive AS">
 	<meta name="theme-color" content="#030407">
@@ -25,6 +25,13 @@
 	<link rel="alternate" hreflang="en" href="https://crowndrive.no/" />
 	<link rel="alternate" hreflang="x-default" href="https://crowndrive.no/" />
 
+	<!-- Performance & Resource Hints -->
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//images.unsplash.com">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 	<!-- Open Graph / Social Assets -->
 	<meta property="og:type" content="website">
 	<meta property="og:locale" content="de_DE">
@@ -34,7 +41,7 @@
 	<meta property="og:image" content="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80">
 	<meta property="og:site_name" content="Crown Drive Luxury Transfers">
 
-	<!-- Multi-Schema Architecture (LocalBusiness + TaxiService + FAQPage) -->
+	<!-- Multi-Schema Architecture (LocalBusiness + TaxiService + FAQPage + BreadcrumbList) -->
 	<script type="application/ld+json">
 	{
 		"@context": "https://schema.org",
@@ -46,7 +53,7 @@
 				"url": "https://crowndrive.no/de/",
 				"logo": "https://crowndrive.no/assets/logo.png",
 				"image": "https://images.unsplash.com/photo-1549399542-7e3f8b79c341",
-				"priceRange": "€€€",
+				"priceRange": "125 EUR - 400 EUR",
 				"telephone": "+4700000000",
 				"email": "concierge@crowndrive.no",
 				"address": {
@@ -81,6 +88,21 @@
 					{"@type": "Airport", "name": "Oslo Airport Gardermoen", "iataCode": "OSL"}
 				],
 				"availableLanguage": ["German", "English", "Norwegian"],
+				"hasOfferCatalog": {
+					"@type": "OfferCatalog",
+					"name": "Chauffeur Services Oslo",
+					"itemListElement": [
+						{
+							"@type": "Offer",
+							"itemOffered": {
+								"@type": "Service",
+								"name": "Flughafentransfer Oslo (OSL)"
+							},
+							"price": "125.00",
+							"priceCurrency": "EUR"
+						}
+					]
+				},
 				"aggregateRating": {
 					"@type": "AggregateRating",
 					"ratingValue": "4.95",
@@ -88,6 +110,24 @@
 					"bestRating": "5",
 					"worstRating": "1"
 				}
+			},
+			{
+				"@type": "BreadcrumbList",
+				"@id": "https://crowndrive.no/de/#breadcrumb",
+				"itemListElement": [
+					{
+						"@type": "ListItem",
+						"position": 1,
+						"name": "Home",
+						"item": "https://crowndrive.no/"
+					},
+					{
+						"@type": "ListItem",
+						"position": 2,
+						"name": "Deutsch",
+						"item": "https://crowndrive.no/de/"
+					}
+				]
 			},
 			{
 				"@type": "FAQPage",
@@ -123,11 +163,6 @@
 	}
 	</script>
 
-	<!-- Fonts Preconnect & Optimization -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
 	<style>
 		:root {
 			--bg-dark: #030407;
@@ -135,7 +170,7 @@
 			--accent-theme: #E3C598;
 			--accent-glow: rgba(227, 197, 152, 0.25);
 			--text-main: #F5F5F7;
-			--text-sub: #86868B;
+			--text-sub: #A1A1A6;
 			--border-glass: rgba(255, 255, 255, 0.08);
 			--radius-pro: 28px;
 			--radius-btn: 999px;
@@ -148,6 +183,18 @@
 			padding: 0;
 			-webkit-font-smoothing: antialiased;
 		}
+
+		.skip-link {
+			position: absolute;
+			top: -40px;
+			left: 0;
+			background: var(--accent-theme);
+			color: #000;
+			padding: 8px;
+			z-index: 10000;
+			transition: top 0.3s;
+		}
+		.skip-link:focus { top: 0; }
 
 		body {
 			font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -427,16 +474,18 @@
 </head>
 <body>
 
+	<a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+
 	<div class="ambient-glow" id="ambientBg"></div>
 
 	<!-- Mood Switcher -->
-	<div class="mood-switcher">
+	<aside class="mood-switcher" aria-label="Farbdesign Anpassen">
 		<span class="mood-title">Akzent</span>
-		<div class="mood-dot dot-gold" onclick="setTheme('#E3C598', 'rgba(227, 197, 152, 0.25)')"></div>
-		<div class="mood-dot dot-emerald" onclick="setTheme('#10B981', 'rgba(16, 185, 129, 0.25)')"></div>
-		<div class="mood-dot dot-blue" onclick="setTheme('#3B82F6', 'rgba(59, 130, 246, 0.25)')"></div>
-		<div class="mood-dot dot-purple" onclick="setTheme('#8B5CF6', 'rgba(139, 92, 246, 0.25)')"></div>
-	</div>
+		<button class="mood-dot dot-gold" onclick="setTheme('#E3C598', 'rgba(227, 197, 152, 0.25)')" aria-label="Gold Theme"></button>
+		<button class="mood-dot dot-emerald" onclick="setTheme('#10B981', 'rgba(16, 185, 129, 0.25)')" aria-label="Smaragd Theme"></button>
+		<button class="mood-dot dot-blue" onclick="setTheme('#3B82F6', 'rgba(59, 130, 246, 0.25)')" aria-label="Blau Theme"></button>
+		<button class="mood-dot dot-purple" onclick="setTheme('#8B5CF6', 'rgba(139, 92, 246, 0.25)')" aria-label="Violett Theme"></button>
+	</aside>
 
 	<!-- Navigation -->
 	<header class="nav-wrapper">
@@ -449,16 +498,16 @@
 			</div>
 
 			<div class="nav-links">
-				<select class="lang-select" onchange="location = this.value;">
+				<select class="lang-select" onchange="location = this.value;" aria-label="Sprache wählen">
 					<option value="https://crowndrive.no/de/" selected>🇩🇪 Deutsch</option>
 					<option value="https://crowndrive.no/">🇬🇧 English</option>
 				</select>
-				<button class="btn-accent">Jetzt Reservieren</button>
+				<button class="btn-accent" type="button">Jetzt Reservieren</button>
 			</div>
 		</nav>
 	</header>
 
-	<main>
+	<main id="main-content">
 		<!-- Hero Section -->
 		<section class="hero" aria-labelledby="hero-heading">
 			<div>
@@ -473,11 +522,11 @@
 
 				<h1 id="hero-heading" class="hero-title">VIP Chauffeur Service in Oslo</h1>
 				<p class="hero-desc">Exklusiver Flughafentransfer & Privattransfers in Norwegen für Kunden aus Deutschland, Österreich und der Schweiz. Pünktliche Abholung am Terminal OSL mit Mercedes-Benz S-Klasse & V-Klasse.</p>
-				<button class="btn-accent" style="padding: 14px 36px; font-size: 0.95rem;">Transfer Buchen</button>
+				<button class="btn-accent" type="button" style="padding: 14px 36px; font-size: 0.95rem;">Transfer Buchen</button>
 			</div>
 
 			<div class="pro-media-frame">
-				<video autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1549399542-7e3f8b79c341" fetchpriority="high" aria-label="Mercedes Luxus-Van Chauffeur-Service Oslo Norwegen">
+				<video autoplay loop muted playsinline fetchpriority="high" poster="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80" width="600" height="480" aria-label="Mercedes Luxus-Van Chauffeur-Service Oslo Flughafen OSL Norwegen">
 					<source src="https://carhirelondon.uk/wp-content/uploads/2026/05/Mercedes-Benz-Luxury-Van-Car-Hire-London.mp4" type="video/mp4">
 				</video>
 			</div>
@@ -485,65 +534,21 @@
 
 		<!-- Booking Console Widget -->
 		<section class="booking-container" aria-label="Chauffeur Buchungsformular">
-			<div class="booking-card">
+			<form class="booking-card" action="#" method="post" onsubmit="event.preventDefault(); simulateBiometrics();">
 				<div class="input-box">
 					<label for="pickup">Abholort / Flugnummer</label>
-					<input type="text" id="pickup" value="Flughafen Oslo (OSL) / LH860" placeholder="z. B. Flugnummer (LH860) oder Hotel">
+					<input type="text" id="pickup" name="pickup" value="Flughafen Oslo (OSL) / LH860" placeholder="z. B. Flugnummer (LH860) oder Hotel" required>
 				</div>
 				<div class="input-box">
 					<label for="dropoff">Zielort</label>
-					<input type="text" id="dropoff" placeholder="z. B. Grand Hotel Oslo / Innenstadt">
+					<input type="text" id="dropoff" name="dropoff" placeholder="z. B. Grand Hotel Oslo / Innenstadt" required>
 				</div>
 				<div class="input-box">
 					<label for="date">Datum & Zeit</label>
-					<input type="date" id="date">
+					<input type="date" id="date" name="date" required>
 				</div>
 				<div class="input-box">
 					<label for="vehicle-class">Fahrzeugklasse</label>
-					<select id="vehicle-class">
+					<select id="vehicle-class" name="vehicle-class" aria-label="Fahrzeugklasse auswählen">
 						<option>Mercedes V-Klasse VIP (7 Sitzplätze)</option>
-						<option>Mercedes S-Klasse Executive (First Class)</option>
-						<option>Porsche Taycan EV Sport</option>
-					</select>
-				</div>
-				<button class="btn-accent" style="height: 50px; align-self: end; border-radius: 16px;" onclick="simulateBiometrics()">Fahrt Bestätigen</button>
-
-				<div class="ai-price-pill">
-					<span>⚡ <strong>Live Flug-Tracking:</strong> Ankünfte aus FRA, MUC, HAM & DUS werden automatisch synchronisiert.</span>
-					<span>Festpreis: <strong>ca. 125 € / 1.450 NOK</strong></span>
-				</div>
-			</div>
-		</section>
-
-		<!-- B2B Trust Indicators -->
-		<div class="section" style="margin-bottom: 60px;">
-			<div class="b2b-trust-strip">
-				<div class="b2b-item">
-					<span>Abrechnung</span>
-					<strong>EU & DE MwSt. Konform</strong>
-				</div>
-				<div class="b2b-item">
-					<span>Flug-Tracking</span>
-					<strong>Kostenlose Wartezeit bei Verspätung</strong>
-				</div>
-				<div class="b2b-item">
-					<span>Zahlungsoptionen</span>
-					<strong>Amex, SEPA & Firmenrechnung</strong>
-				</div>
-			</div>
-		</div>
-
-		<!-- Fleet Section -->
-		<section class="section" id="fleet" aria-labelledby="fleet-heading">
-			<div class="section-header">
-				<span class="section-sub">Erstklassige Flotte</span>
-				<h2 id="fleet-heading" class="section-title">Fahrzeuge für höchste Ansprüche</h2>
-			</div>
-
-			<div class="grid-3">
-				<article class="pro-card">
-					<div class="card-img-box">
-						<img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=600&q=80" alt="Porsche Taycan Elektro Luxus Mietwagen Oslo Norwegen" loading="lazy">
-					</div>
-					<div class="card-body">
-						<h3 class="card
+						<option>Mercedes S-Klasse Executive (Fir
