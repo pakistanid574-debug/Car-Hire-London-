@@ -41,6 +41,15 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+	<!-- EmailJS Integration -->
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+	<script type="text/javascript">
+		(function() {
+			// EMAILJS PUBLIC KEY HERE
+			emailjs.init("YOUR_PUBLIC_KEY"); 
+		})();
+	</script>
+
 	<style>
 		:root {
 			--bg-dark: #0a0d14;
@@ -168,7 +177,20 @@
 		}
 
 		.input-box label { display: block; font-size: 0.75rem; color: var(--accent-theme); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 8px; }
-		.input-box input, .input-box select { width: 100%; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-glass); padding: 14px 18px; border-radius: 14px; color: #FFF; font-size: 0.92rem; outline: none; }
+		.input-box input, .input-box select, .input-box textarea { width: 100%; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-glass); padding: 14px 18px; border-radius: 14px; color: #FFF; font-size: 0.92rem; outline: none; }
+		.input-box textarea { resize: vertical; }
+
+		/* Contact Section Styling */
+		.contact-card {
+			background: var(--bg-card);
+			border: 1px solid var(--border-glass);
+			border-radius: var(--radius-pro);
+			padding: 40px;
+			max-width: 800px;
+			margin: 0 auto;
+		}
+		.contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+		.contact-form .full-width { grid-column: span 2; }
 
 		.footer { background: #05070a; border-top: 1px solid var(--border-glass); padding: 80px 20px 40px; }
 		.footer-grid { max-width: 1280px; margin: 0 auto 60px; display: grid; grid-template-columns: 2fr repeat(3, 1fr); gap: 40px; }
@@ -179,6 +201,9 @@
 			.booking-card { grid-template-columns: 1fr 1fr; }
 			.hero-title { font-size: 2.5rem; }
 			.nav-menu { display: none; }
+			.contact-form { grid-template-columns: 1fr; }
+			.contact-form .full-width { grid-column: span 1; }
+			.footer-grid { grid-template-columns: 1fr; }
 		}
 	</style>
 </head>
@@ -195,6 +220,7 @@
 				<a href="#booking">Book Chauffeur</a>
 				<a href="#london-services">London VIP</a>
 				<a href="#fleet">Royal Fleet</a>
+				<a href="#contact">Contact Us</a>
 				<a href="https://private-driver-no.vercel.app/Blog.html" style="color: var(--accent-theme); font-weight:700;">Blog</a>
 			</div>
 
@@ -337,6 +363,47 @@
 			</div>
 		</section>
 
+		<!-- Contact Us Section -->
+		<section class="section" id="contact">
+			<div class="section-header">
+				<span class="section-sub">Get In Touch</span>
+				<h2 class="section-title">Contact VIP Concierge</h2>
+			</div>
+
+			<div class="contact-card">
+				<form id="contact-form" class="contact-form">
+					<div class="input-box">
+						<label for="from_name">Full Name</label>
+						<input type="text" id="from_name" name="from_name" placeholder="John Doe" required>
+					</div>
+					<div class="input-box">
+						<label for="from_email">Email Address</label>
+						<input type="email" id="from_email" name="from_email" placeholder="john@example.com" required>
+					</div>
+					<div class="input-box">
+						<label for="phone">Phone / WhatsApp</label>
+						<input type="tel" id="phone" name="phone" placeholder="+44 7000 000000" required>
+					</div>
+					<div class="input-box">
+						<label for="service_type">Service Requested</label>
+						<select id="service_type" name="service_type">
+							<option value="Airport Transfer">Airport Transfer</option>
+							<option value="Corporate Travel">Corporate Travel</option>
+							<option value="Intercity Tour">Intercity Tour</option>
+							<option value="Special Event">Special Event / Wedding</option>
+						</select>
+					</div>
+					<div class="input-box full-width">
+						<label for="message">Message / Trip Details</label>
+						<textarea id="message" name="message" rows="5" placeholder="Share your trip details or flight info..." required></textarea>
+					</div>
+					<div class="full-width" style="text-align: center; margin-top: 10px;">
+						<button class="btn-accent" type="submit" style="width: 100%; max-width: 300px;">Send Message</button>
+					</div>
+				</form>
+			</div>
+		</section>
+
 		<!-- Blog Preview Section -->
 		<section class="section" id="blog-preview">
 			<div class="section-header">
@@ -382,6 +449,9 @@
 			<div>
 				<div class="brand-logo">CROWN <span>DRIVE</span></div>
 				<p class="footer-desc">Crown Drive | Premier Luxury Private Chauffeur Services in London and Edinburgh.</p>
+				<p class="footer-desc" style="margin-top: 10px; color: var(--accent-theme);">
+					<strong>Email:</strong> <a href="mailto:hhassansajid8@gmail.com" style="text-decoration: underline;">hhassansajid8@gmail.com</a>
+				</p>
 			</div>
 			<div>
 				<h4 style="color: #FFF; font-size: 1rem; margin-bottom: 16px; font-family: 'Cinzel', serif;">Internal Links</h4>
@@ -390,6 +460,7 @@
 					<li><a href="#booking">Book Chauffeur</a></li>
 					<li><a href="#london-services">London VIP Services</a></li>
 					<li><a href="#fleet">Royal Fleet</a></li>
+					<li><a href="#contact">Contact Us</a></li>
 					<li><a href="https://private-driver-no.vercel.app/Blog.html">Crown Drive Blog</a></li>
 				</ul>
 			</div>
@@ -407,5 +478,19 @@
 		</div>
 	</footer>
 
+	<script type="text/javascript">
+		document.getElementById('contact-form').addEventListener('submit', function(event) {
+			event.preventDefault();
+			
+			// Replace YOUR_SERVICE_ID and YOUR_TEMPLATE_ID with actual values from EmailJS dashboard
+			emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+				.then(function() {
+					alert('Thank you! Your inquiry has been sent successfully.');
+					document.getElementById('contact-form').reset();
+				}, function(error) {
+					alert('Failed to send message: ' + JSON.stringify(error));
+				});
+		});
+	</script>
 </body>
 </html>
