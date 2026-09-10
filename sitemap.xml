@@ -2,39 +2,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/css" href="https://www.xml-sitemaps.com/css/sitemap.css"?>
 
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- Home Page -->
   <url>
     <loc>https://private-driver-no.vercel.app/</loc>
     <lastmod>2026-09-10T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
-    <priority>1.0000</priority>
-  </url>
-
-  <!-- Booking Section -->
-  <url>
-    <loc>https://private-driver-no.vercel.app/#booking</loc>
-    <lastmod>2026-09-10T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8000</priority>
-  </url>
-
-  <!-- Sightseeing Section -->
-  <url>
-    <loc>https://private-driver-no.vercel.app/#sightseeing</loc>
-    <lastmod>2026-09-10T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8000</priority>
-  </url>
-
-  <!-- Contact Section -->
-  <url>
-    <loc>https://private-driver-no.vercel.app/#contact</loc>
-    <lastmod>2026-09-10T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7000</priority>
+    <priority>1.0</priority>
   </url>
 
   <!-- Blog Page -->
@@ -42,7 +17,7 @@
     <loc>https://private-driver-no.vercel.app/Blog.html</loc>
     <lastmod>2026-09-05T14:56:08+00:00</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8000</priority>
+    <priority>0.8</priority>
   </url>
 
 </urlset>
