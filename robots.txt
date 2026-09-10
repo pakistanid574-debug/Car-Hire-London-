@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Disallow private/admin paths if any
+Disallow: /admin/
+Disallow: /api/
+
+# Sitemap Link
+Sitemap: https://private-driver-no.vercel.app/sitemap.xml
+
