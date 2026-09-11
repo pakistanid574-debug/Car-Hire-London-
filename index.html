@@ -328,6 +328,45 @@
 			text-decoration: underline;
 		}
 
+		/* 404 Not Found Modal Overlay */
+		.not-found-modal {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(10, 13, 20, 0.95);
+			backdrop-filter: blur(15px);
+			display: none;
+			justify-content: center;
+			align-items: center;
+			z-index: 9999;
+			text-align: center;
+			padding: 20px;
+		}
+		.not-found-card {
+			background: var(--bg-card);
+			border: 1px solid var(--accent-theme);
+			border-radius: var(--radius-pro);
+			padding: 50px 30px;
+			max-width: 500px;
+			box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+		}
+		.not-found-card h2 {
+			font-size: 4rem;
+			color: var(--accent-theme);
+			margin-bottom: 10px;
+		}
+		.not-found-card h3 {
+			font-size: 1.5rem;
+			color: #fff;
+			margin-bottom: 15px;
+		}
+		.not-found-card p {
+			color: var(--text-sub);
+			margin-bottom: 25px;
+		}
+
 		.footer { background: #05070a; border-top: 1px solid var(--border-glass); padding: 80px 20px 40px; }
 		.footer-grid { max-width: 1280px; margin: 0 auto 60px; display: grid; grid-template-columns: 2fr repeat(3, 1fr); gap: 40px; }
 		.footer-desc { color: var(--text-sub); font-size: 0.9rem; margin-top: 16px; max-width: 340px; }
@@ -836,6 +875,16 @@
 			</div>
 		</section>
 
+		<!-- 404 NOT FOUND MODAL -->
+		<div id="not-found-modal" class="not-found-modal">
+			<div class="not-found-card">
+				<h2>404</h2>
+				<h3>Page Not Found</h3>
+				<p>Maaf kijiye! Jo link aap dhoond rahe hain wo majood nahi hai ya galat hai.</p>
+				<button onclick="close404()" class="btn-accent">Go To Homepage</button>
+			</div>
+		</div>
+
 	</main>
 
 	<!-- Footer Section -->
@@ -892,6 +941,26 @@
 				}
 			}
 		});
+
+		// 404 Route Validator Logic
+		const validSections = ['#home', '#booking', '#airport-transfers', '#sightseeing', '#fleet', '#office', '#contact', '#blog-preview', '#owners'];
+
+		function checkRoute() {
+			const hash = window.location.hash;
+			if (hash && !validSections.includes(hash)) {
+				document.getElementById('not-found-modal').style.display = 'flex';
+			} else {
+				document.getElementById('not-found-modal').style.display = 'none';
+			}
+		}
+
+		function close404() {
+			document.getElementById('not-found-modal').style.display = 'none';
+			window.location.hash = '#home';
+		}
+
+		window.addEventListener('hashchange', checkRoute);
+		window.addEventListener('load', checkRoute);
 
 		document.getElementById('contact-form').addEventListener('submit', function(event) {
 			event.preventDefault();
