@@ -12,7 +12,7 @@ jobs:
         uses: treosh/lighthouse-ci-action@v9
         with:
           urls: |
-            https://yourwebsite.com
+            https://private-driver-no.vercel.app/
           uploadArtifacts: true
           temporaryPublicStorage: true
           
