@@ -1,210 +1,296 @@
-<!doctype html>
-<html lang="en-GB" dir="ltr">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-	
-	<!-- SEO META TAGS -->
-	<title>Luxury Chauffeur Guide &amp; Travel Blog | Royal Chauffeur Service</title>
-	<meta name="description" content="Explore top luxury travel tips, airport transfers, and private chauffeur guides with Royal Chauffeur Service.">
-	<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-	<meta name="theme-color" content="#0a0d14">
-	
-	<!-- Canonical URL -->
-	<link rel="canonical" href="https://royalchauffeurservice.co.uk/blog.html">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore the UK - Top 10 Iconic Places</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-	<!-- Open Graph / Social Media Meta Tags -->
-	<meta property="og:locale" content="en_GB">
-	<meta property="og:type" content="website">
-	<meta property="og:title" content="Luxury Chauffeur Guide &amp; Travel Blog | Royal Chauffeur Service">
-	<meta property="og:description" content="Explore top luxury travel tips, airport transfers, and private chauffeur guides with Royal Chauffeur Service.">
-	<meta property="og:url" content="https://royalchauffeurservice.co.uk/blog.html">
-	<meta property="og:site_name" content="Royal Chauffeur Service">
-	<meta property="og:image" content="https://images.unsplash.com/photo-1543832923-44667a44c804?auto=format&fit=crop&w=1200&q=80">
+    body {
+      background-color: #0f172a;
+      color: #f8fafc;
+      line-height: 1.6;
+    }
 
-	<!-- Google Fonts -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    header {
+      background: #1e293b;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      border-bottom: 2px solid #334155;
+    }
 
-	<!-- Schema.org JSON-LD Structured Data -->
-	<script type="application/ld+json">
-	{
-	  "@context": "https://schema.org",
-	  "@type": "Blog",
-	  "name": "Royal Chauffeur Service Blog",
-	  "url": "https://royalchauffeurservice.co.uk/blog.html",
-	  "description": "Explore top luxury travel tips, airport transfers, and private chauffeur guides.",
-	  "publisher": {
-	    "@type": "Organization",
-	    "name": "Royal Chauffeur Service",
-	    "url": "https://royalchauffeurservice.co.uk"
-	  }
-	}
-	</script>
+    header h1 {
+      color: #38bdf8;
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
 
-	<style>
-		:root {
-			--bg-dark: #0a0d14;
-			--bg-card: rgba(22, 27, 38, 0.7);
-			--accent-theme: #d4af37; /* Royal Gold */
-			--text-main: #f8fafc;
-			--text-sub: #94a3b8;
-			--border-glass: rgba(212, 175, 55, 0.15);
-			--radius-pro: 16px;
-			--radius-btn: 999px;
-			--transition: all 0.3s ease;
-		}
+    header p {
+      color: #94a3b8;
+    }
 
-		* { box-sizing: border-box; margin: 0; padding: 0; }
-		body { font-family: 'Inter', sans-serif; background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; }
-		a { text-decoration: none; color: inherit; }
-		h1, h2, h3, .brand-logo { font-family: 'Cinzel', serif; }
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
 
-		/* Header Navigation */
-		.nav-wrapper { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(10, 13, 20, 0.95); border-bottom: 1px solid var(--border-glass); padding: 15px 20px; }
-		.nav-card { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-		.brand-logo { font-size: 1.3rem; font-weight: 800; color: #fff; }
-		.brand-logo span { color: var(--accent-theme); }
+    /* Grid View */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
 
-		/* Page Layout */
-		.container { max-width: 1100px; margin: 120px auto 60px; padding: 0 20px; }
-		.page-title { text-align: center; font-size: 2.5rem; margin-bottom: 10px; color: var(--accent-theme); }
-		.page-subtitle { text-align: center; color: var(--text-sub); margin-bottom: 50px; font-size: 1rem; }
+    .blog-card {
+      background: #1e293b;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #334155;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
 
-		/* Blog Grid Layout */
-		.blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
+    }
 
-		/* Single Blog Card Styling */
-		.blog-card { background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--radius-pro); overflow: hidden; transition: var(--transition); display: flex; flex-direction: column; }
-		.blog-card:hover { transform: translateY(-5px); border-color: var(--accent-theme); }
-		.blog-img-box { width: 100%; height: 200px; overflow: hidden; position: relative; }
-		.blog-img-box img { width: 100%; height: 100%; object-fit: cover; }
-		.blog-content { padding: 22px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
-		.blog-date { font-size: 0.75rem; color: var(--accent-theme); font-weight: 600; margin-bottom: 8px; text-transform: uppercase; }
-		.blog-title { font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 10px; line-height: 1.4; }
-		.blog-excerpt { font-size: 0.9rem; color: var(--text-sub); margin-bottom: 20px; }
-		.btn-read { display: inline-block; color: var(--accent-theme); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
+    .blog-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
 
-		/* Footer */
-		.footer { text-align: center; padding: 40px 20px; border-top: 1px solid var(--border-glass); color: var(--text-sub); font-size: 0.85rem; margin-top: 80px; }
-	</style>
+    .card-content {
+      padding: 1.5rem;
+    }
+
+    .card-content h3 {
+      color: #38bdf8;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-content p {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .read-btn {
+      display: inline-block;
+      color: #38bdf8;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    /* Detailed Single Page View */
+    .blog-detail {
+      display: none;
+      background: #1e293b;
+      border-radius: 12px;
+      padding: 2rem;
+      border: 1px solid #334155;
+    }
+
+    .blog-detail img {
+      width: 100%;
+      max-height: 450px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+    }
+
+    .blog-detail h2 {
+      color: #38bdf8;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .blog-detail .meta {
+      color: #38bdf8;
+      font-weight: bold;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .blog-detail .content {
+      color: #e2e8f0;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .back-btn {
+      background: #38bdf8;
+      color: #0f172a;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 1.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #64748b;
+      border-top: 1px solid #334155;
+      margin-top: 3rem;
+    }
+  </style>
 </head>
 <body>
 
-	<!-- Navigation Header -->
-	<header class="nav-wrapper">
-		<nav class="nav-card">
-			<a href="index.html" class="brand-logo">ROYAL <span>CHAUFFEUR</span></a>
-			<!-- LINK TO MAIN WEBSITE -->
-			<a href="index.html" style="color: var(--accent-theme); font-weight: 600; font-size: 0.9rem;">← Back To Main Website</a>
-		</nav>
-	</header>
+  <header>
+    <h1>Explore the United Kingdom</h1>
+    <p>Discover 10 iconic, historic, and beautiful destinations across the UK</p>
+  </header>
 
-	<!-- Main Blog Section -->
-	<main class="container">
-		<h1 class="page-title">Royal Chauffeur Blog</h1>
-		<p class="page-subtitle">Latest Travel Insights, Chauffeur Guides &amp; VIP News</p>
+  <div class="container">
+    <!-- Grid view for 10 blog posts -->
+    <div id="blog-grid" class="blog-grid"></div>
 
-		<div class="blog-grid">
+    <!-- Article Detail View -->
+    <div id="blog-detail" class="blog-detail">
+      <button class="back-btn" onclick="showGrid()">← Back to All Destinations</button>
+      <img id="detail-img" src="" alt="">
+      <h2 id="detail-title"></h2>
+      <div id="detail-meta" class="meta"></div>
+      <div id="detail-content" class="content"></div>
+    </div>
+  </div>
 
-			<!-- BLOG CARD: AIRPORT CHAUFFEUR LONDON (NEW) -->
-			<article class="blog-card">
-				<div class="blog-img-box">
-					<img src="https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&fit=crop&w=800&q=80" alt="Airport Chauffeur London VIP Service" loading="lazy">
-				</div>
-				<div class="blog-content">
-					<div>
-						<span class="blog-date">Airport Transfers</span>
-						<h2 class="blog-title">Airport Chauffeur London: Executive VIP Transfers</h2>
-						<p class="blog-excerpt">Experience seamless luxury airport chauffeur transfers across London airports with flight tracking, meet &amp; greet, and executive vehicles.</p>
-					</div>
-					<a href="blogs/airport-chauffeur-london.html" class="btn-read">Read Full Article →</a>
-				</div>
-			</article>
+  <footer>
+    <p>&copy; 2026 UK Travel Guide. All rights reserved.</p>
+  </footer>
 
-			<!-- BLOG CARD: LONDON TO LIVERPOOL -->
-			<article class="blog-card">
-				<div class="blog-img-box">
-					<img src="https://images.unsplash.com/photo-1543832923-44667a44c804?auto=format&fit=crop&w=800&q=80" alt="London to Liverpool Private Chauffeur" loading="lazy">
-				</div>
-				<div class="blog-content">
-					<div>
-						<span class="blog-date">Long Distance Travel</span>
-						<h2 class="blog-title">London to Liverpool: Luxury Long-Distance Chauffeur Transfer</h2>
-						<p class="blog-excerpt">Travel effortlessly between London and Liverpool with premium executive vehicles, professional chauffeurs, and personalized stops.</p>
-					</div>
-					<a href="blogs/london-to-liverpool.html" class="btn-read">Read Full Article →</a>
-				</div>
-			</article>
+  <script>
+    const blogs = [
+      {
+        id: 1,
+        title: "Big Ben & Palace of Westminster",
+        location: "London, England",
+        image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1000&q=80",
+        summary: "London's most famous landmark and iconic clock tower.",
+        content: "Big Ben is the nickname for the Great Bell of the striking clock at the north end of the Palace of Westminster in London. Towering over the River Thames, this iconic landmark represents the political heart of the United Kingdom and is one of London's most recognizable architectural marvels, especially beautiful when illuminated at night."
+      },
+      {
+        id: 2,
+        title: "Stonehenge",
+        location: "Wiltshire, England",
+        image: "https://images.unsplash.com/photo-1599833975787-5c143f373c30?auto=format&fit=crop&w=1000&q=80",
+        summary: "World-famous prehistoric monument wrapped in ancient mystery.",
+        content: "Stonehenge is a world-renowned prehistoric monument created around 3000 BC to 2000 BC. Composed of massive standing stones arranged in a unique ring formation, it remains one of the greatest archaeological mysteries in human history, attracting travelers interested in ancient culture and astronomy."
+      },
+      {
+        id: 3,
+        title: "Edinburgh Castle",
+        location: "Edinburgh, Scotland",
+        image: "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=1000&q=80",
+        summary: "Historic fortress dominating the skyline of Scotland's capital.",
+        content: "Perched atop Castle Rock—an extinct volcanic crag—Edinburgh Castle dominates the skyline of Scotland's capital city. Rich in royal history, this fortress houses the Crown Jewels of Scotland (the Honors of Scotland) and provides breathtaking panoramic views of the entire city."
+      },
+      {
+        id: 4,
+        title: "Giant's Causeway",
+        location: "County Antrim, Northern Ireland",
+        image: "https://images.unsplash.com/photo-1590059301980-8641b99ff1e3?auto=format&fit=crop&w=1000&q=80",
+        summary: "Geological wonder formed by 40,000 interlocking basalt columns.",
+        content: "Giant's Causeway is Northern Ireland's only UNESCO World Heritage Site. Formed by ancient volcanic eruptions, this stunning natural site features around 40,000 interlocking hexagonal basalt columns stepping down into the Irish Sea, wrapped in captivating local mythology."
+      },
+      {
+        id: 5,
+        title: "Tower Bridge",
+        location: "London, England",
+        image: "https://images.unsplash.com/photo-1529655683826-aba9b3e77383?auto=format&fit=crop&w=1000&q=80",
+        summary: "Victorian-era bascule bridge crossing the River Thames.",
+        content: "Built in 1894, Tower Bridge is a historic combination of bascule and suspension bridge structures. Visitors can walk across its high-level glass floor walkways to enjoy panoramic vistas of London and observe the historic engine rooms that power the bridge lifts."
+      },
+      {
+        id: 6,
+        title: "Loch Ness & Urquhart Castle",
+        location: "Highlands, Scotland",
+        image: "https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=1000&q=80",
+        summary: "Deep Scottish lake known for its scenery and mythical monster.",
+        content: "Loch Ness is a deep freshwater loch in the Scottish Highlands, worldwide famous for sightings of the mythical 'Nessie' monster. Nestled on its shores are the scenic ruins of Urquhart Castle, making it a favorite destination for boat cruises and historic sightseeing."
+      },
+      {
+        id: 7,
+        title: "The Roman Baths",
+        location: "Bath, England",
+        image: "https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=1000&q=80",
+        summary: "Extensive preserved ancient Roman bathing complex.",
+        content: "Located in the historic city of Bath, the Roman Baths are among the best-preserved Roman sites in Northern Europe. Fed by thermal hot springs that produce natural hot water, the complex showcases intact ancient bathhouses, temples, and Roman artifacts."
+      },
+      {
+        id: 8,
+        title: "Snowdonia National Park",
+        location: "Gwynedd, Wales",
+        image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80",
+        summary: "Majestic mountains and outdoor adventures in Wales.",
+        content: "Snowdonia National Park (Eryri) in North Wales features dramatic mountain landscapes, including Mount Snowdon—the highest peak in England and Wales. It is a haven for outdoor enthusiasts offering world-class hiking, mountain railway tours, and pristine glacial lakes."
+      },
+      {
+        id: 9,
+        title: "The Lake District",
+        location: "Cumbria, England",
+        image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80",
+        summary: "England's premier national park famous for lakes and fells.",
+        content: "The Lake District National Park is renowned for its scenic lakes, rugged mountains, and charming stone villages. Highlights include Lake Windermere and Scafell Pike, providing options for sailing, hiking, and exploring historic literary connections to writers like Beatrix Potter."
+      },
+      {
+        id: 10,
+        title: "Windsor Castle",
+        location: "Windsor, Berkshire, England",
+        image: "https://images.unsplash.com/photo-1568084680786-a84f91d1153c?auto=format&fit=crop&w=1000&q=80",
+        summary: "The oldest and largest occupied castle in the world.",
+        content: "Windsor Castle has served as an official royal residence for over 1,000 years. Visitors can tour the lavish State Apartments decorated with masterpieces from the Royal Collection and visit St George's Chapel, an exquisite example of Gothic architecture."
+      }
+    ];
 
-			<!-- BLOG CARD: CHELSEA 2027 -->
-			<article class="blog-card">
-				<div class="blog-img-box">
-					<img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=800&q=80" alt="Chelsea 2027 Chauffeur Service London" loading="lazy">
-				</div>
-				<div class="blog-content">
-					<div>
-						<span class="blog-date">VIP Travel Guide</span>
-						<h2 class="blog-title">Chelsea 2027: Exclusive Private Driver &amp; Chauffeur Experience</h2>
-						<p class="blog-excerpt">Navigate Chelsea, King's Road, and the Chelsea Flower Show in 2027 with luxury Mercedes-Benz chauffeur transfers.</p>
-					</div>
-					<a href="blogs/chelsea-2027.html" class="btn-read">Read Full Article →</a>
-				</div>
-			</article>
+    function renderBlogs() {
+      const grid = document.getElementById('blog-grid');
+      grid.innerHTML = blogs.map(blog => `
+        <div class="blog-card" onclick="showDetail(${blog.id})">
+          <img src="${blog.image}" alt="${blog.title}">
+          <div class="card-content">
+            <h3>${blog.title}</h3>
+            <p style="color: #38bdf8; font-size: 0.85rem; font-weight: bold; margin-bottom: 5px;">📍 ${blog.location}</p>
+            <p>${blog.summary}</p>
+            <span class="read-btn">Read Full Article →</span>
+          </div>
+        </div>
+      `).join('');
+    }
 
-			<!-- BLOG CARD: CHRISTMAS 2026 LIGHTS -->
-			<article class="blog-card">
-				<div class="blog-img-box">
-					<img src="https://images.unsplash.com/photo-1543589077-47d81606c1bf?auto=format&fit=crop&w=800&q=80" alt="Christmas 2026 London Lights" loading="lazy">
-				</div>
-				<div class="blog-content">
-					<div>
-						<span class="blog-date">December 2026</span>
-						<h2 class="blog-title">Exploring London Christmas 2026 with VIP Drivers</h2>
-						<p class="blog-excerpt">Experience magical festive lights on Regent Street, Winter Wonderland at Hyde Park, and luxury shopping with a private chauffeur.</p>
-					</div>
-					<a href="blogs/christmas-2026-london.html" class="btn-read">Read Full Article →</a>
-				</div>
-			</article>
+    function showDetail(id) {
+      const blog = blogs.find(b => b.id === id);
+      if (!blog) return;
 
-			<!-- BLOG CARD: AIRPORT TRANSFERS -->
-			<article class="blog-card">
-				<div class="blog-img-box">
-					<img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=800&q=80" alt="Heathrow Airport Christmas Chauffeur" loading="lazy">
-				</div>
-				<div class="blog-content">
-					<div>
-						<span class="blog-date">Airport Transfers</span>
-						<h2 class="blog-title">Holiday Airport Pickups: LHR &amp; LGW</h2>
-						<p class="blog-excerpt">Avoid holiday rush and flight delays during Christmas 2026 with direct terminal pickup and real-time flight tracking.</p>
-					</div>
-					<a href="blogs/holiday-airport-pickups.html" class="btn-read">Read Full Article →</a>
-				</div>
-			</article>
+      document.getElementById('detail-img').src = blog.image;
+      document.getElementById('detail-img').alt = blog.title;
+      document.getElementById('detail-title').innerText = blog.title;
+      document.getElementById('detail-meta').innerText = `Location: ${blog.location}`;
+      document.getElementById('detail-content').innerText = blog.content;
 
-			<!-- BLOG CARD: EDINBURGH AIRPORT -->
-			<article class="blog-card">
-				<div class="blog-img-box">
-					<img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=600&q=80" alt="Edinburgh Airport Private Chauffeur Transfer" loading="lazy">
-				</div>
-				<div class="blog-content">
-					<div>
-						<span class="blog-date">September 2, 2026</span>
-						<h2 class="blog-title">Ultimate Guide to Edinburgh Airport Transfers</h2>
-						<p class="blog-excerpt">Discover how private chauffeur transfers provide seamless, VIP travel from Edinburgh Airport (EDI) to top luxury hotels in Old Town.</p>
-					</div>
-					<a href="blogs/edinburgh-airport-transfer-guide.html" class="btn-read">Read Full Article →</a>
-				</div>
-			</article>
+      document.getElementById('blog-grid').style.display = 'none';
+      document.getElementById('blog-detail').style.display = 'block';
+      window.scrollTo(0, 0);
+    }
 
-		</div>
-	</main>
+    function showGrid() {
+      document.getElementById('blog-detail').style.display = 'none';
+      document.getElementById('blog-grid').style.display = 'grid';
+    }
 
-	<!-- Footer -->
-	<footer class="footer">
-		<p>&copy; 2026 Royal Chauffeur Service | Executive &amp; Luxury VIP Transfers. All rights reserved.</p>
-	</footer>
-
+    renderBlogs();
+  </script>
 </body>
 </html>
