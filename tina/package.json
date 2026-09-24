@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "build": "tinacms build"
+  },
+  "dependencies": {
+    "tinacms": "^1.5.0"
+  }
+}
+
