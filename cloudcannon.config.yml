@@ -1,0 +1,17 @@
+paths:
+  static: static
+  uploads: static/uploads
+timezone: Asia/Karachi
+markdown:
+  engine: commonmark
+  options: {}
+_snippets_imports:
+  mdx: true
+  docusaurus_mdx: true
+collections_config:
+  pages:
+    path: ''
+    icon: wysiwyg
+  admin:
+    path: admin
+    icon: ad
