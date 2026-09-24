@@ -1,17 +1,8 @@
 paths:
-  static: static
-  uploads: static/uploads
-timezone: Asia/Karachi
-markdown:
-  engine: commonmark
-  options: {}
-_snippets_imports:
-  mdx: true
-  docusaurus_mdx: true
+  uploads: images/uploads
+
 collections_config:
-  pages:
-    path: ''
-    icon: wysiwyg
-  admin:
-    path: admin
-    icon: ad
+  blog:
+    path: content/blog
+    output: false
+    icon: article
