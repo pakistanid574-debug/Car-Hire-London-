@@ -9,14 +9,16 @@
 <body>
   <!-- Decap CMS Script -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-  
+
   <script>
     CMS.init({
       config: {
         backend: {
           name: 'github',
-          repo: 'Aapka-GitHub-Username/Aapki-Repo-Name', // <-- YAHAN APNA GITHUB USERNAME AUR REPO NAME LIKHEIN (e.g. max/private-driver)
-          branch: 'main'
+          repo: 'HASSAN-ALVI145/private-driver-no',
+          branch: 'main',
+          base_url: 'https://decap-bridge.vercel.app',
+          auth_endpoint: '/api/auth'
         },
         media_folder: 'images/uploads',
         public_folder: '/images/uploads',
