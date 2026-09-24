@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google" content="notranslate" />
   <title>Content Manager</title>
-
-  <!-- Netlify Identity Widget -->
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
   <!-- Decap CMS Script -->
@@ -17,7 +14,8 @@
     CMS.init({
       config: {
         backend: {
-          name: 'git-gateway',
+          name: 'github',
+          repo: 'Aapka-GitHub-Username/Aapki-Repo-Name', // <-- YAHAN APNA GITHUB USERNAME AUR REPO NAME LIKHEIN (e.g. max/private-driver)
           branch: 'main'
         },
         media_folder: 'images/uploads',
@@ -40,16 +38,6 @@
         ]
       }
     });
-
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.reload();
-          });
-        }
-      });
-    }
   </script>
 </body>
 </html>
