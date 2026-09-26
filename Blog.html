@@ -3,7 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Explore the UK - Top 10 Iconic Places</title>
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Explore the UK with Private Driver | Top 15 Iconic Destinations & Luxury Chauffeur</title>
+  <meta name="title" content="Explore the UK with Private Driver | Top 15 Iconic Destinations & Luxury Chauffeur">
+  <meta name="description" content="Discover London, Cotswolds, Isle of Skye, Oxford, Cambridge & top UK attractions with a professional private driver. Book your private chauffeur tour today! Contact: hassanuk145@gmail.com">
+  <meta name="keywords" content="UK private driver, UK chauffeur tour, hire driver UK, London private tours, Cotswolds private driver, Isle of Skye chauffeur, Oxford day tour, Cambridge chauffeur, Seven Sisters driver, travel UK by car">
+  <meta name="author" content="UK Travel & Private Driver Service">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook / WhatsApp Preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://private-driver-no.vercel.app/">
+  <meta property="og:title" content="Explore the UK - Top 15 Iconic Places with Private Driver Service">
+  <meta property="og:description" content="Travel the UK in comfort! Explore Big Ben, Lake District, Cotswolds, Oxford & more with custom private driver tours.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80">
+
+  <!-- Twitter Meta Tags -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://private-driver-no.vercel.app/">
+  <meta property="twitter:title" content="UK Travel & Private Driver Service">
+  <meta property="twitter:description" content="Book a luxury private driver for your UK holiday. Top 15 iconic spots covered!">
+  <meta property="twitter:image" content="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80">
+
+  <!-- Schema.org JSON-LD for Google Rich Snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TravelAgency",
+    "name": "UK Private Driver & Travel Guide",
+    "url": "https://private-driver-no.vercel.app/",
+    "email": "hassanuk145@gmail.com",
+    "description": "Professional private driver and custom chauffeur tours across top United Kingdom iconic destinations.",
+    "areaServed": "United Kingdom",
+    "priceRange": "$$"
+  }
+  </script>
+
   <style>
     * {
       box-sizing: border-box;
@@ -18,21 +54,96 @@
       line-height: 1.6;
     }
 
-    header {
+    /* Sticky Navigation Bar */
+    .navbar {
       background: #1e293b;
-      padding: 2rem 1.5rem;
-      text-align: center;
+      padding: 0.9rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       border-bottom: 2px solid #334155;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar .logo {
+      color: #38bdf8;
+      font-size: 1.3rem;
+      font-weight: bold;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-btn {
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.9rem;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .home-btn {
+      background: #38bdf8;
+      color: #0f172a;
+    }
+
+    .home-btn:hover {
+      background: #7dd3fc;
+    }
+
+    .email-btn {
+      background: #0284c7;
+      color: #ffffff;
+    }
+
+    .email-btn:hover {
+      background: #0369a1;
+    }
+
+    /* Hero Banner Header */
+    header {
+      background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+      padding: 3rem 1.5rem;
+      text-align: center;
+      border-bottom: 1px solid #334155;
     }
 
     header h1 {
       color: #38bdf8;
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       margin-bottom: 0.5rem;
     }
 
     header p {
       color: #94a3b8;
+      font-size: 1.15rem;
+      max-width: 800px;
+      margin: 0 auto 1.5rem auto;
+    }
+
+    .cta-banner {
+      background: #0284c7;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      display: inline-block;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4);
+    }
+
+    .cta-banner:hover {
+      background: #0369a1;
     }
 
     .container {
@@ -41,10 +152,10 @@
       padding: 0 1rem;
     }
 
-    /* Grid View */
+    /* Grid Layout */
     .blog-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 2rem;
     }
 
@@ -54,7 +165,8 @@
       overflow: hidden;
       border: 1px solid #334155;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
+      display: flex;
+      flex-direction: column;
     }
 
     .blog-card:hover {
@@ -64,33 +176,78 @@
 
     .blog-card img {
       width: 100%;
-      height: 200px;
+      height: 220px;
       object-fit: cover;
+      cursor: pointer;
     }
 
     .card-content {
       padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
     }
 
     .card-content h3 {
       color: #38bdf8;
       margin-bottom: 0.5rem;
+      font-size: 1.3rem;
+    }
+
+    .card-content .location-tag {
+      color: #38bdf8;
+      font-size: 0.85rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+      display: inline-block;
     }
 
     .card-content p {
       color: #cbd5e1;
       font-size: 0.95rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
     }
 
-    .read-btn {
-      display: inline-block;
-      color: #38bdf8;
+    /* Action Buttons inside Card */
+    .card-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-card {
+      flex: 1;
+      text-align: center;
+      padding: 10px 12px;
+      border-radius: 6px;
+      font-size: 0.85rem;
       font-weight: bold;
       text-decoration: none;
+      cursor: pointer;
+      border: none;
     }
 
-    /* Detailed Single Page View */
+    .btn-read {
+      background: #334155;
+      color: #38bdf8;
+      border: 1px solid #38bdf8;
+    }
+
+    .btn-read:hover {
+      background: #38bdf8;
+      color: #0f172a;
+    }
+
+    .btn-driver {
+      background: #38bdf8;
+      color: #0f172a;
+    }
+
+    .btn-driver:hover {
+      background: #7dd3fc;
+    }
+
+    /* Article Detail View */
     .blog-detail {
       display: none;
       background: #1e293b;
@@ -101,7 +258,7 @@
 
     .blog-detail img {
       width: 100%;
-      max-height: 450px;
+      max-height: 480px;
       object-fit: cover;
       border-radius: 8px;
       margin-bottom: 1.5rem;
@@ -109,57 +266,120 @@
 
     .blog-detail h2 {
       color: #38bdf8;
-      font-size: 2rem;
+      font-size: 2.2rem;
       margin-bottom: 0.5rem;
     }
 
     .blog-detail .meta {
       color: #38bdf8;
       font-weight: bold;
-      font-size: 0.95rem;
+      font-size: 1rem;
       margin-bottom: 1.5rem;
     }
 
     .blog-detail .content {
       color: #e2e8f0;
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .detail-nav-btns {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
     }
 
     .back-btn {
-      background: #38bdf8;
-      color: #0f172a;
-      border: none;
+      background: #334155;
+      color: #f8fafc;
+      border: 1px solid #475569;
       padding: 10px 20px;
       border-radius: 6px;
       font-weight: bold;
       cursor: pointer;
-      margin-bottom: 1.5rem;
+    }
+
+    .back-btn:hover {
+      background: #475569;
+    }
+
+    .book-driver-main {
+      background: #38bdf8;
+      color: #0f172a;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: bold;
+      display: inline-block;
+      font-size: 1rem;
+    }
+
+    .book-driver-main:hover {
+      background: #7dd3fc;
     }
 
     footer {
       text-align: center;
-      padding: 2rem;
-      color: #64748b;
+      padding: 2.5rem 1rem;
+      color: #94a3b8;
       border-top: 1px solid #334155;
       margin-top: 3rem;
+      background: #1e293b;
+    }
+
+    footer a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        gap: 10px;
+      }
+      header h1 {
+        font-size: 1.8rem;
+      }
+      .card-actions {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 <body>
 
+  <!-- Sticky Top Navigation Bar -->
+  <nav class="navbar">
+    <a href="https://private-driver-no.vercel.app/" class="logo">
+      🚗 UK Private Driver
+    </a>
+    <div class="nav-links">
+      <a href="https://private-driver-no.vercel.app/" class="nav-btn home-btn">🏠 Home Page</a>
+      <a href="mailto:hassanuk145@gmail.com" class="nav-btn email-btn">✉️ Contact Email</a>
+    </div>
+  </nav>
+
+  <!-- Hero Banner Header -->
   <header>
-    <h1>Explore the United Kingdom</h1>
-    <p>Discover 10 iconic, historic, and beautiful destinations across the UK</p>
+    <h1>Top 15 Iconic UK Places to Visit</h1>
+    <p>Explore Great Britain in comfort and style with our dedicated Private Driver & Chauffeur services.</p>
+    <a href="https://private-driver-no.vercel.app/" class="cta-banner">🚗 Hire Your Private Tour Driver Now</a>
   </header>
 
   <div class="container">
-    <!-- Grid view for 10 blog posts -->
+    <!-- Grid View -->
     <div id="blog-grid" class="blog-grid"></div>
 
     <!-- Article Detail View -->
     <div id="blog-detail" class="blog-detail">
-      <button class="back-btn" onclick="showGrid()">← Back to All Destinations</button>
+      <div class="detail-nav-btns">
+        <button class="back-btn" onclick="showGrid()">← Back to All Destinations</button>
+        <a id="detail-driver-link" href="https://private-driver-no.vercel.app/" class="book-driver-main">🚗 Book Private Driver to This Location</a>
+      </div>
       <img id="detail-img" src="" alt="">
       <h2 id="detail-title"></h2>
       <div id="detail-meta" class="meta"></div>
@@ -167,104 +387,157 @@
     </div>
   </div>
 
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2026 UK Travel Guide. All rights reserved.</p>
+    <p>&copy; 2026 UK Travel Guide & Private Chauffeur Service.</p>
+    <p style="margin-top: 8px;">
+      Direct Inquiries: <a href="mailto:hassanuk145@gmail.com">hassanuk145@gmail.com</a> | 
+      Official Site: <a href="https://private-driver-no.vercel.app/">private-driver-no.vercel.app</a>
+    </p>
   </footer>
 
   <script>
+    const HOME_URL = "https://private-driver-no.vercel.app/";
+    const CONTACT_EMAIL = "hassanuk145@gmail.com";
+
     const blogs = [
       {
         id: 1,
         title: "Big Ben & Palace of Westminster",
         location: "London, England",
         image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1000&q=80",
-        summary: "London's most famous landmark and iconic clock tower.",
-        content: "Big Ben is the nickname for the Great Bell of the striking clock at the north end of the Palace of Westminster in London. Towering over the River Thames, this iconic landmark represents the political heart of the United Kingdom and is one of London's most recognizable architectural marvels, especially beautiful when illuminated at night."
+        summary: "London's most famous political landmark and iconic clock tower.",
+        content: "Big Ben and the Palace of Westminster stand along the River Thames in the heart of London. Experience stress-free travel through London's busy streets by booking a private driver who drops you right at the entrance."
       },
       {
         id: 2,
-        title: "Stonehenge",
-        location: "Wiltshire, England",
-        image: "https://images.unsplash.com/photo-1599833975787-5c143f373c30?auto=format&fit=crop&w=1000&q=80",
-        summary: "World-famous prehistoric monument wrapped in ancient mystery.",
-        content: "Stonehenge is a world-renowned prehistoric monument created around 3000 BC to 2000 BC. Composed of massive standing stones arranged in a unique ring formation, it remains one of the greatest archaeological mysteries in human history, attracting travelers interested in ancient culture and astronomy."
+        title: "The Cotswolds",
+        location: "South Central England",
+        image: "https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=1000&q=80",
+        summary: "Charming stone cottages, rolling green hills & scenic countryside.",
+        content: "The Cotswolds is famous for honey-colored villages like Castle Combe and Bourton-on-the-Water. Since public transport is limited here, hiring a private driver is the best way to explore every hidden village in a single day."
       },
       {
         id: 3,
-        title: "Edinburgh Castle",
-        location: "Edinburgh, Scotland",
+        title: "Isle of Skye",
+        location: "Highlands, Scotland",
         image: "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=1000&q=80",
-        summary: "Historic fortress dominating the skyline of Scotland's capital.",
-        content: "Perched atop Castle Rock—an extinct volcanic crag—Edinburgh Castle dominates the skyline of Scotland's capital city. Rich in royal history, this fortress houses the Crown Jewels of Scotland (the Honors of Scotland) and provides breathtaking panoramic views of the entire city."
+        summary: "Dramatic mountain landscapes, coastal cliffs & ancient castles.",
+        content: "Famous for the Old Man of Storr, Quiraing, and Fairy Pools. Enjoy the scenic Scottish Highlands without mountain driving stress by letting your private chauffeur handle the roads."
       },
       {
         id: 4,
-        title: "Giant's Causeway",
-        location: "County Antrim, Northern Ireland",
-        image: "https://images.unsplash.com/photo-1590059301980-8641b99ff1e3?auto=format&fit=crop&w=1000&q=80",
-        summary: "Geological wonder formed by 40,000 interlocking basalt columns.",
-        content: "Giant's Causeway is Northern Ireland's only UNESCO World Heritage Site. Formed by ancient volcanic eruptions, this stunning natural site features around 40,000 interlocking hexagonal basalt columns stepping down into the Irish Sea, wrapped in captivating local mythology."
+        title: "Oxford & Radcliffe Camera",
+        location: "Oxfordshire, England",
+        image: "https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=1000&q=80",
+        summary: "Historic university city with majestic architecture & historic libraries.",
+        content: "Oxford is famous for its world-class university, Bodleian Library, and historic stone architecture. Book a comfortable day trip from London with a dedicated private driver."
       },
       {
         id: 5,
-        title: "Tower Bridge",
-        location: "London, England",
+        title: "Cambridge & The River Cam",
+        location: "Cambridgeshire, England",
         image: "https://images.unsplash.com/photo-1529655683826-aba9b3e77383?auto=format&fit=crop&w=1000&q=80",
-        summary: "Victorian-era bascule bridge crossing the River Thames.",
-        content: "Built in 1894, Tower Bridge is a historic combination of bascule and suspension bridge structures. Visitors can walk across its high-level glass floor walkways to enjoy panoramic vistas of London and observe the historic engine rooms that power the bridge lifts."
+        summary: "Famous university town known for punting tours & King's College Chapel.",
+        content: "Experience the elegance of Cambridge! Walk through historic colleges and take a traditional punt boat down the River Cam on a private door-to-door chauffeur tour."
       },
       {
         id: 6,
-        title: "Loch Ness & Urquhart Castle",
-        location: "Highlands, Scotland",
-        image: "https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=1000&q=80",
-        summary: "Deep Scottish lake known for its scenery and mythical monster.",
-        content: "Loch Ness is a deep freshwater loch in the Scottish Highlands, worldwide famous for sightings of the mythical 'Nessie' monster. Nestled on its shores are the scenic ruins of Urquhart Castle, making it a favorite destination for boat cruises and historic sightseeing."
+        title: "The London Eye",
+        location: "London, England",
+        image: "https://images.unsplash.com/photo-1529655683826-aba9b3e77383?auto=format&fit=crop&w=1000&q=80",
+        summary: "Europe's tallest observation wheel featuring 360° London skyline views.",
+        content: "Located on London's South Bank, the London Eye offers breathtaking views of St Paul's Cathedral and Buckingham Palace. Perfect for private family day tours in London."
       },
       {
         id: 7,
-        title: "The Roman Baths",
-        location: "Bath, England",
-        image: "https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=1000&q=80",
-        summary: "Extensive preserved ancient Roman bathing complex.",
-        content: "Located in the historic city of Bath, the Roman Baths are among the best-preserved Roman sites in Northern Europe. Fed by thermal hot springs that produce natural hot water, the complex showcases intact ancient bathhouses, temples, and Roman artifacts."
+        title: "Stonehenge",
+        location: "Wiltshire, England",
+        image: "https://images.unsplash.com/photo-1599833975787-5c143f373c30?auto=format&fit=crop&w=1000&q=80",
+        summary: "Prehistoric stone circle monument wrapped in ancient mystery.",
+        content: "Stonehenge is a world-renowned prehistoric monument created around 3000 BC. Combine your Stonehenge trip with Bath or Windsor Castle on a custom private driver day tour."
       },
       {
         id: 8,
-        title: "Snowdonia National Park",
-        location: "Gwynedd, Wales",
-        image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80",
-        summary: "Majestic mountains and outdoor adventures in Wales.",
-        content: "Snowdonia National Park (Eryri) in North Wales features dramatic mountain landscapes, including Mount Snowdon—the highest peak in England and Wales. It is a haven for outdoor enthusiasts offering world-class hiking, mountain railway tours, and pristine glacial lakes."
+        title: "Edinburgh Castle",
+        location: "Edinburgh, Scotland",
+        image: "https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=1000&q=80",
+        summary: "Historic fortress dominating the skyline of Scotland's capital.",
+        content: "Perched atop an extinct volcano, Edinburgh Castle holds royal history and the Crown Jewels of Scotland. Enjoy seamless pickup and transfers from Edinburgh Airport or your hotel."
       },
       {
         id: 9,
-        title: "The Lake District",
-        location: "Cumbria, England",
+        title: "Seven Sisters & Brighton",
+        location: "East Sussex, England",
         image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80",
-        summary: "England's premier national park famous for lakes and fells.",
-        content: "The Lake District National Park is renowned for its scenic lakes, rugged mountains, and charming stone villages. Highlights include Lake Windermere and Scafell Pike, providing options for sailing, hiking, and exploring historic literary connections to writers like Beatrix Potter."
+        summary: "Stunning white chalk cliffs & vibrant coastal seaside town.",
+        content: "The Seven Sisters chalk cliffs offer the UK's most dramatic ocean scenery. Avoid tricky coastal bus schedules by riding comfortably with a private driver."
       },
       {
         id: 10,
-        title: "Windsor Castle",
-        location: "Windsor, Berkshire, England",
+        title: "Stratford-upon-Avon",
+        location: "Warwickshire, England",
+        image: "https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=1000&q=80",
+        summary: "Birthplace of William Shakespeare with timber-framed Tudor houses.",
+        content: "Step back in time to 16th-century England in Shakespeare's home town. Combine your tour with Warwick Castle using our luxury chauffeur service."
+      },
+      {
+        id: 11,
+        title: "Giant's Causeway",
+        location: "County Antrim, Northern Ireland",
+        image: "https://images.unsplash.com/photo-1590059301980-8641b99ff1e3?auto=format&fit=crop&w=1000&q=80",
+        summary: "40,000 interlocking basalt columns formed by ancient volcanic activity.",
+        content: "Northern Ireland's premier UNESCO World Heritage site. Explore the scenic Antrim Coastal Drive with your dedicated private tour driver."
+      },
+      {
+        id: 12,
+        title: "York Minster & The Shambles",
+        location: "North Yorkshire, England",
+        image: "https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=1000&q=80",
+        summary: "Medieval cobble streets, Viking history & grand Gothic cathedral.",
+        content: "Walk through medieval history in York. Discover the iconic Shambles street and York Minster cathedral in complete comfort."
+      },
+      {
+        id: 13,
+        title: "Buckingham Palace",
+        location: "London, England",
         image: "https://images.unsplash.com/photo-1568084680786-a84f91d1153c?auto=format&fit=crop&w=1000&q=80",
-        summary: "The oldest and largest occupied castle in the world.",
-        content: "Windsor Castle has served as an official royal residence for over 1,000 years. Visitors can tour the lavish State Apartments decorated with masterpieces from the Royal Collection and visit St George's Chapel, an exquisite example of Gothic architecture."
+        summary: "Official London residence and administrative headquarters of the Monarch.",
+        content: "Witness the iconic Changing of the Guard ceremony and tour the lavish State Rooms. Book luxury executive transfers for royal London tours."
+      },
+      {
+        id: 14,
+        title: "The Lake District",
+        location: "Cumbria, England",
+        image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80",
+        summary: "England's premier national park known for lakes, mountains & hiking.",
+        content: "Explore Lake Windermere, Ullswater, and Scafell Pike. Relax as your private chauffeur navigates Cumbria's scenic narrow pass roads."
+      },
+      {
+        id: 15,
+        title: "Belfast & Titanic Quarter",
+        location: "Northern Ireland",
+        image: "https://images.unsplash.com/photo-1590059301980-8641b99ff1e3?auto=format&fit=crop&w=1000&q=80",
+        summary: "Vibrant capital city famous for Titanic history & political murals.",
+        content: "Visit the world's largest Titanic visitor experience and explore Belfast's historical murals with your private city chauffeur."
       }
     ];
 
     function renderBlogs() {
       const grid = document.getElementById('blog-grid');
       grid.innerHTML = blogs.map(blog => `
-        <div class="blog-card" onclick="showDetail(${blog.id})">
-          <img src="${blog.image}" alt="${blog.title}">
+        <div class="blog-card">
+          <img src="${blog.image}" alt="${blog.title}" onclick="showDetail(${blog.id})">
           <div class="card-content">
-            <h3>${blog.title}</h3>
-            <p style="color: #38bdf8; font-size: 0.85rem; font-weight: bold; margin-bottom: 5px;">📍 ${blog.location}</p>
-            <p>${blog.summary}</p>
-            <span class="read-btn">Read Full Article →</span>
+            <div>
+              <h3>${blog.title}</h3>
+              <span class="location-tag">📍 ${blog.location}</span>
+              <p>${blog.summary}</p>
+            </div>
+            <div class="card-actions">
+              <button class="btn-card btn-read" onclick="showDetail(${blog.id})">Read Guide</button>
+              <a href="${HOME_URL}" target="_blank" class="btn-card btn-driver">🚗 Book Driver ↗</a>
+            </div>
           </div>
         </div>
       `).join('');
@@ -278,7 +551,17 @@
       document.getElementById('detail-img').alt = blog.title;
       document.getElementById('detail-title').innerText = blog.title;
       document.getElementById('detail-meta').innerText = `Location: ${blog.location}`;
-      document.getElementById('detail-content').innerText = blog.content;
+      document.getElementById('detail-content').innerHTML = `
+        <p>${blog.content}</p>
+        <br>
+        <p style="background: #0f172a; padding: 15px; border-radius: 8px; border-left: 4px solid #38bdf8;">
+          <strong>💡 Pro Tip for Travelers:</strong> Visiting <em>${blog.title}</em> is much easier with a dedicated driver. Avoid parking fees & public transit delays! 
+          <br><br>
+          ✉️ Direct Booking Inquiry: <a href="mailto:${CONTACT_EMAIL}?subject=Private Driver Booking Inquiry - ${encodeURIComponent(blog.title)}" style="color: #38bdf8;">${CONTACT_EMAIL}</a>
+        </p>
+      `;
+
+      document.getElementById('detail-driver-link').href = HOME_URL;
 
       document.getElementById('blog-grid').style.display = 'none';
       document.getElementById('blog-detail').style.display = 'block';
