@@ -28,4 +28,12 @@
         <priority>0.8</priority>
     </url>
 
+    <!-- Halloween London Tours Page -->
+    <url>
+        <loc>https://private-driver-no.vercel.app/halloween-london-tours</loc>
+        <lastmod>2026-10-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
 </urlset>
