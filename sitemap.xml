@@ -12,9 +12,17 @@
         <priority>1.0</priority>
     </url>
 
-    <!-- Blog Main Page (Without .html) -->
+    <!-- Blog Main Page -->
     <url>
         <loc>https://private-driver-no.vercel.app/Blog</loc>
+        <lastmod>2026-10-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Christmas Travel Guide Page -->
+    <url>
+        <loc>https://private-driver-no.vercel.app/christmas-travel-guide</loc>
         <lastmod>2026-10-07</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
