@@ -7,7 +7,7 @@
     <!-- Homepage / Main Landing Page -->
     <url>
         <loc>https://private-driver-no.vercel.app/</loc>
-        <lastmod>2026-09-22</lastmod>
+        <lastmod>2026-10-07</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
@@ -15,7 +15,7 @@
     <!-- Blog Main Page (Without .html) -->
     <url>
         <loc>https://private-driver-no.vercel.app/Blog</loc>
-        <lastmod>2026-09-22</lastmod>
+        <lastmod>2026-10-07</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
