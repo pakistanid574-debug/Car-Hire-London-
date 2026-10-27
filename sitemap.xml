@@ -13,13 +13,7 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://private-driver-no.vercel.app/edinburgh-private-driver</loc>
-        <lastmod>2026-10-27</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://private-driver-no.vercel.app/Blog</loc>
+        <loc>https://private-driver-no.vercel.app/autumn-foliage-tours</loc>
         <lastmod>2026-10-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -37,7 +31,7 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://private-driver-no.vercel.app/autumn-foliage-tours</loc>
+        <loc>https://private-driver-no.vercel.app/Blog</loc>
         <lastmod>2026-10-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
