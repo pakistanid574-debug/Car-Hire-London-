@@ -1,0 +1,27 @@
+name: Auto Google Indexing
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  index-urls:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install Dependencies
+        run: npm install googleapis
+
+      - name: Run Indexing Script
+        env:
+          GSC_JSON_KEY: ${{ secrets.GSC_JSON_KEY }}
+        run: node index-now.js
+        
