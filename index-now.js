@@ -1,52 +1,40 @@
 const { google } = require('googleapis');
 
-// GitHub Secrets se key read karega
-const keyData = process.env.GSC_JSON_KEY ? JSON.parse(process.env.GSC_JSON_KEY) : null;
+// GitHub Secret se JSON Key read karna
+const serviceAccountKey = process.env.GSC_JSON_KEY;
 
-if (!keyData) {
-  console.error('GSC_JSON_KEY environment variable is missing!');
+if (!serviceAccountKey) {
+  console.error("Error: GSC_JSON_KEY environment variable is missing!");
   process.exit(1);
 }
 
-const jwtClient = new google.auth.JWT(
-  keyData.client_email,
-  null,
-  keyData.private_key,
-  ['https://www.googleapis.com/auth/indexing'],
-  null
-);
+// JSON parse karke Auth setup karna
+const auth = new google.auth.GoogleAuth({
+  credentials: JSON.parse(serviceAccountKey),
+  scopes: ['https://www.googleapis.com/auth/indexing'],
+});
 
-// Yahan apne wo URLs dalein jinhe Google par instant index karwana hai
-const urlsToIndex = [
-  'https://private-driver-no.vercel.app/',
-  'https://private-driver-no.vercel.app/chauffeur-service-london',
-  'https://private-driver-no.vercel.app/wedding-chauffeur-london'
-];
+const indexing = google.indexing({ version: 'v3', auth });
 
-jwtClient.authorize(async (err, tokens) => {
-  if (err) {
-    console.error('Authentication Error:', err);
-    return;
-  }
+async function requestIndexing() {
+  // Aapke URLs ki list yahan aayegi
+  const urls = [
+    'https://private-driver-no.vercel.app/'
+  ];
 
-  for (const url of urlsToIndex) {
+  for (const url of urls) {
     try {
-      const response = await fetch('https://indexing.googleapis.com/v1/urlNotifications:publish', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${tokens.access_token}`
-        },
-        body: JSON.stringify({
+      const res = await indexing.urlNotifications.publish({
+        requestBody: {
           url: url,
-          type: 'URL_UPDATED'
-        })
+          type: 'URL_UPDATED',
+        },
       });
-
-      const data = await response.json();
-      console.log(`Successfully pushed ${url}:`, data);
+      console.log(`Successfully pushed: ${url}`, res.data);
     } catch (error) {
-      console.error(`Failed to push ${url}:`, error);
+      console.error(`Error indexing ${url}:`, error.message);
     }
   }
-});
+}
+
+requestIndexing();
