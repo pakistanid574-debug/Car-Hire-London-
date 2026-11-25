@@ -1,42 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <!-- Primary SEO Meta Tags -->
-  <title>London Chauffeur Blog & UK Travel Guides | Royal Chauffeur</title>
-  <meta name="title" content="London Chauffeur Blog & UK Travel Guides | Royal Chauffeur">
-  <meta name="description" content="Read London chauffeur, airport transfer, Mercedes chauffeur and UK travel guides from Royal Chauffeur Service London. Explore helpful articles and travel tips.">
-  <meta name="keywords" content="UK private driver, Chauffeur Service London, London to Manchester chauffeur, Luton airport to London chauffeur, hire driver UK, London private tours, Cotswolds private driver, Isle of Skye chauffeur">
-  <meta name="author" content="UK Travel & Private Driver Service">
-  <meta name="robots" content="index, follow">
+  <title>London Chauffeur Blog &amp; UK Travel Guides | Royal Chauffeur</title>
+  <meta name="description" content="Read London chauffeur, airport transfer, Mercedes chauffeur, and UK travel guides from Royal Chauffeur Service London.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://private-driver-no.vercel.app/Blog">
 
   <!-- Open Graph / Facebook / WhatsApp Preview -->
+  <meta property="og:locale" content="en_GB">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://private-driver-no.vercel.app/">
-  <meta property="og:title" content="Explore the UK - Iconic Places & London Chauffeur Service">
-  <meta property="og:description" content="Travel the UK in comfort! Explore London, Manchester transfers, Luton Airport Transfers, Big Ben, Cotswolds & more with custom private driver tours.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:url" content="https://private-driver-no.vercel.app/Blog">
+  <meta property="og:title" content="London Chauffeur Blog &amp; UK Travel Guides | Royal Chauffeur">
+  <meta property="og:description" content="Practical London chauffeur, Luton &amp; London airport transfer advice, and UK route guides.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&amp;fit=crop&w=1200&q=80">
 
   <!-- Twitter Meta Tags -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://private-driver-no.vercel.app/">
-  <meta property="twitter:title" content="UK Travel & Private Driver Service">
-  <meta property="twitter:description" content="Book a luxury private driver for your UK holiday, long-distance transfers, and airport pickups.">
-  <meta property="twitter:image" content="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://private-driver-no.vercel.app/Blog">
+  <meta name="twitter:title" content="London Chauffeur Blog &amp; UK Travel Guides | Royal Chauffeur">
+  <meta name="twitter:description" content="London chauffeur guides, airport transfer tips, and UK route planning.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&amp;fit=crop&w=1200&q=80">
 
-  <!-- Schema.org JSON-LD for Google Rich Snippets -->
+  <!-- Schema.org JSON-LD for Blog -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "TravelAgency",
-    "name": "UK Private Driver & Travel Guide",
-    "url": "https://private-driver-no.vercel.app/",
-    "email": "royalchauffeur129@gmail.com",
-    "description": "Professional private driver, airport transfers, intercity London to Manchester chauffeur, and custom tours across top United Kingdom destinations.",
-    "areaServed": "United Kingdom",
-    "priceRange": "$$"
+    "@type": "Blog",
+    "@id": "https://private-driver-no.vercel.app/Blog#blog",
+    "name": "Royal Chauffeur London Blog & UK Travel Guides",
+    "url": "https://private-driver-no.vercel.app/Blog",
+    "inLanguage": "en-GB",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Royal Chauffeur Service London",
+      "url": "https://private-driver-no.vercel.app/",
+      "email": "royalchauffeur129@gmail.com"
+    }
   }
   </script>
 
@@ -54,7 +57,6 @@
       line-height: 1.6;
     }
 
-    /* Sticky Navigation Bar */
     .navbar {
       background: #1e293b;
       padding: 0.9rem 1.5rem;
@@ -124,7 +126,6 @@
       background: #0369a1;
     }
 
-    /* Hero Banner Header */
     header {
       background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
       padding: 3rem 1.5rem;
@@ -166,7 +167,6 @@
       padding: 0 1rem;
     }
 
-    /* Grid Layout */
     .blog-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -223,7 +223,6 @@
       margin-bottom: 1.2rem;
     }
 
-    /* Action Buttons inside Card */
     .card-actions {
       display: flex;
       gap: 10px;
@@ -261,7 +260,6 @@
       background: #7dd3fc;
     }
 
-    /* Article Detail View */
     .blog-detail {
       display: none;
       background: #1e293b;
@@ -367,47 +365,43 @@
 <body>
 
   <!-- Sticky Top Navigation Bar -->
-  <nav class="navbar">
+  <nav class="navbar" aria-label="Blog Navigation">
     <a href="https://private-driver-no.vercel.app/" class="logo">
-      🚗 UK Private Driver
+      Chauffeur in London
     </a>
     <div class="nav-links">
-      <a href="https://private-driver-no.vercel.app/" class="nav-btn home-btn">🏠 Home Page</a>
-      <a href="https://private-driver-no.vercel.app/chauffeur-luton-airport-london" target="_blank" class="nav-btn service-nav-btn">✈️ Luton Airport Transfer</a>
-      <a href="https://private-driver-no.vercel.app/Chauffeur%20Service%20London" target="_blank" class="nav-btn service-nav-btn">🚘 Chauffeur Service London</a>
-      <a href="https://private-driver-no.vercel.app/london-to-manchester-chauffeur" target="_blank" class="nav-btn service-nav-btn">🛣️ London to Manchester</a>
-      <a href="mailto:royalchauffeur129@gmail.com" class="nav-btn email-btn">✉️ Contact Email</a>
+      <a href="https://private-driver-no.vercel.app/" class="nav-btn home-btn">Home Page</a>
+      <a href="https://private-driver-no.vercel.app/wedding-chauffeur-london" class="nav-btn service-nav-btn">Wedding Chauffeur</a>
+      <a href="https://private-driver-no.vercel.app/chauffeur-luton-airport-london" class="nav-btn service-nav-btn">Luton Airport Transfer</a>
+      <a href="https://private-driver-no.vercel.app/london-to-manchester-chauffeur" class="nav-btn service-nav-btn">London to Manchester</a>
+      <a href="mailto:royalchauffeur129@gmail.com" class="nav-btn email-btn">Contact Email</a>
     </div>
   </nav>
 
   <!-- Hero Banner Header -->
   <header>
-    <h1>Top 18 Iconic UK Places & Chauffeur Services</h1>
-    <p>Explore Great Britain in comfort and style with our dedicated Private Driver, Airport Transfers & Intercity Chauffeur services.</p>
-    <a href="https://private-driver-no.vercel.app/" class="cta-banner">🚗 Hire Your Private Tour Driver Now</a>
+    <h1>London Chauffeur Blog &amp; UK Travel Guides</h1>
+    <p>Practical guides on hiring a chauffeur in London, airport transfers, Mercedes vehicles, and key UK routes.</p>
+    <a href="https://private-driver-no.vercel.app/#booking" class="cta-banner">Get a London Chauffeur Quote</a>
   </header>
 
-  <!-- Crawlable Blog Index: direct HTML links for search engines -->
+  <!-- Crawlable Blog Index -->
   <section class="container" aria-labelledby="all-blogs-title">
     <div style="background:#1e293b;border:1px solid #334155;border-radius:12px;padding:1.5rem;margin-bottom:2rem;">
-      <h2 id="all-blogs-title" style="color:#38bdf8;font-size:1.8rem;margin-bottom:1rem;">Latest Chauffeur & London Travel Blogs</h2>
-      <p style="color:#cbd5e1;margin-bottom:1.2rem;">Explore our London chauffeur guides, airport transfer advice, seasonal travel articles and luxury Mercedes chauffeur guides.</p>
+      <h2 id="all-blogs-title" style="color:#38bdf8;font-size:1.8rem;margin-bottom:1rem;">Featured Chauffeur &amp; London Guides</h2>
+      <p style="color:#cbd5e1;margin-bottom:1.2rem;">Explore our London chauffeur guides, airport transfer advice, wedding chauffeur options, and Mercedes fleet articles.</p>
       <ul style="list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;">
         <li><a style="color:#38bdf8;text-decoration:underline;" href="https://private-driver-no.vercel.app/chauffeur-service-london-hotel-transfers.html">London Hotel Transfers with a Chauffeur</a></li>
-        <li><a style="color:#38bdf8;text-decoration:underline;" href="https://private-driver-no.vercel.app/chauffeur-bonfire-night-london-2026.html">London Bonfire Night Chauffeur Guide 2026</a></li>
-        <li><a style="color:#38bdf8;text-decoration:underline;" href="https://private-driver-no.vercel.app/chauffeur-fury-vs-joshua-london.html">Fury vs Joshua: Chauffeur Travel Guide</a></li>
         <li><a style="color:#38bdf8;text-decoration:underline;" href="https://private-driver-no.vercel.app/chauffeur-mercedes-london.html">Mercedes Chauffeur London Guide</a></li>
         <li><a style="color:#38bdf8;text-decoration:underline;" href="https://private-driver-no.vercel.app/chauffeur-mercedes-e-class-london.html">Mercedes E-Class Chauffeur London</a></li>
-        <li><a style="color:#38bdf8;text-decoration:underline;" href="https://private-driver-no.vercel.app/christmas-travel-guide">Christmas Travel Guide</a></li>
-        <li><a style="color:#38bdf8;text-decoration:underline;" href="https://private-driver-no.vercel.app/halloween-london-tours">Halloween London Tours</a></li>
-        <li><a style="color:#38bdf8;text-decoration:underline;" href="https://private-driver-no.vercel.app/wedding-chauffeur-london">Wedding Chauffeur London</a></li>
-        <li><a style="color:#38bdf8;text-decoration:underline;" href="https://private-driver-no.vercel.app/autumn-foliage-tours">Autumn Foliage Tours</a></li>
+        <li><a style="color:#38bdf8;text-decoration:underline;" href="https://private-driver-no.vercel.app/wedding-chauffeur-london">Luxury Wedding Chauffeur London</a></li>
         <li><a style="color:#38bdf8;text-decoration:underline;" href="https://private-driver-no.vercel.app/edinburgh-private-driver">Edinburgh Private Driver</a></li>
+        <li><a style="color:#38bdf8;text-decoration:underline;" href="https://private-driver-no.vercel.app/christmas-travel-guide">Christmas Travel Guide</a></li>
       </ul>
-      <h3 style="color:#38bdf8;font-size:1.2rem;margin:1.5rem 0 .7rem;">Chauffeur Service Pages</h3>
+      <h3 style="color:#38bdf8;font-size:1.2rem;margin:1.5rem 0 .7rem;">Core Chauffeur Service Pages</h3>
       <ul style="list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;">
-        <li><a style="color:#38bdf8;text-decoration:underline;" href="https://private-driver-no.vercel.app/chauffeur-service-london">Chauffeur Service London</a></li>
-        <li><a style="color:#38bdf8;text-decoration:underline;" href="https://private-driver-no.vercel.app/chauffeur-service-near-me">Private Driver Near Me</a></li>
+        <li><a style="color:#38bdf8;text-decoration:underline;" href="https://private-driver-no.vercel.app/">Chauffeur in London (Home)</a></li>
+        <li><a style="color:#38bdf8;text-decoration:underline;" href="https://private-driver-no.vercel.app/wedding-chauffeur-london">Luxury Wedding Chauffeur</a></li>
         <li><a style="color:#38bdf8;text-decoration:underline;" href="https://private-driver-no.vercel.app/chauffeur-luton-airport-london">Luton Airport Chauffeur</a></li>
         <li><a style="color:#38bdf8;text-decoration:underline;" href="https://private-driver-no.vercel.app/london-to-manchester-chauffeur">London to Manchester Chauffeur</a></li>
       </ul>
@@ -421,8 +415,8 @@
     <!-- Article Detail View -->
     <div id="blog-detail" class="blog-detail">
       <div class="detail-nav-btns">
-        <button class="back-btn" onclick="showGrid()">← Back to All Destinations</button>
-        <a id="detail-driver-link" href="https://private-driver-no.vercel.app/" target="_blank" class="book-driver-main">🚗 Book Private Driver / View Service</a>
+        <button class="back-btn" onclick="showGrid()">Back to All Guides</button>
+        <a id="detail-driver-link" href="https://private-driver-no.vercel.app/" class="book-driver-main">Book Chauffeur in London</a>
       </div>
       <img id="detail-img" src="" alt="">
       <h2 id="detail-title"></h2>
@@ -433,205 +427,117 @@
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2026 UK Travel Guide & Private Chauffeur Service.</p>
+    <p>&copy; 2026 Royal Chauffeur Service London. All rights reserved.</p>
     <p style="margin-top: 8px;">
-      Quick Links: 
-      <a href="https://private-driver-no.vercel.app/chauffeur-luton-airport-london" target="_blank">Luton Airport Chauffeur</a> | 
-      <a href="https://private-driver-no.vercel.app/Chauffeur%20Service%20London" target="_blank">Chauffeur Service London</a> | 
-      <a href="https://private-driver-no.vercel.app/london-to-manchester-chauffeur" target="_blank">London to Manchester Chauffeur</a>
+      Quick Links:
+      <a href="https://private-driver-no.vercel.app/">Chauffeur in London</a> |
+      <a href="https://private-driver-no.vercel.app/wedding-chauffeur-london">Luxury Wedding Chauffeur</a> |
+      <a href="https://private-driver-no.vercel.app/chauffeur-luton-airport-london">Luton Airport Chauffeur</a> |
+      <a href="https://private-driver-no.vercel.app/london-to-manchester-chauffeur">London to Manchester Chauffeur</a>
     </p>
     <p style="margin-top: 8px;">
-      Direct Inquiries: <a href="mailto:royalchauffeur129@gmail.com">royalchauffeur129@gmail.com</a> | 
-      Official Site: <a href="https://private-driver-no.vercel.app/">private-driver-no.vercel.app</a>
+      <a href="https://private-driver-no.vercel.app/privacy-policy">Privacy Policy</a> |
+      Direct Inquiries: <a href="mailto:royalchauffeur129@gmail.com">royalchauffeur129@gmail.com</a>
     </p>
   </footer>
 
   <script>
     const HOME_URL = "https://private-driver-no.vercel.app/";
+    const WEDDING_URL = "https://private-driver-no.vercel.app/wedding-chauffeur-london";
     const CONTACT_EMAIL = "royalchauffeur129@gmail.com";
 
     const blogs = [
       {
         id: 1,
         title: "Chauffeur Luton Airport to London",
-        location: "Luton Airport (LTN) ↔ London",
+        location: "Luton Airport (LTN) to London",
         image: "https://carhirelondon.uk/wp-content/uploads/2026/09/shangrila-shard-1.jpg",
         url: "https://private-driver-no.vercel.app/chauffeur-luton-airport-london",
-        summary: "Seamless, reliable door-to-door private airport transfers between London Luton Airport and Central London.",
-        content: "Arriving at London Luton Airport? Skip the stress of train delays and heavy luggage. Our dedicated Luton Airport to London chauffeur service offers meet-and-greet arrivals, flight tracking, and direct door-to-door comfort to your hotel, office, or any London address."
+        summary: "Direct private airport transfers between London Luton Airport and Central London.",
+        content: "Arriving at London Luton Airport? Our Luton Airport to London chauffeur service provides arrivals meet-and-greet, flight tracking, and direct door-to-door transfers to hotels, offices, or London postcodes."
       },
       {
         id: 2,
-        title: "Chauffeur Service London",
+        title: "Chauffeur Service in London",
         location: "Central & Greater London",
         image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1000&q=80",
-        url: "https://private-driver-no.vercel.app/Chauffeur%20Service%20London",
-        summary: "Professional hourly hire, corporate travel, sightseeing & executive point-to-point rides across London.",
-        content: "Navigate London effortlessly with our dedicated Chauffeur Service London. Whether you need full-day business travel, VIP event transport, shopping trips in Mayfair, or custom sightseeing around the city, your experienced local driver stays at your service."
+        url: HOME_URL,
+        summary: "Hourly hire, corporate travel, and point-to-point chauffeur rides across London.",
+        content: "Plan your day across Mayfair, Knightsbridge, Canary Wharf, and Central London with hourly or point-to-point chauffeur hire tailored to your schedule."
       },
       {
         id: 3,
         title: "London to Manchester Chauffeur",
-        location: "London ↔ Manchester Intercity",
+        location: "London to Manchester",
         image: "https://carhirelondon.uk/wp-content/uploads/2026/09/London-to-Gloucester-Chauffeur-Service.png",
         url: "https://private-driver-no.vercel.app/london-to-manchester-chauffeur",
-        summary: "Direct long-distance private car transfer between London and Manchester in total comfort.",
-        content: "Travel smoothly between London and Manchester without crowded trains or multiple station changes. Our London to Manchester chauffeur service provides flexible pickup times, luggage assistance, optional scenic stops along the way, and direct door-to-door arrival."
+        summary: "Direct long-distance private car transfer between London and Manchester.",
+        content: "Travel between London and Manchester with flexible pickup times, luggage assistance, and direct door-to-door routing without station transfers."
       },
       {
         id: 4,
+        title: "Luxury Wedding Chauffeur in London",
+        location: "London & Surrounding Venues",
+        image: "https://images.unsplash.com/photo-1568084680786-a84f91d1153c?auto=format&fit=crop&w=1000&q=80",
+        url: WEDDING_URL,
+        summary: "Executive and luxury cars for weddings, receptions, and guest transfers in London.",
+        content: "Coordinate timely arrivals for wedding ceremonies, reception venues, and family or VIP guests with dedicated chauffeur scheduling."
+      },
+      {
+        id: 5,
         title: "Big Ben & Palace of Westminster",
         location: "London, England",
         image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1000&q=80",
         url: HOME_URL,
-        summary: "London's most famous political landmark and iconic clock tower.",
-        content: "Big Ben and the Palace of Westminster stand along the River Thames in the heart of London. Experience stress-free travel through London's busy streets by booking a private driver who drops you right at the entrance."
-      },
-      {
-        id: 5,
-        title: "The Cotswolds",
-        location: "South Central England",
-        image: "https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=1000&q=80",
-        url: HOME_URL,
-        summary: "Charming stone cottages, rolling green hills & scenic countryside.",
-        content: "The Cotswolds is famous for honey-colored villages like Castle Combe and Bourton-on-the-Water. Since public transport is limited here, hiring a private driver is the best way to explore every hidden village in a single day."
+        summary: "Plan central London sightseeing around Westminster and the River Thames.",
+        content: "Combine Westminster, Whitehall, and nearby London landmarks on a custom hourly chauffeur itinerary with direct pickup and drop-off points."
       },
       {
         id: 6,
-        title: "Isle of Skye",
-        location: "Highlands, Scotland",
-        image: "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=1000&q=80",
+        title: "The Cotswolds Day Trips from London",
+        location: "Cotswolds, England",
+        image: "https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=1000&q=80",
         url: HOME_URL,
-        summary: "Dramatic mountain landscapes, coastal cliffs & ancient castles.",
-        content: "Famous for the Old Man of Storr, Quiraing, and Fairy Pools. Enjoy the scenic Scottish Highlands without mountain driving stress by letting your private chauffeur handle the roads."
+        summary: "Visit Cotswolds villages on a full-day private chauffeur route from London.",
+        content: "Explore countryside villages at your own pace with a pre-planned full-day chauffeur route departing from London."
       },
       {
         id: 7,
-        title: "Oxford & Radcliffe Camera",
-        location: "Oxfordshire, England",
-        image: "https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=1000&q=80",
+        title: "Oxford & Cambridge Chauffeur Tours",
+        location: "Oxfordshire & Cambridgeshire",
+        image: "https://images.unsplash.com/photo-1529655683826-aba9b3e77383?auto=format&fit=crop&w=1000&q=80",
         url: HOME_URL,
-        summary: "Historic university city with majestic architecture & historic libraries.",
-        content: "Oxford is famous for its world-class university, Bodleian Library, and historic stone architecture. Book a comfortable day trip from London with a dedicated private driver."
+        summary: "Day trips from London to historic university cities with door-to-door comfort.",
+        content: "Travel from London to Oxford or Cambridge with flexible timing and direct return transport."
       },
       {
         id: 8,
-        title: "Cambridge & The River Cam",
-        location: "Cambridgeshire, England",
-        image: "https://images.unsplash.com/photo-1529655683826-aba9b3e77383?auto=format&fit=crop&w=1000&q=80",
-        url: HOME_URL,
-        summary: "Famous university town known for punting tours & King's College Chapel.",
-        content: "Experience the elegance of Cambridge! Walk through historic colleges and take a traditional punt boat down the River Cam on a private door-to-door chauffeur tour."
-      },
-      {
-        id: 9,
-        title: "The London Eye",
-        location: "London, England",
-        image: "https://images.unsplash.com/photo-1529655683826-aba9b3e77383?auto=format&fit=crop&w=1000&q=80",
-        url: HOME_URL,
-        summary: "Europe's tallest observation wheel featuring 360° London skyline views.",
-        content: "Located on London's South Bank, the London Eye offers breathtaking views of St Paul's Cathedral and Buckingham Palace. Perfect for private family day tours in London."
-      },
-      {
-        id: 10,
-        title: "Stonehenge",
-        location: "Wiltshire, England",
+        title: "Stonehenge & Bath Private Routes",
+        location: "Wiltshire & Somerset, England",
         image: "https://images.unsplash.com/photo-1599833975787-5c143f373c30?auto=format&fit=crop&w=1000&q=80",
         url: HOME_URL,
-        summary: "Prehistoric stone circle monument wrapped in ancient mystery.",
-        content: "Stonehenge is a world-renowned prehistoric monument created around 3000 BC. Combine your Stonehenge trip with Bath or Windsor Castle on a custom private driver day tour."
-      },
-      {
-        id: 11,
-        title: "Edinburgh Castle",
-        location: "Edinburgh, Scotland",
-        image: "https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=1000&q=80",
-        url: HOME_URL,
-        summary: "Historic fortress dominating the skyline of Scotland's capital.",
-        content: "Perched atop an extinct volcano, Edinburgh Castle holds royal history and the Crown Jewels of Scotland. Enjoy seamless pickup and transfers from Edinburgh Airport or your hotel."
-      },
-      {
-        id: 12,
-        title: "Seven Sisters & Brighton",
-        location: "East Sussex, England",
-        image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80",
-        url: HOME_URL,
-        summary: "Stunning white chalk cliffs & vibrant coastal seaside town.",
-        content: "The Seven Sisters chalk cliffs offer the UK's most dramatic ocean scenery. Avoid tricky coastal bus schedules by riding comfortably with a private driver."
-      },
-      {
-        id: 13,
-        title: "Stratford-upon-Avon",
-        location: "Warwickshire, England",
-        image: "https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=1000&q=80",
-        url: HOME_URL,
-        summary: "Birthplace of William Shakespeare with timber-framed Tudor houses.",
-        content: "Step back in time to 16th-century England in Shakespeare's home town. Combine your tour with Warwick Castle using our luxury chauffeur service."
-      },
-      {
-        id: 14,
-        title: "Giant's Causeway",
-        location: "County Antrim, Northern Ireland",
-        image: "https://images.unsplash.com/photo-1590059301980-8641b99ff1e3?auto=format&fit=crop&w=1000&q=80",
-        url: HOME_URL,
-        summary: "40,000 interlocking basalt columns formed by ancient volcanic activity.",
-        content: "Northern Ireland's premier UNESCO World Heritage site. Explore the scenic Antrim Coastal Drive with your dedicated private tour driver."
-      },
-      {
-        id: 15,
-        title: "York Minster & The Shambles",
-        location: "North Yorkshire, England",
-        image: "https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=1000&q=80",
-        url: HOME_URL,
-        summary: "Medieval cobble streets, Viking history & grand Gothic cathedral.",
-        content: "Walk through medieval history in York. Discover the iconic Shambles street and York Minster cathedral in complete comfort."
-      },
-      {
-        id: 16,
-        title: "Buckingham Palace",
-        location: "London, England",
-        image: "https://images.unsplash.com/photo-1568084680786-a84f91d1153c?auto=format&fit=crop&w=1000&q=80",
-        url: HOME_URL,
-        summary: "Official London residence and administrative headquarters of the Monarch.",
-        content: "Witness the iconic Changing of the Guard ceremony and tour the lavish State Rooms. Book luxury executive transfers for royal London tours."
-      },
-      {
-        id: 17,
-        title: "The Lake District",
-        location: "Cumbria, England",
-        image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80",
-        url: HOME_URL,
-        summary: "England's premier national park known for lakes, mountains & hiking.",
-        content: "Explore Lake Windermere, Ullswater, and Scafell Pike. Relax as your private chauffeur navigates Cumbria's scenic narrow pass roads."
-      },
-      {
-        id: 18,
-        title: "Belfast & Titanic Quarter",
-        location: "Northern Ireland",
-        image: "https://images.unsplash.com/photo-1590059301980-8641b99ff1e3?auto=format&fit=crop&w=1000&q=80",
-        url: HOME_URL,
-        summary: "Vibrant capital city famous for Titanic history & political murals.",
-        content: "Visit the world's largest Titanic visitor experience and explore Belfast's historical murals with your private city chauffeur."
+        summary: "Full-day journeys from London to Stonehenge and Bath.",
+        content: "Pair Stonehenge with Bath or Windsor on a private full-day chauffeur trip tailored to your arrival and return times."
       }
     ];
 
     function renderBlogs() {
       const grid = document.getElementById('blog-grid');
       grid.innerHTML = blogs.map(blog => `
-        <div class="blog-card">
-          <img src="${blog.image}" alt="${blog.title}" onclick="showDetail(${blog.id})">
+        <article class="blog-card">
+          <img src="${blog.image}" alt="${blog.title}" onclick="showDetail(${blog.id})" loading="lazy">
           <div class="card-content">
             <div>
               <h3>${blog.title}</h3>
-              <span class="location-tag">📍 ${blog.location}</span>
+              <span class="location-tag">${blog.location}</span>
               <p>${blog.summary}</p>
             </div>
             <div class="card-actions">
               <button class="btn-card btn-read" onclick="showDetail(${blog.id})">Read Guide</button>
-              <a href="${blog.url}" target="_blank" class="btn-card btn-driver">🚗 Book Driver ↗</a>
+              <a href="${blog.url}" class="btn-card btn-driver">View Service</a>
             </div>
           </div>
-        </div>
+        </article>
       `).join('');
     }
 
@@ -642,16 +548,16 @@
       document.getElementById('detail-img').src = blog.image;
       document.getElementById('detail-img').alt = blog.title;
       document.getElementById('detail-title').innerText = blog.title;
-      document.getElementById('detail-meta').innerText = `Location: ${blog.location}`;
+      document.getElementById('detail-meta').innerText = `Route / Area: ${blog.location}`;
       document.getElementById('detail-content').innerHTML = `
         <p>${blog.content}</p>
         <br>
         <p style="background: #0f172a; padding: 15px; border-radius: 8px; border-left: 4px solid #38bdf8;">
-          <strong>💡 Pro Tip for Travelers:</strong> Booking <em>${blog.title}</em> is effortless with our dedicated private driver service. Avoid parking fees & public transit delays! 
+          <strong>Booking Info:</strong> Request a quote for <em>${blog.title}</em> with your pickup postcode, destination or hourly duration, date, and vehicle choice.
           <br><br>
-          🔗 Service Page: <a href="${blog.url}" target="_blank" style="color: #38bdf8;">${blog.url}</a>
+          Service Page: <a href="${blog.url}" style="color: #38bdf8; text-decoration: underline;">${blog.url}</a>
           <br>
-          ✉️ Direct Booking Inquiry: <a href="mailto:${CONTACT_EMAIL}?subject=Private Driver Booking Inquiry - ${encodeURIComponent(blog.title)}" style="color: #38bdf8;">${CONTACT_EMAIL}</a>
+          Email Inquiry: <a href="mailto:${CONTACT_EMAIL}?subject=Chauffeur Inquiry - ${encodeURIComponent(blog.title)}" style="color: #38bdf8; text-decoration: underline;">${CONTACT_EMAIL}</a>
         </p>
       `;
 
