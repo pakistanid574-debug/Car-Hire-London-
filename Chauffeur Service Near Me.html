@@ -1,558 +1,532 @@
-<!-- SEO Meta Details (Add to Yoast SEO / Rank Math / Page Head)
-Meta Title: Chauffeur Service Near Me UK | 24/7 Luxury Private Driver Hire
-Meta Description: Searching for a reliable chauffeur service near me in the UK? Book executive Mercedes saloons, Range Rovers & V-Class MPVs across London, Manchester, Birmingham & UK airports.
-Focus Keyword: Chauffeur Service Near Me
-URL Slug: /chauffeur-service-near-me
--->
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chauffeur Service Near Me UK | 24/7 Luxury Private Driver Hire</title>
+  <meta name="description" content="Searching for a reliable chauffeur service near me in the UK? Book executive Mercedes saloons, Range Rovers & V-Class MPVs across London, Manchester, Birmingham & UK airports." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <!-- Update canonical to match your exact live URL -->
+  <link rel="canonical" href="https://private-driver-no.vercel.app/chauffeur-service-near-me" />
 
-<style>
-  .pd-uk-wrapper {
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    color: #1f1f1f;
-    line-height: 1.75;
-    max-width: 920px;
-    margin: 0 auto;
-    padding: 24px 16px;
-  }
-  .pd-uk-wrapper h1 {
-    font-size: 2.25rem;
-    color: #0f0f0f;
-    line-height: 1.25;
-    margin-bottom: 18px;
-    font-weight: 700;
-  }
-  .pd-uk-wrapper h2 {
-    font-size: 1.65rem;
-    color: #0f0f0f;
-    margin-top: 40px;
-    margin-bottom: 16px;
-    border-left: 4px solid #c59d5f;
-    padding-left: 14px;
-    font-weight: 700;
-  }
-  .pd-uk-wrapper h3 {
-    font-size: 1.25rem;
-    color: #1a1a1a;
-    margin-top: 26px;
-    margin-bottom: 10px;
-    font-weight: 600;
-  }
-  .pd-uk-wrapper p {
-    margin-bottom: 18px;
-    font-size: 1.05rem;
-  }
-  .pd-uk-wrapper a {
-    color: #9e783a;
-    text-decoration: underline;
-    font-weight: 600;
-  }
-  .pd-uk-wrapper ul, .pd-uk-wrapper ol {
-    margin-bottom: 24px;
-    padding-left: 24px;
-  }
-  .pd-uk-wrapper li {
-    margin-bottom: 10px;
-    font-size: 1.05rem;
-  }
-  .pd-uk-wrapper img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin: 26px 0 8px 0;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.09);
-    display: block;
-  }
-  .pd-img-caption {
-    font-size: 0.9rem;
-    color: #555555;
-    text-align: center;
-    margin-bottom: 28px;
-    font-style: italic;
-  }
-  .pd-highlight-box {
-    background-color: #fbf8f3;
-    border: 1px solid #eadcc5;
-    border-left: 4px solid #c59d5f;
-    padding: 18px 22px;
-    border-radius: 6px;
-    margin: 26px 0;
-  }
-  .pd-fleet-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 26px 0;
-    font-size: 0.98rem;
-  }
-  .pd-fleet-table th, .pd-fleet-table td {
-    border: 1px solid #dddddd;
-    padding: 14px 16px;
-    text-align: left;
-  }
-  .pd-fleet-table th {
-    background-color: #111111;
-    color: #ffffff;
-    font-weight: 600;
-  }
-  .pd-fleet-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-
-  /* Interactive + / - Accordion FAQ Styling */
-  .pd-faq-list {
-    margin-top: 20px;
-  }
-  .pd-faq-item {
-    background: #f8f8f8;
-    border: 1px solid #e5e5e5;
-    border-left: 4px solid #111111;
-    border-radius: 6px;
-    margin-bottom: 12px;
-    overflow: hidden;
-    transition: border-color 0.2s ease, background-color 0.2s ease;
-  }
-  .pd-faq-item[open] {
-    background: #ffffff;
-    border-left-color: #c59d5f;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-  }
-  .pd-faq-item summary {
-    list-style: none;
-    cursor: pointer;
-    padding: 16px 20px;
-    font-size: 1.08rem;
-    font-weight: 600;
-    color: #111111;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-    user-select: none;
-  }
-  .pd-faq-item summary::-webkit-details-marker {
-    display: none;
-  }
-  .pd-faq-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background-color: #111111;
-    color: #ffffff;
-    font-size: 1.2rem;
-    font-weight: 700;
-    line-height: 1;
-    transition: background-color 0.2s ease;
-  }
-  .pd-faq-icon::before {
-    content: "+";
-  }
-  .pd-faq-item[open] .pd-faq-icon {
-    background-color: #c59d5f;
-    color: #111111;
-  }
-  .pd-faq-item[open] .pd-faq-icon::before {
-    content: "−";
-  }
-  .pd-faq-answer {
-    padding: 0 20px 18px 20px;
-    color: #333333;
-    font-size: 1.02rem;
-    border-top: 1px solid #efefef;
-    padding-top: 14px;
-  }
-
-  .pd-cta-box {
-    background-color: #111111;
-    color: #ffffff;
-    padding: 34px 28px;
-    border-radius: 10px;
-    margin-top: 42px;
-    text-align: center;
-  }
-  .pd-cta-box h2 {
-    color: #ffffff;
-    border-left: none;
-    padding-left: 0;
-    margin-top: 0;
-  }
-  .pd-cta-box p {
-    color: #e2e2e2;
-    max-width: 660px;
-    margin: 0 auto 24px auto;
-  }
-  .pd-cta-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 14px;
-  }
-  .pd-btn {
-    display: inline-block;
-    padding: 13px 24px;
-    border-radius: 6px;
-    text-decoration: none !important;
-    font-weight: 600;
-    font-size: 1rem;
-  }
-  .pd-btn-gold {
-    background-color: #c59d5f;
-    color: #111111 !important;
-  }
-  .pd-btn-white {
-    background-color: #ffffff;
-    color: #111111 !important;
-  }
-  .pd-btn-outline {
-    border: 1px solid #c59d5f;
-    color: #ffffff !important;
-  }
-</style>
-
-<article class="pd-uk-wrapper" lang="en-GB">
-
-  <h1>Chauffeur Service Near Me in the UK: 24/7 Executive &amp; Luxury Private Driver Hire</h1>
-
-  <p>When you search for a <strong>chauffeur service near me</strong> anywhere in the United Kingdom, you expect punctuality down to the minute, immaculate executive vehicles, and a discreet professional behind the wheel. Unlike standard minicabs or ride-hailing apps with unpredictable surge pricing and last-minute cancellations, <a href="https://private-driver-no.vercel.app/" target="_blank" rel="noopener"><strong>Private Driver</strong></a> delivers pre-booked, door-to-door luxury transport tailored around your exact British itinerary.</p>
-
-  <p>Whether you require an early-morning transfer to London Heathrow, a full-day corporate chauffeur in Mayfair or Canary Wharf, or long-distance intercity travel between London, Manchester, Birmingham, and Edinburgh, our nationwide UK chauffeur network is on standby 24 hours a day, 7 days a week.</p>
-
-  <div class="pd-highlight-box">
-    <strong>Instant UK Chauffeur Dispatch:</strong> Need a last-minute executive vehicle or want to lock in a fixed-price quote? Visit <a href="https://private-driver-no.vercel.app/" target="_blank" rel="noopener">Private Driver Online Booking</a> or message our 24/7 dispatch desk directly via WhatsApp at <a href="https://wa.me/923716643001" target="_blank" rel="noopener">+92 371 6643001</a>.
-  </div>
-
-  <figure>
-    <img src="https://carhirelondon.uk/wp-content/uploads/2026/08/65eb38a23e2810267827f076_Paris-luxury-Chauffeur-Service-dbsexperience-768x512.webp" alt="Professional UK chauffeur opening the door of a luxury black executive saloon for a passenger" width="768" height="512" loading="lazy" />
-    <figcaption class="pd-img-caption">Smartly attired, vetted UK chauffeurs providing punctual door-to-door service across Britain.</figcaption>
-  </figure>
-
-  <h2>Why British &amp; International Travellers Choose Private Driver</h2>
-
-  <p>Across the UK, corporate executives, diplomats, families, and VIP visitors rely on our <a href="https://private-driver-no.vercel.app/" target="_blank" rel="noopener">UK private chauffeur service</a> because every detail is verified before your journey begins:</p>
-
-  <ul>
-    <li><strong>Experienced, Vetted UK Chauffeurs:</strong> Every driver is impeccably dressed in business attire, background-checked under <a href="https://tfl.gov.uk/info-for/taxis-and-private-hire/" target="_blank" rel="noopener nofollow">Transport for London (TfL) private hire standards</a> and UK local council regulations, and thoroughly familiar with London Congestion Charge zones, ULEZ routes, and UK motorway corridors.</li>
-    <li><strong>Fixed, Transparent Fares:</strong> Agree your exact fare in advance with zero hidden mileage surcharges, surge fees, or unexpected waiting charges.</li>
-    <li><strong>Real-Time Flight &amp; Traffic Monitoring:</strong> We track live UK air traffic feeds and <a href="https://nationalhighways.co.uk/travel-updates/" target="_blank" rel="noopener nofollow">National Highways live traffic updates</a> so your chauffeur adjusts automatically to early arrivals, motorway closures, or roadworks.</li>
-    <li><strong>Complimentary Airport Waiting Time:</strong> Enjoy up to 60 minutes of complimentary waiting time after landing at any major UK international airport, giving you ample time to clear <a href="https://www.gov.uk/uk-border-control" target="_blank" rel="noopener nofollow">UK Border Control</a> and baggage reclaim.</li>
-  </ul>
-
-  <h2>Our UK Luxury Chauffeur Fleet</h2>
-
-  <p>Every vehicle in our fleet is late-model, valeted prior to every pickup, and equipped with dual-zone climate control, complimentary bottled water, onboard Wi-Fi, and mobile charging ports.</p>
-
-  <table class="pd-fleet-table">
-    <thead>
-      <tr>
-        <th>Vehicle Class</th>
-        <th>Recommended For</th>
-        <th>Passenger &amp; Luggage Capacity</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>Executive Saloon</strong><br>(Mercedes-Benz E-Class)</td>
-        <td>Corporate city transfers, solo executives, direct airport runs</td>
-        <td>Up to 3 passengers + 2 large suitcases</td>
-      </tr>
-      <tr>
-        <td><strong>First-Class Luxury Saloon</strong><br>(Mercedes-Benz S-Class)</td>
-        <td>VIP arrivals, boardroom roadshows, fine dining, red-carpet events</td>
-        <td>Up to 3 passengers + 2–3 suitcases</td>
-      </tr>
-      <tr>
-        <td><strong>Luxury 4x4 SUV</strong><br>(Range Rover Autobiography)</td>
-        <td>Countryside estates, Royal Ascot, Cheltenham, winter UK travel</td>
-        <td>Up to 4 passengers + 3–4 suitcases</td>
-      </tr>
-      <tr>
-        <td><strong>Executive Luxury MPV</strong><br>(Mercedes-Benz V-Class)</td>
-        <td>Families, diplomatic delegations, group airport transfers</td>
-        <td>Up to 6–7 passengers + 6–7 suitcases</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <figure>
-    <img src="https://carhirelondon.uk/wp-content/uploads/2026/07/luxury_car_under_500kb1.jpg" alt="Luxury Mercedes and executive chauffeur fleet available across the United Kingdom" loading="lazy" />
-    <figcaption class="pd-img-caption">Choose from Mercedes-Benz E-Class, S-Class, V-Class, and Range Rover models across the UK.</figcaption>
-  </figure>
-
-  <h2>Bespoke Chauffeur Services Across the United Kingdom</h2>
-
-  <h3>1. UK Airport Chauffeur Transfers (Meet &amp; Greet)</h3>
-  <p>Avoid crowded train platforms and long taxi ranks after a long-haul flight. Book a dedicated <a href="https://private-driver-no.vercel.app/" target="_blank" rel="noopener">UK airport chauffeur transfer</a> to and from <a href="https://www.heathrow.com/transport-and-directions" target="_blank" rel="noopener nofollow"><strong>London Heathrow (LHR)</strong></a>, <strong>Gatwick (LGW), Stansted (STN), Luton (LTN), London City (LCY), Manchester (MAN), Birmingham (BHX), and Edinburgh (EDI)</strong>, as well as private jet FBOs at <strong>Farnborough, Biggin Hill, and RAF Northolt</strong>. Your chauffeur greets you inside the arrivals terminal with a personalised name board and assists with all luggage.</p>
-
-  <figure>
-    <img src="https://carhirelondon.uk/wp-content/uploads/2026/08/Stansted-768x410.png" alt="UK airport chauffeur transfer service at London Stansted and Heathrow Airports" width="768" height="410" loading="lazy" />
-    <figcaption class="pd-img-caption">Seamless Meet &amp; Greet airport transfers across all major UK airports and private terminals.</figcaption>
-  </figure>
-
-  <h3>2. Corporate &amp; Financial Roadshow Chauffeurs</h3>
-  <p>Maximise productivity between meetings across the City of London, Canary Wharf, Westminster, and regional UK commercial centres. Our chauffeurs coordinate directly with PAs and executive assistants to handle tight multi-stop schedules with complete confidentiality.</p>
-
-  <h3>3. Hourly "As-Directed" Private Driver Hire</h3>
-  <p>Keep a luxury car and personal chauffeur waiting outside while you shop in Knightsbridge and Bond Street, attend a West End show, visit Harley Street clinics, or host clients across town.</p>
-
-  <h3>4. Intercity Chauffeur Travel Across Britain</h3>
-  <p>Travel door-to-door between UK cities without rail strikes, station changes, or luggage hassle. Popular intercity routes include <strong>London to Oxford, Cambridge, Bath, Bristol, Manchester, Birmingham, Leeds, and Cardiff</strong>.</p>
-
-  <h3>5. British Sporting Events, Weddings &amp; Private Tours</h3>
-  <p>Arrive in style at <strong>Wimbledon, Royal Ascot, Goodwood, Silverstone, Premier League hospitality suites</strong>, and luxury country-house weddings. We also curate private day tours to iconic heritage sites featured by <a href="https://www.visitbritain.com/" target="_blank" rel="noopener nofollow">VisitBritain</a>, including <strong>Stonehenge, Windsor Castle, the Cotswolds, and Bath</strong>.</p>
-
-  <h2>Major UK Cities &amp; Postcode Areas We Cover</h2>
-
-  <p>Whenever you look for a <strong>chauffeur service near me</strong> in Great Britain, our local dispatch network covers all major metropolitan areas and surrounding counties:</p>
-
-  <ul>
-    <li><strong>Greater London &amp; Home Counties:</strong> Mayfair (W1), Knightsbridge (SW1), Kensington &amp; Chelsea (SW3/SW7), City of London (EC2), Canary Wharf (E14), Surrey, Berkshire, Hertfordshire, Kent, and Essex.</li>
-    <li><strong>The Midlands:</strong> Birmingham, Solihull, Coventry, Nottingham, Leicester, and Stratford-upon-Avon.</li>
-    <li><strong>North West &amp; Yorkshire:</strong> Manchester, Liverpool, Cheshire, Leeds, Sheffield, and York.</li>
-    <li><strong>South West &amp; Scotland:</strong> Bristol, Bath, Oxford, Cambridge, Edinburgh, and Glasgow.</li>
-  </ul>
-
-  <h2>How to Book Your UK Chauffeur in 3 Easy Steps</h2>
-
-  <ol>
-    <li><strong>Submit Your Journey Details:</strong> Visit <a href="https://private-driver-no.vercel.app/" target="_blank" rel="noopener">https://private-driver-no.vercel.app/</a> or message us with your UK pickup postcode, destination, date, flight number (if applicable), and passenger count.</li>
-    <li><strong>Select Your Vehicle Class:</strong> Choose the Mercedes saloon, Range Rover, or V-Class MPV that best fits your group and luggage.</li>
-    <li><strong>Meet Your Chauffeur:</strong> Receive instant booking confirmation and chauffeur details prior to pickup, then enjoy a calm, first-class journey.</li>
-  </ol>
-
-  <h2>Frequently Asked Questions (UK Chauffeur Hire)</h2>
-
-  <div class="pd-faq-list">
-    <details class="pd-faq-item" open>
-      <summary>
-        <span>1. How much does a chauffeur service near me cost in the UK?</span>
-        <span class="pd-faq-icon" aria-hidden="true"></span>
-      </summary>
-      <div class="pd-faq-answer">
-        Pricing depends on your chosen vehicle class, distance, or hourly hire duration. We provide fixed, all-inclusive quotes in advance with zero surge pricing or hidden mileage fees—request an instant quote at <a href="https://private-driver-no.vercel.app/" target="_blank" rel="noopener">Private Driver</a>.
-      </div>
-    </details>
-
-    <details class="pd-faq-item">
-      <summary>
-        <span>2. Can I book a same-day or last-minute chauffeur anywhere in the UK?</span>
-        <span class="pd-faq-icon" aria-hidden="true"></span>
-      </summary>
-      <div class="pd-faq-answer">
-        Yes. While advance reservations are recommended for flagship vehicles such as the Range Rover Autobiography or Mercedes-Benz S-Class, our 24/7 dispatch team accommodates short-notice bookings across London and major UK cities subject to fleet availability.
-      </div>
-    </details>
-
-    <details class="pd-faq-item">
-      <summary>
-        <span>3. What happens if my flight into Heathrow, Gatwick, or Stansted is delayed?</span>
-        <span class="pd-faq-icon" aria-hidden="true"></span>
-      </summary>
-      <div class="pd-faq-answer">
-        We monitor live UK flight landing schedules automatically. If your flight is delayed or lands early, your chauffeur adjusts your pickup time accordingly, and all international airport transfers include up to 60 minutes of complimentary waiting time after touchdown.
-      </div>
-    </details>
-
-    <details class="pd-faq-item">
-      <summary>
-        <span>4. Are Congestion Charge, ULEZ, and airport parking fees included in my quote?</span>
-        <span class="pd-faq-icon" aria-hidden="true"></span>
-      </summary>
-      <div class="pd-faq-answer">
-        Yes. Central London Congestion Charge and ULEZ fees are factored into your fixed quote upfront, and standard airport drop-off/pickup parking is clearly detailed before you confirm your booking so there are no surprises.
-      </div>
-    </details>
-
-    <details class="pd-faq-item">
-      <summary>
-        <span>5. Are your UK chauffeurs fully licensed, insured, and DBS-checked?</span>
-        <span class="pd-faq-icon" aria-hidden="true"></span>
-      </summary>
-      <div class="pd-faq-answer">
-        Absolutely. Every chauffeur holds valid UK private-hire licensing (such as TfL in London or the relevant local authority), has passed enhanced DBS background checks, and drives a fully insured, regularly inspected luxury vehicle.
-      </div>
-    </details>
-
-    <details class="pd-faq-item">
-      <summary>
-        <span>6. Can I hire a private chauffeur by the hour ("as directed")?</span>
-        <span class="pd-faq-icon" aria-hidden="true"></span>
-      </summary>
-      <div class="pd-faq-answer">
-        Yes. Our hourly as-directed service keeps a dedicated chauffeur and vehicle on standby for multiple meetings, Knightsbridge shopping trips, West End theatre evenings, or private medical appointments across the city.
-      </div>
-    </details>
-
-    <details class="pd-faq-item">
-      <summary>
-        <span>7. Do you provide intercity transfers outside London?</span>
-        <span class="pd-faq-icon" aria-hidden="true"></span>
-      </summary>
-      <div class="pd-faq-answer">
-        Yes. We operate long-distance door-to-door transfers across England, Scotland, and Wales—including routes connecting London with Oxford, Cambridge, Bath, Bristol, Manchester, Birmingham, Leeds, and Edinburgh.
-      </div>
-    </details>
-
-    <details class="pd-faq-item">
-      <summary>
-        <span>8. Are child car seats available for family airport transfers?</span>
-        <span class="pd-faq-icon" aria-hidden="true"></span>
-      </summary>
-      <div class="pd-faq-answer">
-        Yes. Rear-facing infant carriers, toddler seats, and booster seats complying with UK safety standards can be fitted free of charge when requested at the time of booking.
-      </div>
-    </details>
-
-    <details class="pd-faq-item">
-      <summary>
-        <span>9. How will I find my chauffeur at a busy UK airport terminal?</span>
-        <span class="pd-faq-icon" aria-hidden="true"></span>
-      </summary>
-      <div class="pd-faq-answer">
-        Your chauffeur will wait inside the arrivals hall holding a clear name board displaying your name or company logo. You also receive your chauffeur's name, mobile number, and vehicle registration prior to pickup.
-      </div>
-    </details>
-
-    <details class="pd-faq-item">
-      <summary>
-        <span>10. What is your cancellation or itinerary amendment policy?</span>
-        <span class="pd-faq-icon" aria-hidden="true"></span>
-      </summary>
-      <div class="pd-faq-answer">
-        Plans change—you can modify pickup times, flight numbers, or vehicle preferences easily by contacting our 24/7 dispatch team via <a href="https://wa.me/923716643001" target="_blank" rel="noopener">WhatsApp (+92 371 6643001)</a> or <a href="mailto:royalchauffeur129@gmail.com">royalchauffeur129@gmail.com</a> ahead of your scheduled pickup.
-      </div>
-    </details>
-  </div>
-
-  <div class="pd-cta-box">
-    <h2>Book Your UK Chauffeur Service Today</h2>
-    <p>Experience punctual, discreet, first-class travel anywhere in the United Kingdom. Reach out to <strong>Private Driver</strong> 24/7 for an instant fixed quote.</p>
-    <div class="pd-cta-buttons">
-      <a href="https://wa.me/923716643001" target="_blank" rel="noopener" class="pd-btn pd-btn-gold">WhatsApp / Call: +92 371 6643001</a>
-      <a href="mailto:royalchauffeur129@gmail.com" class="pd-btn pd-btn-white">Email: royalchauffeur129@gmail.com</a>
-      <a href="https://private-driver-no.vercel.app/" target="_blank" rel="noopener" class="pd-btn pd-btn-outline">Book Online Now</a>
-    </div>
-  </div>
-
-</article>
-
-<!-- JSON-LD Schema Markup (UK LocalBusiness / LimousineBusService + 10-Question FAQPage) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "LimousineBusService",
-      "@id": "https://private-driver-no.vercel.app/#organization",
-      "name": "Private Driver UK",
-      "url": "https://private-driver-no.vercel.app/",
-      "telephone": "+92 371 6643001",
-      "email": "royalchauffeur129@gmail.com",
-      "areaServed": {
-        "@type": "Country",
-        "name": "United Kingdom"
-      },
-      "priceRange": "£££",
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday"
-        ],
-        "opens": "00:00",
-        "closes": "23:59"
-      }
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "How much does a chauffeur service near me cost in the UK?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Pricing depends on your chosen vehicle class, distance, or hourly hire duration. We provide fixed, all-inclusive quotes in advance with zero surge pricing or hidden mileage fees."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I book a same-day or last-minute chauffeur anywhere in the UK?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. While advance reservations are recommended for flagship vehicles such as the Range Rover Autobiography or Mercedes-Benz S-Class, our 24/7 dispatch team accommodates short-notice bookings across London and major UK cities subject to fleet availability."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What happens if my flight into Heathrow, Gatwick, or Stansted is delayed?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We monitor live UK flight landing schedules automatically. If your flight is delayed or lands early, your chauffeur adjusts your pickup time accordingly, and all international airport transfers include up to 60 minutes of complimentary waiting time after touchdown."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Are Congestion Charge, ULEZ, and airport parking fees included in my quote?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Central London Congestion Charge and ULEZ fees are factored into your fixed quote upfront, and standard airport drop-off/pickup parking is clearly detailed before you confirm your booking."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Are your UK chauffeurs fully licensed, insured, and DBS-checked?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Absolutely. Every chauffeur holds valid UK private-hire licensing (such as TfL in London or the relevant local authority), has passed enhanced DBS background checks, and drives a fully insured, regularly inspected luxury vehicle."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I hire a private chauffeur by the hour (as directed)?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Our hourly as-directed service keeps a dedicated chauffeur and vehicle on standby for multiple meetings, Knightsbridge shopping trips, West End theatre evenings, or private medical appointments across the city."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you provide intercity transfers outside London?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. We operate long-distance door-to-door transfers across England, Scotland, and Wales—including routes connecting London with Oxford, Cambridge, Bath, Bristol, Manchester, Birmingham, Leeds, and Edinburgh."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Are child car seats available for family airport transfers?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Rear-facing infant carriers, toddler seats, and booster seats complying with UK safety standards can be fitted free of charge when requested at the time of booking."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How will I find my chauffeur at a busy UK airport terminal?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Your chauffeur will wait inside the arrivals hall holding a clear name board displaying your name or company logo. You also receive your chauffeur's name, mobile number, and vehicle registration prior to pickup."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is your cancellation or itinerary amendment policy?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "You can modify pickup times, flight numbers, or vehicle preferences easily by contacting our 24/7 dispatch team via WhatsApp (+92 371 6643001) or royalchauffeur129@gmail.com ahead of your scheduled pickup."
-          }
-        }
-      ]
+  <style>
+    .pd-uk-wrapper {
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #1f1f1f;
+      line-height: 1.75;
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 24px 16px;
     }
-  ]
-}
-</script>
+    .pd-uk-wrapper h1 {
+      font-size: 2.25rem;
+      color: #0f0f0f;
+      line-height: 1.25;
+      margin-bottom: 18px;
+      font-weight: 700;
+    }
+    .pd-uk-wrapper h2 {
+      font-size: 1.65rem;
+      color: #0f0f0f;
+      margin-top: 40px;
+      margin-bottom: 16px;
+      border-left: 4px solid #c59d5f;
+      padding-left: 14px;
+      font-weight: 700;
+    }
+    .pd-uk-wrapper h3 {
+      font-size: 1.25rem;
+      color: #1a1a1a;
+      margin-top: 26px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    .pd-uk-wrapper p {
+      margin-bottom: 18px;
+      font-size: 1.05rem;
+    }
+    .pd-uk-wrapper a {
+      color: #9e783a;
+      text-decoration: underline;
+      font-weight: 600;
+    }
+    .pd-uk-wrapper ul, .pd-uk-wrapper ol {
+      margin-bottom: 24px;
+      padding-left: 24px;
+    }
+    .pd-uk-wrapper li {
+      margin-bottom: 10px;
+      font-size: 1.05rem;
+    }
+    .pd-img-box {
+      background: #f4f1ea;
+      border: 1px dashed #c59d5f;
+      border-radius: 8px;
+      padding: 24px;
+      margin: 24px 0 8px 0;
+      text-align: center;
+      color: #333333;
+    }
+    .pd-img-caption {
+      font-size: 0.9rem;
+      color: #555555;
+      text-align: center;
+      margin-bottom: 28px;
+      font-style: italic;
+    }
+    .pd-highlight-box {
+      background-color: #fbf8f3;
+      border: 1px solid #eadcc5;
+      border-left: 4px solid #c59d5f;
+      padding: 18px 22px;
+      border-radius: 6px;
+      margin: 26px 0;
+    }
+    .pd-fleet-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 26px 0;
+      font-size: 0.98rem;
+    }
+    .pd-fleet-table th, .pd-fleet-table td {
+      border: 1px solid #dddddd;
+      padding: 14px 16px;
+      text-align: left;
+    }
+    .pd-fleet-table th {
+      background-color: #111111;
+      color: #ffffff;
+      font-weight: 600;
+    }
+    .pd-fleet-table tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .pd-faq-list {
+      margin-top: 20px;
+    }
+    .pd-faq-item {
+      background: #f8f8f8;
+      border: 1px solid #e5e5e5;
+      border-left: 4px solid #111111;
+      border-radius: 6px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+    .pd-faq-item[open] {
+      background: #ffffff;
+      border-left-color: #c59d5f;
+    }
+    .pd-faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 16px 20px;
+      font-size: 1.08rem;
+      font-weight: 600;
+      color: #111111;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .pd-faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+    .pd-faq-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background-color: #111111;
+      color: #ffffff;
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .pd-faq-icon::before {
+      content: "+";
+    }
+    .pd-faq-item[open] .pd-faq-icon {
+      background-color: #c59d5f;
+      color: #111111;
+    }
+    .pd-faq-item[open] .pd-faq-icon::before {
+      content: "−";
+    }
+    .pd-faq-answer {
+      padding: 14px 20px 18px 20px;
+      color: #333333;
+      font-size: 1.02rem;
+      border-top: 1px solid #efefef;
+      margin: 0;
+    }
+
+    .pd-cta-box {
+      background-color: #111111;
+      color: #ffffff;
+      padding: 34px 28px;
+      border-radius: 10px;
+      margin-top: 42px;
+      text-align: center;
+    }
+    .pd-cta-box h2 {
+      color: #ffffff;
+      border-left: none;
+      padding-left: 0;
+      margin-top: 0;
+    }
+    .pd-cta-box p {
+      color: #e2e2e2;
+      max-width: 660px;
+      margin: 0 auto 24px auto;
+    }
+    .pd-cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+    }
+    .pd-btn {
+      display: inline-block;
+      padding: 13px 24px;
+      border-radius: 6px;
+      text-decoration: none !important;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    .pd-btn-gold {
+      background-color: #c59d5f;
+      color: #111111 !important;
+    }
+    .pd-btn-white {
+      background-color: #ffffff;
+      color: #111111 !important;
+    }
+    .pd-btn-outline {
+      border: 1px solid #c59d5f;
+      color: #ffffff !important;
+    }
+  </style>
+
+  <!-- JSON-LD Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://private-driver-no.vercel.app/#organization",
+        "name": "Private Driver UK",
+        "serviceType": "Chauffeur Service",
+        "url": "https://private-driver-no.vercel.app/",
+        "telephone": "+92 371 6643001",
+        "email": "royalchauffeur129@gmail.com",
+        "areaServed": {
+          "@type": "Country",
+          "name": "United Kingdom"
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "00:00",
+          "closes": "23:59"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How much does a chauffeur service near me cost in the UK?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Pricing depends on your chosen vehicle class, distance, or hourly hire duration. We provide fixed, all-inclusive quotes in advance with zero surge pricing or hidden mileage fees."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I book a same-day or last-minute chauffeur anywhere in the UK?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. While advance reservations are recommended for flagship vehicles such as the Range Rover Autobiography or Mercedes-Benz S-Class, our 24/7 dispatch team accommodates short-notice bookings across London and major UK cities subject to fleet availability."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens if my flight into Heathrow, Gatwick, or Stansted is delayed?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We monitor live UK flight landing schedules automatically. If your flight is delayed or lands early, your chauffeur adjusts your pickup time accordingly, and all international airport transfers include up to 60 minutes of complimentary waiting time after touchdown."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are Congestion Charge, ULEZ, and airport parking fees included in my quote?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Central London Congestion Charge and ULEZ fees are factored into your fixed quote upfront, and standard airport drop-off/pickup parking is clearly detailed before you confirm your booking."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are your UK chauffeurs fully licensed, insured, and DBS-checked?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Every chauffeur holds valid UK private-hire licensing (such as TfL in London or the relevant local authority), has passed enhanced DBS background checks, and drives a fully insured, regularly inspected luxury vehicle."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I hire a private chauffeur by the hour (as directed)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Our hourly as-directed service keeps a dedicated chauffeur and vehicle on standby for multiple meetings, Knightsbridge shopping trips, West End theatre evenings, or private medical appointments across the city."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you provide intercity transfers outside London?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. We operate long-distance door-to-door transfers across England, Scotland, and Wales—including routes connecting London with Oxford, Cambridge, Bath, Bristol, Manchester, Birmingham, Leeds, and Edinburgh."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are child car seats available for family airport transfers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Rear-facing infant carriers, toddler seats, and booster seats complying with UK safety standards can be fitted free of charge when requested at the time of booking."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How will I find my chauffeur at a busy UK airport terminal?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Your chauffeur will wait inside the arrivals hall holding a clear name board displaying your name or company logo. You also receive your chauffeur's name, mobile number, and vehicle registration prior to pickup."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is your cancellation or itinerary amendment policy?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can modify pickup times, flight numbers, or vehicle preferences easily by contacting our 24/7 dispatch team via WhatsApp (+92 371 6643001) or royalchauffeur129@gmail.com ahead of your scheduled pickup."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <main class="pd-uk-wrapper">
+
+    <h1>Chauffeur Service Near Me in the UK: 24/7 Executive &amp; Luxury Private Driver Hire</h1>
+
+    <p>When you search for a <strong>chauffeur service near me</strong> anywhere in the United Kingdom, you expect punctuality down to the minute, immaculate executive vehicles, and a discreet professional behind the wheel. Unlike standard minicabs or ride-hailing apps with unpredictable surge pricing and last-minute cancellations, <a href="https://private-driver-no.vercel.app/" target="_blank" rel="noopener">Private Driver</a> delivers pre-booked, door-to-door luxury transport tailored around your exact British itinerary.</p>
+
+    <p>Whether you require an early-morning transfer to London Heathrow, a full-day corporate chauffeur in Mayfair or Canary Wharf, or long-distance intercity travel between London, Manchester, Birmingham, and Edinburgh, our nationwide UK chauffeur network is on standby 24 hours a day, 7 days a week.</p>
+
+    <div class="pd-highlight-box">
+      <strong>Instant UK Chauffeur Dispatch:</strong> Need a last-minute executive vehicle or want to lock in a fixed-price quote? Message our 24/7 dispatch desk directly via WhatsApp at <a href="https://wa.me/923716643001" target="_blank" rel="noopener">+92 371 6643001</a>.
+    </div>
+
+    <!-- Replace this block with a locally hosted / self-owned image on your domain -->
+    <div class="pd-img-box">Add your own hosted chauffeur photo here (avoid hotlinking third-party sites)</div>
+    <p class="pd-img-caption">Smartly attired, vetted UK chauffeurs providing punctual door-to-door service across Britain.</p>
+
+    <h2>Why British &amp; International Travellers Choose Private Driver</h2>
+
+    <p>Across the UK, corporate executives, diplomats, families, and VIP visitors rely on our UK private chauffeur service because every detail is verified before your journey begins:</p>
+
+    <ul>
+      <li><strong>Experienced, Vetted UK Chauffeurs:</strong> Every driver is dressed in business attire, background-checked under <a href="https://tfl.gov.uk/info-for/taxis-and-private-hire/" target="_blank" rel="noopener nofollow">Transport for London (TfL) private hire standards</a> and UK local council regulations, and familiar with London Congestion Charge zones, ULEZ routes, and UK motorway corridors.</li>
+      <li><strong>Fixed, Transparent Fares:</strong> Agree your exact fare in advance with zero hidden mileage surcharges, surge fees, or unexpected waiting charges.</li>
+      <li><strong>Real-Time Flight &amp; Traffic Monitoring:</strong> We track live UK air traffic feeds and <a href="https://nationalhighways.co.uk/travel-updates/" target="_blank" rel="noopener nofollow">National Highways live traffic updates</a> so your chauffeur adjusts automatically to early arrivals, motorway closures, or roadworks.</li>
+      <li><strong>Complimentary Airport Waiting Time:</strong> Enjoy up to 60 minutes of complimentary waiting time after landing at any major UK international airport, giving you time to clear <a href="https://www.gov.uk/uk-border-control" target="_blank" rel="noopener nofollow">UK Border Control</a> and baggage reclaim.</li>
+    </ul>
+
+    <h2>Our UK Luxury Chauffeur Fleet</h2>
+
+    <p>Every vehicle in our fleet is late-model, valeted prior to every pickup, and equipped with climate control, complimentary bottled water, onboard Wi-Fi, and charging ports.</p>
+
+    <table class="pd-fleet-table">
+      <thead>
+        <tr>
+          <th>Vehicle Class</th>
+          <th>Recommended For</th>
+          <th>Passenger &amp; Luggage Capacity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Executive Saloon</strong><br />(Mercedes-Benz E-Class)</td>
+          <td>Corporate city transfers, solo executives, direct airport runs</td>
+          <td>Up to 3 passengers + 2 large suitcases</td>
+        </tr>
+        <tr>
+          <td><strong>First-Class Luxury Saloon</strong><br />(Mercedes-Benz S-Class)</td>
+          <td>VIP arrivals, boardroom roadshows, fine dining, red-carpet events</td>
+          <td>Up to 3 passengers + 2–3 suitcases</td>
+        </tr>
+        <tr>
+          <td><strong>Luxury 4x4 SUV</strong><br />(Range Rover Autobiography)</td>
+          <td>Countryside estates, Royal Ascot, Cheltenham, winter UK travel</td>
+          <td>Up to 4 passengers + 3–4 suitcases</td>
+        </tr>
+        <tr>
+          <td><strong>Executive Luxury MPV</strong><br />(Mercedes-Benz V-Class)</td>
+          <td>Families, diplomatic delegations, group airport transfers</td>
+          <td>Up to 6–7 passengers + 6–7 suitcases</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Bespoke Chauffeur Services Across the United Kingdom</h2>
+
+    <h3>1. UK Airport Chauffeur Transfers (Meet &amp; Greet)</h3>
+    <p>Avoid crowded train platforms and long taxi ranks after a long-haul flight. Book a dedicated UK airport chauffeur transfer to and from <a href="https://www.heathrow.com/transport-and-directions" target="_blank" rel="noopener nofollow">London Heathrow (LHR)</a>, Gatwick (LGW), Stansted (STN), Luton (LTN), London City (LCY), Manchester (MAN), Birmingham (BHX), and Edinburgh (EDI), as well as private jet FBOs at Farnborough, Biggin Hill, and RAF Northolt. Your chauffeur greets you inside the arrivals terminal with a personalised name board and assists with luggage.</p>
+
+    <h3>2. Corporate &amp; Financial Roadshow Chauffeurs</h3>
+    <p>Maximise productivity between meetings across the City of London, Canary Wharf, Westminster, and regional UK commercial centres. Our chauffeurs coordinate directly with PAs and executive assistants to handle multi-stop schedules with discretion.</p>
+
+    <h3>3. Hourly "As-Directed" Private Driver Hire</h3>
+    <p>Keep a luxury car and personal chauffeur waiting outside while you shop in Knightsbridge and Bond Street, attend a West End show, visit Harley Street clinics, or host clients across town.</p>
+
+    <h3>4. Intercity Chauffeur Travel Across Britain</h3>
+    <p>Travel door-to-door between UK cities without rail strikes, station changes, or luggage hassle. Popular intercity routes include London to Oxford, Cambridge, Bath, Bristol, Manchester, Birmingham, Leeds, and Cardiff.</p>
+
+    <h3>5. British Sporting Events, Weddings &amp; Private Tours</h3>
+    <p>Arrive at Wimbledon, Royal Ascot, Goodwood, Silverstone, Premier League hospitality suites, and country-house weddings. We also arrange private day trips to heritage destinations featured by <a href="https://www.visitbritain.com/" target="_blank" rel="noopener nofollow">VisitBritain</a>, including Stonehenge, Windsor Castle, the Cotswolds, and Bath.</p>
+
+    <h2>Major UK Cities &amp; Postcode Areas We Cover</h2>
+
+    <p>Whenever you look for a <strong>chauffeur service near me</strong> in Great Britain, our local dispatch network covers major metropolitan areas and surrounding counties:</p>
+
+    <ul>
+      <li><strong>Greater London &amp; Home Counties:</strong> Mayfair (W1), Knightsbridge (SW1), Kensington &amp; Chelsea (SW3/SW7), City of London (EC2), Canary Wharf (E14), Surrey, Berkshire, Hertfordshire, Kent, and Essex.</li>
+      <li><strong>The Midlands:</strong> Birmingham, Solihull, Coventry, Nottingham, Leicester, and Stratford-upon-Avon.</li>
+      <li><strong>North West &amp; Yorkshire:</strong> Manchester, Liverpool, Cheshire, Leeds, Sheffield, and York.</li>
+      <li><strong>South West &amp; Scotland:</strong> Bristol, Bath, Oxford, Cambridge, Edinburgh, and Glasgow.</li>
+    </ul>
+
+    <h2>How to Book Your UK Chauffeur in 3 Easy Steps</h2>
+
+    <ol>
+      <li><strong>Submit Your Journey Details:</strong> Message us with your UK pickup postcode, destination, date, flight number (if applicable), and passenger count.</li>
+      <li><strong>Select Your Vehicle Class:</strong> Choose the Mercedes saloon, Range Rover, or V-Class MPV that fits your group and luggage.</li>
+      <li><strong>Meet Your Chauffeur:</strong> Receive booking confirmation and chauffeur details prior to pickup, then travel door-to-door.</li>
+    </ol>
+
+    <h2>Frequently Asked Questions (UK Chauffeur Hire)</h2>
+
+    <div class="pd-faq-list">
+      <details class="pd-faq-item" open>
+        <summary>
+          <span>1. How much does a chauffeur service near me cost in the UK?</span>
+          <span class="pd-faq-icon" aria-hidden="true"></span>
+        </summary>
+        <p class="pd-faq-answer">Pricing depends on your chosen vehicle class, distance, or hourly hire duration. We provide fixed quotes in advance with no surge pricing or hidden mileage fees.</p>
+      </details>
+
+      <details class="pd-faq-item">
+        <summary>
+          <span>2. Can I book a same-day or last-minute chauffeur anywhere in the UK?</span>
+          <span class="pd-faq-icon" aria-hidden="true"></span>
+        </summary>
+        <p class="pd-faq-answer">Yes. While advance reservations are recommended for vehicles such as the Range Rover Autobiography or Mercedes-Benz S-Class, our 24/7 dispatch team handles short-notice bookings across London and major UK cities subject to availability.</p>
+      </details>
+
+      <details class="pd-faq-item">
+        <summary>
+          <span>3. What happens if my flight into Heathrow, Gatwick, or Stansted is delayed?</span>
+          <span class="pd-faq-icon" aria-hidden="true"></span>
+        </summary>
+        <p class="pd-faq-answer">We track flight landing schedules so your chauffeur adjusts pickup timing automatically, and international airport transfers include up to 60 minutes of complimentary waiting time after touchdown.</p>
+      </details>
+
+      <details class="pd-faq-item">
+        <summary>
+          <span>4. Are Congestion Charge, ULEZ, and airport parking fees included in my quote?</span>
+          <span class="pd-faq-icon" aria-hidden="true"></span>
+        </summary>
+        <p class="pd-faq-answer">Yes. Central London Congestion Charge and ULEZ fees are included in your quote upfront, and airport parking details are confirmed before booking.</p>
+      </details>
+
+      <details class="pd-faq-item">
+        <summary>
+          <span>5. Are your UK chauffeurs fully licensed, insured, and DBS-checked?</span>
+          <span class="pd-faq-icon" aria-hidden="true"></span>
+        </summary>
+        <p class="pd-faq-answer">Every chauffeur holds UK private-hire licensing (such as TfL in London or the relevant local authority), has passed background checks, and drives an insured, regularly inspected vehicle.</p>
+      </details>
+
+      <details class="pd-faq-item">
+        <summary>
+          <span>6. Can I hire a private chauffeur by the hour ("as directed")?</span>
+          <span class="pd-faq-icon" aria-hidden="true"></span>
+        </summary>
+        <p class="pd-faq-answer">Yes. Our hourly as-directed service keeps a chauffeur and vehicle available for multiple meetings, shopping trips, theatre evenings, or appointments.</p>
+      </details>
+
+      <details class="pd-faq-item">
+        <summary>
+          <span>7. Do you provide intercity transfers outside London?</span>
+          <span class="pd-faq-icon" aria-hidden="true"></span>
+        </summary>
+        <p class="pd-faq-answer">Yes. We cover long-distance transfers across England, Scotland, and Wales, including routes connecting London with Oxford, Cambridge, Bath, Bristol, Manchester, Birmingham, Leeds, and Edinburgh.</p>
+      </details>
+
+      <details class="pd-faq-item">
+        <summary>
+          <span>8. Are child car seats available for family airport transfers?</span>
+          <span class="pd-faq-icon" aria-hidden="true"></span>
+        </summary>
+        <p class="pd-faq-answer">Yes. Infant carriers, toddler seats, and booster seats meeting UK safety rules can be provided when requested during booking.</p>
+      </details>
+
+      <details class="pd-faq-item">
+        <summary>
+          <span>9. How will I find my chauffeur at a busy UK airport terminal?</span>
+          <span class="pd-faq-icon" aria-hidden="true"></span>
+        </summary>
+        <p class="pd-faq-answer">Your chauffeur meets you in the arrivals area with a name board, and you receive driver and vehicle details ahead of pickup.</p>
+      </details>
+
+      <details class="pd-faq-item">
+        <summary>
+          <span>10. What is your cancellation or itinerary amendment policy?</span>
+          <span class="pd-faq-icon" aria-hidden="true"></span>
+        </summary>
+        <p class="pd-faq-answer">You can update pickup times, flight numbers, or vehicle choices by contacting our dispatch team via <a href="https://wa.me/923716643001" target="_blank" rel="noopener">WhatsApp (+92 371 6643001)</a> or <a href="mailto:royalchauffeur129@gmail.com">royalchauffeur129@gmail.com</a> before pickup.</p>
+      </details>
+    </div>
+
+    <div class="pd-cta-box">
+      <h2>Book Your UK Chauffeur Service Today</h2>
+      <p>Arrange door-to-door private driver hire across the United Kingdom with 24/7 dispatch support.</p>
+      <div class="pd-cta-buttons">
+        <a href="https://wa.me/923716643001" target="_blank" rel="noopener" class="pd-btn pd-btn-gold">WhatsApp / Call: +92 371 6643001</a>
+        <a href="mailto:royalchauffeur129@gmail.com" class="pd-btn pd-btn-white">Email: royalchauffeur129@gmail.com</a>
+        <a href="https://private-driver-no.vercel.app/" target="_blank" rel="noopener" class="pd-btn pd-btn-outline">Visit Website</a>
+      </div>
+    </div>
+
+  </main>
+
+</body>
+</html>
