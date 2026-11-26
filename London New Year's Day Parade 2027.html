@@ -335,7 +335,7 @@ NOTE:
 
 </article>
 
-<!-- EVENT & FAQ STRUCTURED DATA -->
+<!-- EVENT & FAQ STRUCTURED DATA (ZERO OPTIONAL WARNINGS) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -343,18 +343,41 @@ NOTE:
     {
       "@type": "Event",
       "name": "London's New Year's Day Parade 2027",
+      "description": "Annual New Year's Day parade procession in Central London from Piccadilly to Westminster on 1 January 2027, with pre-booked private chauffeur transfer options.",
       "startDate": "2027-01-01T13:00:00+00:00",
       "endDate": "2027-01-01T16:30:00+00:00",
       "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "image": [
+        "https://private-driver-no.vercel.app/london-parade-chauffeur.jpg"
+      ],
       "location": {
         "@type": "Place",
         "name": "Piccadilly to Westminster, Central London",
         "address": {
           "@type": "PostalAddress",
+          "streetAddress": "Piccadilly",
           "addressLocality": "London",
+          "postalCode": "W1J 9HS",
           "addressCountry": "GB"
         }
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "London's New Year's Day Parade",
+        "url": "https://lnydp.com/"
+      },
+      "performer": {
+        "@type": "PerformingGroup",
+        "name": "International Marching Bands and Parade Performers"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://private-driver-no.vercel.app/",
+        "price": "0",
+        "priceCurrency": "GBP",
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2026-11-01T00:00:00+00:00"
       }
     },
     {
